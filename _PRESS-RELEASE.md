@@ -1,4 +1,5 @@
 # Project Name #
+Medical Record
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -19,26 +20,39 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  a complete medical history of all patients including past illnesses and various diseases.
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  Medical records is for doctors who wants to organise manage and save patients medical information.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  you can access many patients medical relevent information easily using medical records,the information will make it easy to track patients medications,allergies and help doctor make informed decisons with all the facts in one place.
 ## Problem ##
   > Describe the problem your product solves.
 
+  The doctor will have to ask the patient for medical history each time he comes in and sometimes you some information will go missing.
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+Medical records facilitates saving and organizing information for doctors in one place.
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+"Be like a pencil,leave your mark,and if you made mistakes along the way you can erase and start over,you can sculpt yourself to be better,and your essence is the most important"
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  Just make an account,log in and then you can start adding patients and their relevent data.
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+"This app helped me in my medical practice to make more informed decisoins and have a clearer picture of the health of patient"
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+if you are interested to see the app head over to our website at:
