@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+<<<<<<< HEAD
 var router=require('./routes.js')
 var app = express();
 
@@ -7,6 +8,12 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
+=======
+var app = express();
+
+app.use(express.static(__dirname + '/../react-client/dist'));
+//start of project
+>>>>>>> master branch commit
 
 app.use('/',router)
 
