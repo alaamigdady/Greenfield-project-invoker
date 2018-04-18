@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
-//hello12
 var db = mongoose.connection;
 
 db.on('error', function() {
