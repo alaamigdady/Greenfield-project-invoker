@@ -3,7 +3,8 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.use(express.static(__dirname + '/../react-client/dist'));
-
+//start of project
+//added my branch
 app.get('/items', function (req, res) {
   items.selectAll(function(err, data) {
     if(err) {
