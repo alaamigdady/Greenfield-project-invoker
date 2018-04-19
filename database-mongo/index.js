@@ -24,9 +24,9 @@ var patientSchema = mongoose.Schema({
   Age:Number,
   Phone:{type:Number,unique:true},
   Conditions:String,
-  Past diseases:String,
-  Currentlly medications:String,
-  Genetic diseases:String,
+  Past_diseases:String,
+  Currentlly_medications:String,
+  Genetic_diseases:String,
   Allergies:String,
   description: String
 });
