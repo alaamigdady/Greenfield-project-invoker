@@ -1,7 +1,16 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var router=require('./routes.js')
+var router=require('./routes.js');
+var session=require('express-session');
+
+
 var app = express();
+
+
+app.use(session({
+  secret:"123456"
+}))
+
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
