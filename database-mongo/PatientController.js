@@ -32,9 +32,9 @@ exports.updateOne = function (req, res) {
 			patient.Age=req.body.Age;
 			patient.Phone=req.body.Phone;
 			patient.Conditions=req.body.Conditions;
-			patient.Past diseases=req.body.Past diseases;
-			patient.Currentlly medications=req.body.Currentlly medications;
-		    patient.Genetic diseases=req.body.Genetic diseases;
+			patient.Past_diseases=req.body.Past diseases;
+			patient.Currentlly_medications=req.body.Currentlly medications;
+		    patient.Genetic_diseases=req.body.Genetic diseases;
 			patient.Allergies=req.body.Allergies;
 			patient.description=req.body.description;
 
