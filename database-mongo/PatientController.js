@@ -72,7 +72,7 @@ Patient.findById(req.body.number,function(err,patient){
 };
 
 //4.return all info for one patient 
-exports.retrieveOne=function(req.res){
+exports.retrieveOne=function(req,res){
 Patient.findByid(req.body.number,function(err,patient){
 if(err){
 	console.log(err)

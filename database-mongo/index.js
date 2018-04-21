@@ -18,7 +18,7 @@ db.once('open', function() {
 //create our schema
 var patientSchema = mongoose.Schema({
   number:{type:Number,unique:true},
-  Firstname:Number,
+  Firstname:String,
   Lastname:String,
   Gender:String,
   Age:Number,
