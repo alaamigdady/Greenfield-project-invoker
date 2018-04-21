@@ -1,4 +1,4 @@
-var Patient= require('./Patient');
+var Patient= require('./index');
 //controller methods:
 
 
