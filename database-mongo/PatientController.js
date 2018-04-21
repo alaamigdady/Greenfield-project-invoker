@@ -2,7 +2,7 @@ var Patient= require('./Patient');
 //controller methods:
 
 
-//1.create one patient 
+//1.create one patient
 exports.createOne = function (req, res) {
 	var pInfo=req.body;
 
@@ -16,7 +16,7 @@ exports.createOne = function (req, res) {
 	})
 };
 
-//2.update specific info for one patient 
+//2.update specific info for one patient
 exports.updateOne = function (req, res) {
 	Patient.findById(req.body.number,function(err,patient){
 		if(err){
@@ -24,7 +24,7 @@ exports.updateOne = function (req, res) {
 			res.send(500);
 		}
 		else{
-			
+
 			patient.number=req.body.number;
 			patient.Firstname=req.body.Firstname;
 			patient.Lastname=req.body.Lastname;
@@ -50,7 +50,7 @@ exports.updateOne = function (req, res) {
 	})
 };
 
-//3.delete one patient 
+//3.delete one patient
 exports.delete=function(req,res){
 Patient.findById(req.body.number,function(err,patient){
 	if(err){
@@ -68,10 +68,10 @@ Patient.findById(req.body.number,function(err,patient){
            	})
            }
 
-})	
+})
 };
 
-//4.return all info for one patient 
+//4.return all info for one patient
 exports.retrieveOne=function(req,res){
 Patient.findByid(req.body.number,function(err,patient){
 if(err){
@@ -101,17 +101,3 @@ Patient.find(function(err,allpatient){
 })
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
