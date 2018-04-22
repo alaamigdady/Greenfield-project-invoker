@@ -1,12 +1,12 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
-//react
+
 const List = (props) => (
   <div>
-  <h1> this is my tag </h1> 
-    <h4> List Component </h4>
-    There are { props.items.length } items.
-    { props.items.map(item => <ListItem item={item}/>)}
+  <h1> this is my disease </h1> 
+    <h4> List painent </h4>
+    There are { props.painents.length } painents.
+    { props.painents.map(painent => <ListItem painent={painent}/>)}
   </div>
 )
 
