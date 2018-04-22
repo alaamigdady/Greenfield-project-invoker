@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
+import User from './components/User.jsx';
+import Password from './components/Password.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,10 +28,20 @@ class App extends React.Component {
   }
 
   render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+    //the style for main header
+    const headerStyle={
+      //marginTop:'100px',
+      color:'black',
+      fontWeight:'bold',
+      textAlign:'center'
+    };
+    return (
+      <div>
+        <h2 style={headerStyle}>Welcome To Medical Record</h2>
+        <h3 style={headerStyle}>Login</h3>
+        <User></User>
+        <Password></Password>
+      </div>)
   }
 }
 
