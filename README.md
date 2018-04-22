@@ -9,6 +9,6 @@ npm install -g webpack
 npm install
 
 then start the monogod
-then this two step in two alone terminal windows:
+then do this two step in two seperated terminal windows:
 npm run react-dev
 npm run server-dev
