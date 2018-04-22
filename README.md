@@ -12,3 +12,5 @@ then start the monogod
 then do this two step in two seperated terminal windows:
 npm run react-dev
 npm run server-dev
+
+//
