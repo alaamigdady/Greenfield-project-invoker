@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
-import User from './components/User.jsx';
-import Password from './components/Password.jsx';
+import List from './Rifaa/components/List.jsx';
+import User from './Jozaa/components/User.jsx';
+import Password from './Jozaa/components/Password.jsx';
 
 class App extends React.Component {
   constructor(props) {
