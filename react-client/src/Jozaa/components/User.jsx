@@ -1,8 +1,6 @@
 import React from 'react';
-//react
 //the style for the user
 const userStyle={
-  //marginTop:'100px',
   color:'blue',
   fontWeight:'bold',
   textAlign:'center',
@@ -10,15 +8,17 @@ const userStyle={
 //the style for the user input
 const userInputStyle={
   padding:'3px',
+  //this three to make it center
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
 };
+//what render for user component
 const User = (props) => (
   <div>
     <h3 style={userStyle}>  Username: </h3>
     <input placeholder="Insert your username" style={userInputStyle} ></input>
   </div>
 )
-
+//export this component to can use
 export default User;
