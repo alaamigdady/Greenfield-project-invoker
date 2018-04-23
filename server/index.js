@@ -8,7 +8,9 @@ var app = express();
 
 
 app.use(session({
-  secret:"123456"
+  secret:"123456",
+  resave: false,
+  saveUninitialized: true
 }))
 
 
