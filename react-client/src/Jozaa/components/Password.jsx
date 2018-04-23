@@ -14,11 +14,16 @@ const userInputStyle={
   marginLeft: 'auto',
 };  
 //what render for password component
-const Password = (props) => (
-  <div>
-    <h3 style={passwordStyle}> Password: </h3>
-    <input placeholder="Insert your password" style={userInputStyle} ></input>
-  </div>
-)
+class Password extends React.Component {
+  //what render
+  render (props) { 
+    return (
+      <div>
+        <h3 style={passwordStyle}> Password: </h3>
+        <input placeholder="Insert your password" style={userInputStyle} ></input>
+      </div>
+    )
+  }
+}
 //export this component to can use
 export default Password;

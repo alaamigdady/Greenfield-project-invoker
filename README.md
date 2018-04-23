@@ -1,7 +1,5 @@
 # Greenfield-project-invoker
 
-
-
 to run the server correct:
 be in the root of the repo
 do this step:
@@ -13,5 +11,6 @@ then do this two step in two seperated terminal windows:
 npm run react-dev
 npm run server-dev
 
-we must do the react router
-npm install react-router --save
+or use this command:
+npm run jozaa
+
