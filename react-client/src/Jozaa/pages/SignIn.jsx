@@ -1,4 +1,7 @@
+//to work react
 import React from 'react';
+//to work in ajax
+import $ from 'jquery';
 //the style for the two main header
 const header={
   color:'black',
@@ -72,7 +75,6 @@ class SignIn extends React.Component {
 }
 //export this component to can use
 export default SignIn;
-
 
 
 
