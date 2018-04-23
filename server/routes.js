@@ -11,10 +11,21 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended : true}))
 //routes and handling requests.
 
+//Jozaa 'give me the controll for the get request only'
+
+
+router.route('/').get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+});
 
 router.route('/login').get(function(req,res){
-  res.send('hi')
-})
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+});
+
+router.route('/signup').get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+});
+
 
 router.route('/login').post(function(req,res){
   var userName=req.body.userName;
@@ -33,11 +44,6 @@ router.route('/login').post(function(req,res){
       }
     })
   })
-})
-
-router.route('/signup').get(function(req,res){
-  // res.sendFile(__dirname + '/../react-client/dist/index.html')
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 
 router.route('/signup').post(function(req,res){
@@ -68,9 +74,7 @@ console.log('HERE',req.body);
   })
 })
 
-router.route('/').get(function(req,res){
 
-})
 //retrieve a pateint.
 router.route('/patient').get(utils.checkUser,controller.retrieveOne)
 

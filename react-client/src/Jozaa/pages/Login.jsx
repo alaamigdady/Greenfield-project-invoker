@@ -79,7 +79,7 @@ class Login extends React.Component {
   //for sign in button
   login() {
     console.log(`YOU WANT LOGIN : ${this.state.userName} ${this.state.password} `);
-    //ajax request
+    //ajax request to sent the data to server then data base
     $.ajax({
       type: 'POST',
       url: '/login',
@@ -97,7 +97,7 @@ class Login extends React.Component {
       },
     }); 
   }
-  //what render -----------------need change
+  //what render -----------------need change style to be nice
   render () { 
     return (
       <div>
@@ -110,9 +110,7 @@ class Login extends React.Component {
         <input value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input} ></input>
        
         <button onClick={this.login.bind(this)} style={button}>Login</button>
-        <h5 style={password}>Dont have an account ?</h5>
-        {/*  sign up go to router   */}
-        <button style={button2}>Sign Up</button>
+
       </div>
     )
   }
@@ -121,4 +119,7 @@ class Login extends React.Component {
 export default Login;
 
 
-
+/*
+        <h5 style={password}>Dont have an account ?</h5>
+        <button style={button2}>Sign Up</button>
+*/
