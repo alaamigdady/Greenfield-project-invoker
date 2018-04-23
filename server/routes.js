@@ -33,12 +33,15 @@ router.route('/signup').get()
 router.route('/signup').post(function(req,res){
   var username=req.body.username;
   var password=req.body.password;
+  var firstName=req.body.firstName;
+  var lastName=req.body.lastName;
+
 
   User.find({username:username},function(err,user){
     if(!user){
       bcrypt.hash(password,null,function(err,hash){
 
-          var user=new User({username:username,password:hash})
+          var user=new User({firstName:firstName,lastName:lastName,username:username,password:hash})
           user.save(function(err,user){
 
             utils.createSession(req,res,user)
