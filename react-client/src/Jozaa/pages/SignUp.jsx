@@ -8,19 +8,19 @@ const header={
   fontWeight:'bold',
   textAlign:'center'
 };
-//the style for the first and last name 
+//the style for the first and last name
 const name={
   color:'#9900cc',
   fontWeight:'bold',
   textAlign:'center',
 };
-//the style for the user 
+//the style for the user
 const user={
   color:'blue',
   fontWeight:'bold',
   textAlign:'center',
 };
-//the style for the user and password input 
+//the style for the user and password input
 const input={
   padding:'3px',
   //this three to make it center
@@ -28,7 +28,7 @@ const input={
   marginRight: 'auto',
   marginLeft: 'auto',
 };
-//the style for the password 
+//the style for the password
 const password={
   color:'red',
   fontWeight:'bold',
@@ -111,12 +111,12 @@ class SignUp extends React.Component {
       },
       success: function () {
         //when success
-        console.log('success post after press button')
+        console.log('SUCCESS WHEN SIGNUP')
       }
     });
   }
   //what render -----------------need change
-  render () { 
+  render () {
     //understand props
     //console.log(this.props.t1)
     return (
@@ -125,16 +125,16 @@ class SignUp extends React.Component {
 
         <h3 style={name}>First name:</h3>
         <input /*undestand click */ value={this.state.firstName} onChange={this.onWrite1.bind(this)} placeholder="Insert your first name" style={input} ></input>
-        
+
         <h3 style={name}>Last name:</h3>
         <input /*undestand click */ value={this.state.lastName} onChange={this.onWrite2.bind(this)} placeholder="Insert your last name" style={input} ></input>
-        
+
         <h3 style={user}>Username:</h3>
         <input /*undestand click */ value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Insert your username" style={input} ></input>
-     
+
         <h3 style={password}>Password:</h3>
         <input /*undestand click */ value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Insert your password" style={input} ></input>
-       
+
         <button /*click event*/ onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
         <h5 style={password}> Have an account ?</h5>
         <button style={button2}>Sign In</button>
@@ -144,6 +144,3 @@ class SignUp extends React.Component {
 }
 //export this component to can use
 export default SignUp;
-
-
-

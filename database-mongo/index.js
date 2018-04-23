@@ -18,16 +18,16 @@ db.once('open', function() {
 //create our schema
 var patientSchema = mongoose.Schema({
   number:{type:Number,unique:true},
-  Firstname:String,
-  Lastname:String,
-  Gender:String,
-  Age:Number,
-  Phone:{type:Number,unique:true},
-  Conditions:String,
-  Past_diseases:String,
-  Currentlly_medications:String,
-  Genetic_diseases:String,
-  Allergies:String,
+  firstName:String,
+  lastName:String,
+  gender:String,
+  age:Number,
+  phone:{type:Number,unique:true},
+  conditions:String,
+  past_Diseases:String,
+  currentlly_Medications:String,
+  genetic_Diseases:String,
+  allergies:String,
   description: String
 });
 
@@ -61,11 +61,11 @@ var save=function(PatientInstance){
 
 //create our schema
 var userSchema = mongoose.Schema({
-  username:{type:String,unique:true},
+  userName:{type:String,unique:true},
   password:String,
-  firstname:String,
-  Lastname:String
- 
+  firstName:String,
+  lastName:String
+
 });
 
 

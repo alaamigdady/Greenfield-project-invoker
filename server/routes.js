@@ -4,6 +4,7 @@ var utils=require('./utils')
 var bcrypt=require('bcrypt')
 var bodyParser = require('body-parser');
 var path=require('path')
+var User=require('../database-mongo/index.js');
 
 
 router.use(bodyParser.json())
@@ -16,10 +17,10 @@ router.route('/login').get(function(req,res){
 })
 
 router.route('/login').post(function(req,res){
-  var username=req.body.username;
+  var userName=req.body.userName;
   var password=req.body.password;
 
-  User.find({username:username},function(err,user){
+  User.find({userName:userName},function(err,user){
     if(!user){
       return res.redirect('/login')
     }
@@ -42,19 +43,20 @@ router.route('/signup').get(function(req,res){
 router.route('/signup').post(function(req,res){
 // console.log(req.body);
 // res.end('done')
-  var username=req.body.username;
+  var userName=req.body.userName;
   var password=req.body.password;
   var firstName=req.body.firstName;
   var lastName=req.body.lastName;
 
-
-  User.find({username:username},function(err,user){
+console.log('HERE',req.body);
+  User.find({userName:userName},function(err,user){
+    console.log(user);
     if(!user){
       bcrypt.hash(password,null,function(err,hash){
 
-          var user=new User({firstName:firstName,lastName:lastName,username:username,password:hash})
+          var user=new User({firstName:firstName,lastName:lastName,userName:userName,password:hash})
           user.save(function(err,user){
-            console.log(user);
+            // console.log(user);
             utils.createSession(req,res,user)
           })
 
