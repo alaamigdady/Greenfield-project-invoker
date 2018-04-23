@@ -26,16 +26,16 @@ exports.updateOne = function (req, res) {
 		else{
 
 			patient.number=req.body.number;
-			patient.Firstname=req.body.Firstname;
-			patient.Lastname=req.body.Lastname;
-			patient.Gender=req.body.Gender;
-			patient.Age=req.body.Age;
-			patient.Phone=req.body.Phone;
-			patient.Conditions=req.body.Conditions;
-			patient.Past_diseases=req.body.Past_diseases;
-			patient.Currentlly_medications=req.body.Currentlly_medications;
-		    patient.Genetic_diseases=req.body.Genetic_diseases;
-			patient.Allergies=req.body.Allergies;
+			patient.firstName=req.body.firstName;
+			patient.lastName=req.body.lastName;
+			patient.gender=req.body.gender;
+			patient.age=req.body.age;
+			patient.phone=req.body.phone;
+			patient.conditions=req.body.conditions;
+			patient.past_Diseases=req.body.past_Diseases;
+			patient.currentlly_Medications=req.body.currentlly_Medications;
+		  patient.genetic_Diseases=req.body.genetic_Diseases;
+			patient.allergies=req.body.allergies;
 			patient.description=req.body.description;
 
 			patient.save(function(err,patient){
