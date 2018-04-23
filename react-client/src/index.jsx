@@ -1,6 +1,9 @@
 //import main dependencies react + react-dom + jquery
+//to work react
 import React from 'react';
+//to work react dom
 import ReactDOM from 'react-dom';
+//to work in ajax
 import $ from 'jquery';
 //and the router
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
@@ -17,8 +20,8 @@ class App2 extends React.Component {
     const t='Welcome jozaa' 
     return (
       <div>
-        <SignIn ></SignIn>
-        <SignUp /*understand props*/ title={t}></SignUp>
+        <SignUp /*understand props*/ t1={t}></SignUp>
+        <SignIn></SignIn>
       </div>)
   }
 }
