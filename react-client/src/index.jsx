@@ -12,11 +12,13 @@ import SignUp from './Jozaa/pages/SignUp.jsx';
 //make the main page in div id app1 name App2
 class App2 extends React.Component {
   //what render -----------------need change for the router
-  render () { 
+  render () {
+    //undestand props
+    const t='Welcome jozaa' 
     return (
       <div>
-        <SignIn></SignIn>
-        <SignUp></SignUp>
+        <SignIn ></SignIn>
+        <SignUp /*understand props*/ title={t}></SignUp>
       </div>)
   }
 }
