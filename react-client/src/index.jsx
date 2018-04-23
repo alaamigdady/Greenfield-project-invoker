@@ -9,19 +9,25 @@ import $ from 'jquery';
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 //import each components
 import List from './Rifaa/components/List.jsx';
-import SignIn from './Jozaa/pages/SignIn.jsx';
+import Login from './Jozaa/pages/Login.jsx';
 import SignUp from './Jozaa/pages/SignUp.jsx';
 
 //make the main page in div id app1 name App2
 class App2 extends React.Component {
   //what render -----------------need change for the router
   render () {
-    //undestand props
-    const t='Welcome jozaa' 
     return (
       <div>
-        <SignUp /*understand props*/ t1={t}></SignUp>
-        <SignIn></SignIn>
+       {/* the history ?????
+        <Router history={hashHistory}>
+          <Route path="/" exact strict component={Layout}>
+            <IndexRoute component={Featured}></IndexRoute>
+            <Route path="archives(/:article)" name="archives" component={Archives}></Route>
+            <Route path="settings" name="settings" component={Settings}></Route>
+          </Route>
+        </Router> */}
+        <SignUp></SignUp>
+        <Login></Login>
       </div>)
   }
 }
@@ -36,5 +42,7 @@ ReactDOM.render(<App2 />, document.getElementById('app1'));
     <Route path="settings" name="settings" component={Settings}></Route>
   </Route>
 </Router>
+
+
 
 */
