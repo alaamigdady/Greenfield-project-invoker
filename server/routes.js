@@ -2,13 +2,10 @@ var router=require('express').Router();
 var controller=require('../database-mongo/PatientController');
 var utils=require('./utils')
 var bcrypt=require('bcrypt')
-var session=require('express-session');
-
-
 //routes and handling requests.
 
-router.get('/',utils.checkUser,function(req,res){
-  res.send('hi')
+router.route('/').get(utils.checkUser,function(req,res){
+
 })
 
 router.route('/login').get(function(req,res){
