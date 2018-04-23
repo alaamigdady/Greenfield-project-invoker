@@ -55,7 +55,7 @@ router.route('/signup').post(function(req,res){
   var lastName=req.body.lastName;
 
 console.log('HERE',req.body);
-  User.find({userName:userName},function(err,user){
+  User.findOne({userName:userName},function(err,user){
     console.log(user);
     if(!user){
       bcrypt.hash(password,null,function(err,hash){
