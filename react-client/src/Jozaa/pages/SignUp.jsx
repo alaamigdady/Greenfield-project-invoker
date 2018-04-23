@@ -2,7 +2,6 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
-
 //the style for the two main header
 const header={
   color:'black',
@@ -100,7 +99,7 @@ class SignUp extends React.Component {
   //for sign in button
   saveUser() {
     console.log(`YOU MAKE NEW USER :  ${this.state.firstName} ${this.state.lastName} ${this.state.userName} ${this.state.password} `);
-    //ajax request
+    //ajax request to sent the data to server then data base
     $.ajax({
       type: 'POST',
       url: '/signup',
@@ -119,8 +118,26 @@ class SignUp extends React.Component {
         console.log('FAILED SIGN UP')
       },
     }); 
-  }
-  //what render -----------------need change
+    this.props.history.push(path);
+
+  };
+  //when press login go to login page
+  login() {
+    //ajax request for login
+    $.ajax({
+      type: 'GET',
+      url: '/login',
+      //when success do this
+      success: function (res) {
+        console.log('SUCCESS GO TO LOGIN',typeof res);
+      },
+      //when error do this
+      error: function (){
+        console.log('FAILED GO TO LOGIN')
+      },
+    }); 
+  };
+  //what render -----------------need change style to be nice
   render () {
     return (
       <div>
@@ -139,12 +156,19 @@ class SignUp extends React.Component {
         <input value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Insert your password" style={input} ></input>
 
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
-        <h5 style={password}> Have an account ?</h5>
-        {/*  login go to router   */}
-        <button style={button2}>Login</button>
+
       </div>
     )
   }
 }
 //export this component to can use
 export default SignUp;
+/*
+        <h5 style={password}> Have an account ?</h5>
+        <button onClick={this.login.bind(this)} style={button2}>Login</button>
+
+        import {withRouter} from 'react-router-dom';
+
+withRouter
+history.push
+*/
