@@ -14,11 +14,16 @@ const userInputStyle={
   marginLeft: 'auto',
 };
 //what render for user component
-const User = (props) => (
-  <div>
-    <h3 style={userStyle}>  Username: </h3>
-    <input placeholder="Insert your username" style={userInputStyle} ></input>
-  </div>
-)
+class User extends React.Component {
+  //what render
+  render (props) { 
+    return (
+      <div>
+        <h3 style={userStyle}>  Username: </h3>
+        <input placeholder="Insert your username" style={userInputStyle} ></input>
+      </div>
+    )
+  }
+}
 //export this component to can use
 export default User;

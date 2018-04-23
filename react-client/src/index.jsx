@@ -6,17 +6,17 @@ import $ from 'jquery';
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 //import each components
 import List from './Rifaa/components/List.jsx';
-import User from './Jozaa/components/User.jsx';
-import Password from './Jozaa/components/Password.jsx';
-import Login from './Jozaa/pages/Login.jsx';
+import SignIn from './Jozaa/pages/SignIn.jsx';
+import SignUp from './Jozaa/pages/SignUp.jsx';
 
 //make the main page in div id app1 name App2
 class App2 extends React.Component {
-  //what render -----------------need change
+  //what render -----------------need change for the router
   render () { 
     return (
       <div>
-        <Login></Login>
+        <SignIn></SignIn>
+        <SignUp></SignUp>
       </div>)
   }
 }
