@@ -4,9 +4,6 @@ var utils=require('./utils')
 var bcrypt=require('bcrypt')
 //routes and handling requests.
 
-router.route('/').get(utils.checkUser,function(req,res){
-
-})
 
 router.route('/login').get(function(req,res){
   res.send('hi')
@@ -55,6 +52,9 @@ router.route('/signup').post(function(req,res){
   })
 })
 
+router.route('/').get(utils.checkUser,function(req,res){
+
+})
 //retrieve a pateint.
 router.route('/patient').get(utils.checkUser,controller.retrieveOne)
 
