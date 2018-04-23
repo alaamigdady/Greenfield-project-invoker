@@ -59,6 +59,20 @@ var save=function(PatientInstance){
   })
 }
 
+//create our schema
+var userSchema = mongoose.Schema({
+  username:{type:String,unique:true},
+  password:String,
+  firstname:String,
+  Lastname:String
+ 
+});
+
+
+//compiling our schema into a Model(class)
+var User = mongoose.model('user', userSchema);
+
+module.exports=User;
 module.exports=Patient;
 module.exports.selectAll = selectAll;
 module.exports.save = save;
