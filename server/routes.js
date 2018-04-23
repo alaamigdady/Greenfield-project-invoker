@@ -2,6 +2,12 @@ var router=require('express').Router();
 var controller=require('../database-mongo/PatientController');
 var utils=require('./utils')
 var bcrypt=require('bcrypt')
+var bodyParser = require('body-parser');
+var path=require('path')
+
+
+router.use(bodyParser.json())
+router.use(bodyParser.urlencoded({extended : true}))
 //routes and handling requests.
 
 
@@ -28,9 +34,14 @@ router.route('/login').post(function(req,res){
   })
 })
 
-router.route('/signup').get()
+router.route('/signup').get(function(req,res){
+  // res.sendFile(__dirname + '/../react-client/dist/index.html')
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 
 router.route('/signup').post(function(req,res){
+// console.log(req.body);
+// res.end('done')
   var username=req.body.username;
   var password=req.body.password;
   var firstName=req.body.firstName;
@@ -43,7 +54,7 @@ router.route('/signup').post(function(req,res){
 
           var user=new User({firstName:firstName,lastName:lastName,username:username,password:hash})
           user.save(function(err,user){
-
+            console.log(user);
             utils.createSession(req,res,user)
           })
 
@@ -55,7 +66,7 @@ router.route('/signup').post(function(req,res){
   })
 })
 
-router.route('/').get(utils.checkUser,function(req,res){
+router.route('/').get(function(req,res){
 
 })
 //retrieve a pateint.
