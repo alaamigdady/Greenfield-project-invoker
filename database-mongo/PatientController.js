@@ -18,7 +18,7 @@ exports.createOne = function (req, res) {
 
 //2.update specific info for one patient
 exports.updateOne = function (req, res) {
-	Patient.findById(req.body.number,function(err,patient){
+	Patient.find({number:req.body.number},function(err,patient){
 		if(err){
 			console.log(err)
 			res.send(500);
@@ -52,7 +52,7 @@ exports.updateOne = function (req, res) {
 
 //3.delete one patient
 exports.delete=function(req,res){
-Patient.findById(req.body.number,function(err,patient){
+Patient.find({number:req.body.number},function(err,patient){
 	if(err){
 		console.log(err)
 		res.send(500);
@@ -73,7 +73,7 @@ Patient.findById(req.body.number,function(err,patient){
 
 //4.return all info for one patient
 exports.retrieveOne=function(req,res){
-Patient.findByid(req.body.number,function(err,patient){
+Patient.find({number:req.body.number},function(err,patient){
 if(err){
 	console.log(err)
 	res.send(500)
