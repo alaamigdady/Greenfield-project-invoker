@@ -52,7 +52,7 @@ const button2={
 //the page login what inside render
 class SignIn extends React.Component {
   //what render -----------------need change
-  render (props) { 
+  render () { 
     return (
       <div>
         <h2 style={header}>Welcome To Medical Record</h2>
