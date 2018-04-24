@@ -4,8 +4,9 @@ var utils=require('./utils')
 var bcrypt=require('bcrypt')
 var bodyParser = require('body-parser');
 var path=require('path')
-var User=require('../database-mongo/index.js');
-
+var User=require('../database-mongo/index');
+var mongoose=require('mongoose')
+var User=mongoose.model('User')
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended : true}))
@@ -47,20 +48,26 @@ router.route('/login').post(function(req,res){
 })
 
 router.route('/signup').post(function(req,res){
-// console.log(req.body);
+console.log(req.body);
 // res.end('done')
   var userName=req.body.userName;
   var password=req.body.password;
   var firstName=req.body.firstName;
   var lastName=req.body.lastName;
 
-console.log('HERE',req.body);
-  User.findOne({userName:userName},function(err,user){
-    console.log(user);
+// console.log('HERE',req.body);
+  User.findById({_id:req.body._id},function(err,user){
     if(!user){
-      bcrypt.hash(password,null,function(err,hash){
+      bcrypt.hash(password,10,function(err,hash){
 
-          var user=new User({firstName:firstName,lastName:lastName,userName:userName,password:hash})
+        console.log(hash);
+          var user=new User({firstname:firstName,
+            lastname:lastName,
+            username:userName,
+            password:hash
+          })
+          console.log(user);
+
           user.save(function(err,user){
             // console.log(user);
             utils.createSession(req,res,user)
