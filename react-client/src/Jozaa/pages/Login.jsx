@@ -4,36 +4,38 @@ import React from 'react';
 import $ from 'jquery';
 //the style for the main header
 const header={
-  color:'black',
+  color:'#d22d10',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'20px',
+  fontSize:'40px',
 };
 //the style for the user
 const user={
   color:'#294866',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for the password
 const password={
-  color:'#773060',
+  color:'#bb280e',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for the user and password input
 const input={
-  padding:'3px',
+  padding: '10px 10px 10px 10px',
   //this three to make it center
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
   color:'black',
-  fontSize:'8px',
+  fontSize:'15px',
+  border: '2px solid #d22d10',
+  borderRadius: '15px',
 };
 //the style for the button Login
 const button={
@@ -45,10 +47,10 @@ const button={
   backgroundColor: '#bb280e',
   color: 'white',
   border: '2px solid #bb280e',
+  borderRadius: '10px',
   marginTop:'20px',
-  fontSize:'10px',
+  fontSize:'20px',
 };
-
 //the page login what inside render
 class Login extends React.Component {
   //constructor to undestand state
@@ -118,9 +120,3 @@ class Login extends React.Component {
 }
 //export this component to can use
 export default Login;
-
-
-/*
-        <h5 style={password}>Dont have an account ?</h5>
-        <button style={button2}>Sign Up</button>
-*/

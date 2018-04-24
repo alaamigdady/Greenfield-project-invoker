@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- image for tilte -->
+    <link rel="icon" type="image/gif/png" href="https://pacificmedicalacls.com/images/pluslogo.png">
+    <!-- library for syle but dont work until now 24/4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style> 
+      body, html {
+        height: 100%;
+        margin: 0;
+      }
       .main{
-        background: 'https://harrisguidi.com/wp-content/uploads/2017/10/shutterstock_143828728.jpg';
-      }  
+        background-image:url('https://inhalemd.com/wp-content/uploads/2015/05/Doctor-Medical-Consultation-Generic1.jpg');
+        /* Full height */
+        height: 100%; 
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      } 
     </style>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">   
@@ -13,9 +27,9 @@
     <!-- title of home page-->
     <title>Medical Record</title>
   </head>
-  <body id='main' background='https://harrisguidi.com/wp-content/uploads/2017/10/shutterstock_143828728.jpg'>
+  <body>
   	<!-- main div id app1 -->
-    <div id="app1"></div>
+    <div class='main' id="app1"></div>
     <!-- main js file -->
     <script type="text/javascript" src="bundle.js"></script>
   </body>

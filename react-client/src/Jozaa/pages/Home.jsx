@@ -8,7 +8,8 @@ import $ from 'jquery';
 const header={
   color:'black',
   fontWeight:'bold',
-  textAlign:'center'
+  textAlign:'center',
+  fontSize:'40px',
 };
 
 //the page home what inside render
@@ -17,11 +18,8 @@ class Home extends React.Component {
   constructor(){
     super();
     this.state={
-
     };
   }
-
-
   //what render -----------------need change style to be nice
   render () { 
     return (
