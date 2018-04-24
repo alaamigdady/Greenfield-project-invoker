@@ -20,14 +20,14 @@
         background-size: cover;
       }
       .loader {
-        position: fixed;
-        left: 0px;
-        top: 0px;
+        /*position: fixed;*/
+        /*left: 0px;*/
+        /*top: 0px;*/
+        /*z-index: 9999;*/
         width: 100%;
         height: 100%;
-        z-index: 9999;
-        background: url('http://freefrontend.com/assets/img/css-loaders/loading.gif') 50% 50% rgb(249,249,249) no-repeat;
-        background-size: 100%;
+        background: url('https://cdn.vox-cdn.com/thumbor/cGTmmKiYGBzn_jTtjjwu8DtbHZU=/cdn.vox-cdn.com/uploads/chorus_asset/file/3443912/gif_4.0.gif') 50% 50% rgb(249,249,249) no-repeat;
+        background-size: 100% 100%;
       }
     </style>
     <!-- Latest compiled and minified CSS -->
@@ -47,36 +47,46 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 <script>
+  //to remove the loader icon after loead the page
+  //we can but setiome out
 $(window).load(function(){
-  // setTimeout(function(){
+  setTimeout(function(){
     $('.loader').fadeOut() 
-  // }, 6000);
+  }, 2000);
 });
 
 </script>
   </body>
 </html>
 
-<!--
-so good 90%
+<!-- the laoader pic
+99%
+https://cdn.vox-cdn.com/thumbor/cGTmmKiYGBzn_jTtjjwu8DtbHZU=/cdn.vox-cdn.com/uploads/chorus_asset/file/3443912/gif_4.0.gif
+
+95%
+https://static1.squarespace.com/static/53f61092e4b0879526f82ace/5940a7023a0411e686330484/5940aaa6db29d64c86b85c88/1497410216230/TGT_OTC_Icons.gif?format=2500w
+
+90%
 https://cdn.dribbble.com/users/187497/screenshots/1725519/medical-icons.gif
 
 85%
 https://blog.advids.co/wp-content/uploads//2017/06/Medical-Explainer-min.gif
 
-dovtor with patint
+75%
+http://freefrontend.com/assets/img/css-loaders/loading.gif
+
+good but small
+https://static1.squarespace.com/static/55972c7ee4b069786e8c66ae/55b38d13e4b0a813f74e3dc1/56c56b9dab48de5338b2145d/1455779252981/alchemy-dribbble-medicalicons.gif?format=300w
+
+doctor with patint
 https://www.careprn.com/theme/front/img/preloader.gif
 
 shiled empalanse
 https://myblueprint.arkansasbluecross.com/shared/template/images/loading.gif?v=3
-
-loead 00 ......100%
-http://freefrontend.com/assets/img/css-loaders/loading.gif
-
 
 move good
 https://i.imgur.com/B2PFJ7a.gif
 
 so funny
 https://www.freepik.com/blog/wp-content/uploads/2017/05/03b.gif
-
+-->
