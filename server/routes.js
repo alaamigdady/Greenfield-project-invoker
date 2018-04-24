@@ -16,14 +16,11 @@ router.use(bodyParser.urlencoded({extended : true}))
 
 
 router.route('/')
-.get(function(req,res){
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-});
+.get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
+
 
 router.route('/login')
-  .get(function(req,res){
-    res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-  })
+.get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
   .post(function(req,res){
   var userName=req.body.userName;
   var password=req.body.password;
@@ -47,9 +44,7 @@ router.route('/login')
 });
 
 router.route('/signup')
-.get(function(req,res){
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-})
+.get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
 .post(function(req,res){
   var userName=req.body.userName;
   var password=req.body.password;
@@ -82,7 +77,9 @@ router.route('/signup')
 
 router.route('/patient')
 //retrieve a pateint.
-.get(utils.checkUser,controller.retrieveOne)
+.get(  function(req,res){  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));}
+  //utils.checkUser,controller.retrieveOne
+  )
 //create a patient.
 .post(utils.checkUser,controller.createOne)
 //update patient information.
@@ -93,5 +90,13 @@ router.route('/patient')
 router.route('/patients')
 //get all patients
 .get(utils.checkUser,controller.retrieveAll)
+
+//Jozaa another get request i neeed to control it to see rifaa work 
+//about router I think we have to do somthing in server to give me all the controll 
+//we will talk in that tonorrow
+router.route('/list').get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
+router.route('/user').get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
+
+
 
 module.exports=router;

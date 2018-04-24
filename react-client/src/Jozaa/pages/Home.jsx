@@ -1,5 +1,4 @@
 //this page only to see if it is work or not the router
-
 //to work react
 import React from 'react';
 //to work in ajax

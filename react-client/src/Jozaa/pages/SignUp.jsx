@@ -6,10 +6,11 @@ import $ from 'jquery';
 //const Fan = require('react-fontawesome');
 //the style for the main header
 const header={
-  color:'#d22d10',
+  color:'black',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'40px',
+  fontFamily: 'Lobster',
 };
 //the style for first name
 const fName={
@@ -29,7 +30,7 @@ const lName={
 };
 //the style for the user
 const user={
-  color:'#294866',
+  color:'#1B5494',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'20px',
@@ -52,7 +53,7 @@ const input={
   marginLeft: 'auto',
   color:'black',
   fontSize:'15px',
-  border: '2px solid #d22d10',
+  border: '2px solid black',
   borderRadius: '15px',
 };
 //the style for the button Sign Up
@@ -62,12 +63,13 @@ const button={
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
-  backgroundColor: '#bb280e',
+  backgroundColor: '#123456',
   color: 'white',
-  border: '2px solid #bb280e',
+  border: '2px solid #123456',
   marginTop:'20px',
   fontSize:'20px',
   borderRadius: '10px',
+  fontFamily: 'Lobster',
 };
 
 //the page login what inside render
@@ -130,34 +132,28 @@ class SignUp extends React.Component {
         console.log('FAILED SIGN UP')
       },
     }); 
-
   };
   //what render -----------------need change style to be nice
   render () {
     return (
       <div>
         <h2 style={header}>Welcome To Medical Record</h2>
-
         <h3 style={fName}>First name: 
           <input value={this.state.firstName} onChange={this.onWrite1.bind(this)} placeholder="First name" style={input}>
           </input>
-        </h3>
-        
+        </h3>       
         <h3 style={lName}>Last name: 
           <input value={this.state.lastName} onChange={this.onWrite2.bind(this)} placeholder="Last name" style={input}>
           </input>
-        </h3>
-        
+        </h3>        
         <h3 style={user}>Username:
          <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
          </input>
         </h3>
-
         <h3 style={password}>Password:
          <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
          </input>
         </h3>
-
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
       </div>
     )
