@@ -19,6 +19,8 @@ exports.checkUser=function(req,res,next){
 exports.createSession=function(req,res,aUser){
   req.session.regenerate(function(){
     req.session.user=aUser;
+    // console.log(req.session);
     res.redirect('/')
+    res.end()
   })
 }

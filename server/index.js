@@ -14,9 +14,9 @@ app.use(session({
 }))
 
 
+app.use('/',router)
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-app.use('/',router)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 

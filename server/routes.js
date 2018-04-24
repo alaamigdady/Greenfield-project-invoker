@@ -15,27 +15,23 @@ router.use(bodyParser.urlencoded({extended : true}))
 //Jozaa 'give me the controll for the get request only'
 
 
-router.route('/').get(function(req,res){
+router.route('/')
+.get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 });
 
-router.route('/login').get(function(req,res){
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-});
-
-router.route('/signup').get(function(req,res){
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-});
-
-
-router.route('/login').post(function(req,res){
+router.route('/login')
+  .get(function(req,res){
+    res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+  })
+  .post(function(req,res){
   var userName=req.body.userName;
   var password=req.body.password;
 
   User.findOne({userName:userName},function(err,user){
     if(!user){
       return res.redirect('/login')
-    }
+    }else{
     bcrypt.compare(password,user.password,function(err,match){
       if(match){
         console.log('successful login');
@@ -46,11 +42,15 @@ router.route('/login').post(function(req,res){
         res.redirect('/login')
 
       }
-    })
+    })}
   })
-})
+});
 
-router.route('/signup').post(function(req,res){
+router.route('/signup')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
+.post(function(req,res){
   var userName=req.body.userName;
   var password=req.body.password;
   var firstName=req.body.firstName;
@@ -78,24 +78,20 @@ router.route('/signup').post(function(req,res){
     res.redirect('/signup');
   }
   })
-})
+});
 
-
+router.route('/patient')
 //retrieve a pateint.
-router.route('/patient').get(utils.checkUser,controller.retrieveOne)
-
+.get(utils.checkUser,controller.retrieveOne)
 //create a patient.
-router.route('/patient').post(utils.checkUser,controller.createOne)
-
+.post(utils.checkUser,controller.createOne)
 //update patient information.
-router.route('/patient').put(utils.checkUser,controller.updateOne)
-
+.put(utils.checkUser,controller.updateOne)
 //delete a patient.
-router.route('/patient').delete(utils.checkUser,controller.delete)
+.delete(utils.checkUser,controller.delete)
 
+router.route('/patients')
 //get all patients
-router.route('/patients').get(utils.checkUser,controller.retrieveAll)
-
-
+.get(utils.checkUser,controller.retrieveAll)
 
 module.exports=router;
