@@ -32,14 +32,17 @@ router.route('/login').post(function(req,res){
   var userName=req.body.userName;
   var password=req.body.password;
 
-  User.find({userName:userName},function(err,user){
+  User.findOne({userName:userName},function(err,user){
     if(!user){
       return res.redirect('/login')
     }
     bcrypt.compare(password,user.password,function(err,match){
       if(match){
+        console.log('successful login');
         utils.createSession(req,res,user)
       }else{
+        console.log('Wrong password');
+
         res.redirect('/login')
 
       }
@@ -48,28 +51,24 @@ router.route('/login').post(function(req,res){
 })
 
 router.route('/signup').post(function(req,res){
-console.log(req.body);
-// res.end('done')
   var userName=req.body.userName;
   var password=req.body.password;
   var firstName=req.body.firstName;
   var lastName=req.body.lastName;
 
-// console.log('HERE',req.body);
-  User.findById({_id:req.body._id},function(err,user){
+  User.findOne({userName:userName},function(err,user){
     if(!user){
       bcrypt.hash(password,10,function(err,hash){
 
-        console.log(hash);
-          var user=new User({firstname:firstName,
-            lastname:lastName,
-            username:userName,
+          var user=new User({
+            firstName:firstName,
+            lastName:lastName,
+            userName:userName,
             password:hash
           })
-          console.log(user);
 
           user.save(function(err,user){
-            // console.log(user);
+            console.log(user);
             utils.createSession(req,res,user)
           })
 
