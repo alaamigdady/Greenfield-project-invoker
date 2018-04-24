@@ -12,7 +12,7 @@ import $ from 'jquery';
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt } from "react-router-dom";
 
 //import each components
-import List from './Rifaa/components/List.jsx';
+import PatientList from './Rifaa/components/List.jsx';
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
 import SignUp from './Jozaa/pages/SignUp.jsx';

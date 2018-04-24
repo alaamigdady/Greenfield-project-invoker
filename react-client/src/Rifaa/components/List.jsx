@@ -1,13 +1,13 @@
 import React from 'react';
-import ListItem from './ListItem.jsx';
+import Patient from './patient.jsx';
 
-const List = (props) => (
+const PatientList = (props) => (
   <div>
   <h1> this is my disease </h1> 
-    <h4> List painent </h4>
-    There are { props.painents.length } painents.
-    { props.painents.map(painent => <ListItem painent={painent}/>)}
+    <h4>patients List</h4>
+    There are { props.patients.length } patients.
+    { props.patients.map(patient => <Patient patient={patient}/>)}
   </div>
 )
 
-export default List;
+export default PatientList;
