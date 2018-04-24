@@ -70,7 +70,7 @@ var userSchema = mongoose.Schema({
 
 
 //compiling our schema into a Model(class)
-var User = mongoose.model('user', userSchema);
+var User = mongoose.model('User', userSchema);
 
 module.exports=User;
 module.exports=Patient;
