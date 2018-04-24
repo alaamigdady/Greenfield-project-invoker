@@ -25,6 +25,8 @@ const header1={
   fontSize:'25px',
   marginLeft:'10px',
   marginTop:'2px',
+    fontFamily: 'Lobster',
+
 };
 //the style for the main header
 const header2={
@@ -32,7 +34,7 @@ const header2={
   fontWeight:'bold',
   fontSize:'25px',
   marginLeft:'10px',
-    marginTop:'20px',
+  marginTop:'20px',
 
 };
 //style for not active link

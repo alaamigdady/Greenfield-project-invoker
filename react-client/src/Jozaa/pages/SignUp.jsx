@@ -6,10 +6,11 @@ import $ from 'jquery';
 //const Fan = require('react-fontawesome');
 //the style for the main header
 const header={
-  color:'#d22d10',
+  color:'black',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'40px',
+  fontFamily: 'Lobster',
 };
 //the style for first name
 const fName={
@@ -29,7 +30,7 @@ const lName={
 };
 //the style for the user
 const user={
-  color:'#294866',
+  color:'#1B5494',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'20px',
@@ -52,7 +53,7 @@ const input={
   marginLeft: 'auto',
   color:'black',
   fontSize:'15px',
-  border: '2px solid #d22d10',
+  border: '2px solid black',
   borderRadius: '15px',
 };
 //the style for the button Sign Up
@@ -62,12 +63,13 @@ const button={
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
-  backgroundColor: '#bb280e',
+  backgroundColor: '#123456',
   color: 'white',
-  border: '2px solid #bb280e',
+  border: '2px solid #123456',
   marginTop:'20px',
   fontSize:'20px',
   borderRadius: '10px',
+  fontFamily: 'Lobster',
 };
 
 //the page login what inside render

@@ -18,7 +18,17 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-      } 
+      }
+      .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('http://freefrontend.com/assets/img/css-loaders/loading.gif') 50% 50% rgb(249,249,249) no-repeat;
+        background-size: 100%;
+      }
     </style>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">   
@@ -29,8 +39,44 @@
   </head>
   <body>
   	<!-- main div id app1 -->
-    <div class='main' id="app1"></div>
+    <div class='loader' >  </div>
+
+    <div class='main' id='app1'></div>
     <!-- main js file -->
     <script type="text/javascript" src="bundle.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script>
+$(window).load(function(){
+  // setTimeout(function(){
+    $('.loader').fadeOut() 
+  // }, 6000);
+});
+
+</script>
   </body>
 </html>
+
+<!--
+so good 90%
+https://cdn.dribbble.com/users/187497/screenshots/1725519/medical-icons.gif
+
+85%
+https://blog.advids.co/wp-content/uploads//2017/06/Medical-Explainer-min.gif
+
+dovtor with patint
+https://www.careprn.com/theme/front/img/preloader.gif
+
+shiled empalanse
+https://myblueprint.arkansasbluecross.com/shared/template/images/loading.gif?v=3
+
+loead 00 ......100%
+http://freefrontend.com/assets/img/css-loaders/loading.gif
+
+
+move good
+https://i.imgur.com/B2PFJ7a.gif
+
+so funny
+https://www.freepik.com/blog/wp-content/uploads/2017/05/03b.gif
+

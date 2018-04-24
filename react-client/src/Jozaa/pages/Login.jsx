@@ -4,14 +4,15 @@ import React from 'react';
 import $ from 'jquery';
 //the style for the main header
 const header={
-  color:'#d22d10',
+  color:'black',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'40px',
+  fontFamily: 'Lobster',
 };
 //the style for the user
 const user={
-  color:'#294866',
+  color:'#1B5494',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'20px',
@@ -34,8 +35,9 @@ const input={
   marginLeft: 'auto',
   color:'black',
   fontSize:'15px',
-  border: '2px solid #d22d10',
+  border: '2px solid black',
   borderRadius: '15px',
+
 };
 //the style for the button Login
 const button={
@@ -44,12 +46,13 @@ const button={
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
-  backgroundColor: '#bb280e',
+  backgroundColor: '#123456',
   color: 'white',
-  border: '2px solid #bb280e',
+  border: '2px solid #123456',
   borderRadius: '10px',
   marginTop:'20px',
   fontSize:'20px',
+  fontFamily: 'Lobster',
 };
 //the page login what inside render
 class Login extends React.Component {
