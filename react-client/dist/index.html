@@ -40,22 +40,20 @@
   <body>
   	<!-- main div id app1 -->
     <div class='loader' >  </div>
-
-    <div class='main' id='app1'></div>
     <!-- main js file -->
+    <div class='main' id='app1'></div>
     <script type="text/javascript" src="bundle.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-<script>
-  //to remove the loader icon after loead the page
-  //we can but setiome out
-$(window).load(function(){
-  setTimeout(function(){
-    $('.loader').fadeOut() 
-  }, 2000);
-});
-
-</script>
+    <script>
+      //to remove the loader icon after loead the page
+      $(window).load(function(){
+        //we can but setiome out
+        setTimeout(function(){
+          $('.loader').fadeOut() 
+        }, 2000);
+      });
+    </script>
   </body>
 </html>
 

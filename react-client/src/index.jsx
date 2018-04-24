@@ -8,10 +8,13 @@ import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
 //import each components
-import PatientList from './Rifaa/components/List.jsx';
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
 import SignUp from './Jozaa/pages/SignUp.jsx';
+import List from './Rifaa/components/List.jsx';
+import Patient from './Rifaa/components/patient.jsx';
+import User from './Rifaa/pages/user.jsx';
+
 //style for div top
 const div2={
   backgroundColor:'#123456',
@@ -25,8 +28,7 @@ const header1={
   fontSize:'25px',
   marginLeft:'10px',
   marginTop:'2px',
-    fontFamily: 'Lobster',
-
+  fontFamily: 'Lobster',
 };
 //the style for the main header
 const header2={
@@ -35,7 +37,6 @@ const header2={
   fontSize:'25px',
   marginLeft:'10px',
   marginTop:'20px',
-
 };
 //style for not active link
 const notActive1={
@@ -82,9 +83,13 @@ class App2 extends React.Component {
           <Route path="/" exact strict component={Home}/>     
           <Route path="/login" exact strict component={Login}/>     
           <Route path="/signup" exact strict component={SignUp}/>
+          <Route path="/list" exact strict component={List}/>
+          <Route path="/patient" exact strict component={Patient}/>
+          <Route path="/user" exact strict component={User}/>
+                 
         </div>
       </Router> 
-      )
+    )
   }
 }
 ReactDOM.render(<App2 />, document.getElementById('app1'));
@@ -100,6 +105,6 @@ User({match})=> {match.params.username}
     import {withRouter} from 'react-router-dom';
 withRouter
 
-4-neeed to have the home page
+4-neeed home page
 
 */

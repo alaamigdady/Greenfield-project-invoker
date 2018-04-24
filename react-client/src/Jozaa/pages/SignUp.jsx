@@ -132,34 +132,28 @@ class SignUp extends React.Component {
         console.log('FAILED SIGN UP')
       },
     }); 
-
   };
   //what render -----------------need change style to be nice
   render () {
     return (
       <div>
         <h2 style={header}>Welcome To Medical Record</h2>
-
         <h3 style={fName}>First name: 
           <input value={this.state.firstName} onChange={this.onWrite1.bind(this)} placeholder="First name" style={input}>
           </input>
-        </h3>
-        
+        </h3>       
         <h3 style={lName}>Last name: 
           <input value={this.state.lastName} onChange={this.onWrite2.bind(this)} placeholder="Last name" style={input}>
           </input>
-        </h3>
-        
+        </h3>        
         <h3 style={user}>Username:
          <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
          </input>
         </h3>
-
         <h3 style={password}>Password:
          <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
          </input>
         </h3>
-
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
       </div>
     )

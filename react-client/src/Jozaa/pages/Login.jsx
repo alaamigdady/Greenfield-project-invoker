@@ -37,7 +37,6 @@ const input={
   fontSize:'15px',
   border: '2px solid black',
   borderRadius: '15px',
-
 };
 //the style for the button Login
 const button={
@@ -104,19 +103,15 @@ class Login extends React.Component {
     return (
       <div>
         <h2 style={header}>Welcome To Medical Record</h2>
-        
         <h3 style={user}>Username:
           <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
           </input>
         </h3>
-     
         <h3 style={password}>Password:
           <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
           </input>
         </h3>
-       
         <button onClick={this.login.bind(this)} style={button}>Login</button>
-
       </div>
     )
   }
