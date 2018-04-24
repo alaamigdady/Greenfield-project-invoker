@@ -19,7 +19,7 @@ const user={
 };
 //the style for the password
 const password={
-  color:'#773060',
+  color:'#bb280e',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'20px',
@@ -34,7 +34,7 @@ const input={
   marginLeft: 'auto',
   color:'black',
   fontSize:'15px',
-  border: '2px solid red',
+  border: '2px solid #d22d10',
   borderRadius: '15px',
 };
 //the style for the button Login
@@ -51,7 +51,6 @@ const button={
   marginTop:'20px',
   fontSize:'20px',
 };
-
 //the page login what inside render
 class Login extends React.Component {
   //constructor to undestand state
@@ -121,9 +120,3 @@ class Login extends React.Component {
 }
 //export this component to can use
 export default Login;
-
-
-/*
-        <h5 style={password}>Dont have an account ?</h5>
-        <button style={button2}>Sign Up</button>
-*/

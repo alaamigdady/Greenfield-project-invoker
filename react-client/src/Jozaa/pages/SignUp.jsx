@@ -4,7 +4,6 @@ import React from 'react';
 import $ from 'jquery';
 //library for style
 //const Fan = require('react-fontawesome');
-
 //the style for the main header
 const header={
   color:'#d22d10',
@@ -38,7 +37,7 @@ const user={
 };
 //the style for the password
 const password={
-  color:'#773060',
+  color:'#bb280e',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'20px',
@@ -53,7 +52,7 @@ const input={
   marginLeft: 'auto',
   color:'black',
   fontSize:'15px',
-  border: '2px solid red',
+  border: '2px solid #d22d10',
   borderRadius: '15px',
 };
 //the style for the button Sign Up
@@ -63,9 +62,9 @@ const button={
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
-  backgroundColor: '#773060',
+  backgroundColor: '#bb280e',
   color: 'white',
-  border: '2px solid #773060',
+  border: '2px solid #bb280e',
   marginTop:'20px',
   fontSize:'20px',
   borderRadius: '10px',
@@ -131,7 +130,6 @@ class SignUp extends React.Component {
         console.log('FAILED SIGN UP')
       },
     }); 
-    //this.props.history.push(path);
 
   };
   //what render -----------------need change style to be nice
@@ -161,17 +159,9 @@ class SignUp extends React.Component {
         </h3>
 
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
-
       </div>
     )
   }
 }
 //export this component to can use
 export default SignUp;
-/*
-import {withRouter} from 'react-router-dom';
-withRouter
-history.push
-
- class="fa fa-user-md"  
-*/
