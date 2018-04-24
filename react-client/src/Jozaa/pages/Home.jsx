@@ -8,7 +8,8 @@ import $ from 'jquery';
 const header={
   color:'black',
   fontWeight:'bold',
-  textAlign:'center'
+  textAlign:'center',
+    fontSize:'40px',
 };
 
 //the page home what inside render

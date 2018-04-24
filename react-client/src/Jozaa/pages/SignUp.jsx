@@ -2,27 +2,30 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
+//library for style
+//const Fan = require('react-fontawesome');
+
 //the style for the main header
 const header={
-  color:'black',
+  color:'#d22d10',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'20px',
+  fontSize:'40px',
 };
 //the style for first name
 const fName={
-  color:'#9900cc',
+  color:'#7a00a3',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for last name
 const lName={
-  color:'#9900cc',
+  color:'#7a00a3',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for the user
@@ -30,7 +33,7 @@ const user={
   color:'#294866',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for the password
@@ -38,18 +41,20 @@ const password={
   color:'#773060',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for the user and password input
 const input={
-  padding:'3px',
+  padding: '10px 10px 10px 10px',
   //this three to make it center
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
   color:'black',
-  fontSize:'8px',
+  fontSize:'15px',
+  border: '2px solid red',
+  borderRadius: '15px',
 };
 //the style for the button Sign Up
 const button={
@@ -62,7 +67,8 @@ const button={
   color: 'white',
   border: '2px solid #773060',
   marginTop:'20px',
-  fontSize:'10px',
+  fontSize:'20px',
+  borderRadius: '10px',
 };
 
 //the page login what inside render
@@ -145,7 +151,7 @@ class SignUp extends React.Component {
         </h3>
         
         <h3 style={user}>Username:
-         <input  value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
+         <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
          </input>
         </h3>
 
@@ -163,11 +169,9 @@ class SignUp extends React.Component {
 //export this component to can use
 export default SignUp;
 /*
-        <h5 style={password}> Have an account ?</h5>
-        <button onClick={this.login.bind(this)} style={button2}>Login</button>
-
-        import {withRouter} from 'react-router-dom';
-
+import {withRouter} from 'react-router-dom';
 withRouter
 history.push
+
+ class="fa fa-user-md"  
 */

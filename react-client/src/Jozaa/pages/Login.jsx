@@ -4,17 +4,17 @@ import React from 'react';
 import $ from 'jquery';
 //the style for the main header
 const header={
-  color:'black',
+  color:'#d22d10',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'20px',
+  fontSize:'40px',
 };
 //the style for the user
 const user={
   color:'#294866',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for the password
@@ -22,18 +22,20 @@ const password={
   color:'#773060',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'10px',
+  fontSize:'20px',
   marginBottom:'-10px',
 };
 //the style for the user and password input
 const input={
-  padding:'3px',
+  padding: '10px 10px 10px 10px',
   //this three to make it center
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
   color:'black',
-  fontSize:'8px',
+  fontSize:'15px',
+  border: '2px solid red',
+  borderRadius: '15px',
 };
 //the style for the button Login
 const button={
@@ -45,8 +47,9 @@ const button={
   backgroundColor: '#bb280e',
   color: 'white',
   border: '2px solid #bb280e',
+  borderRadius: '10px',
   marginTop:'20px',
-  fontSize:'10px',
+  fontSize:'20px',
 };
 
 //the page login what inside render
