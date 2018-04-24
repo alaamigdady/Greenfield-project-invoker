@@ -2,31 +2,38 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
-//the style for the two main header
+//the style for the main header
 const header={
   color:'black',
   fontWeight:'bold',
-  textAlign:'center'
+  textAlign:'center',
+  fontSize:'20px',
 };
-//the style for the user 
+//the style for the user
 const user={
-  color:'blue',
+  color:'#294866',
   fontWeight:'bold',
   textAlign:'center',
+  fontSize:'10px',
+  marginBottom:'-10px',
 };
-//the style for the user and password input 
+//the style for the password
+const password={
+  color:'#773060',
+  fontWeight:'bold',
+  textAlign:'center',
+  fontSize:'10px',
+  marginBottom:'-10px',
+};
+//the style for the user and password input
 const input={
   padding:'3px',
   //this three to make it center
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
-};
-//the style for the password 
-const password={
-  color:'red',
-  fontWeight:'bold',
-  textAlign:'center',
+  color:'black',
+  fontSize:'8px',
 };
 //the style for the button Login
 const button={
@@ -35,23 +42,13 @@ const button={
   display: 'block',
   marginRight: 'auto',
   marginLeft: 'auto',
-  backgroundColor: 'black',
+  backgroundColor: '#bb280e',
   color: 'white',
-  border: '2px solid',
-  marginTop:'10px'
+  border: '2px solid #bb280e',
+  marginTop:'20px',
+  fontSize:'10px',
 };
-//the style for the button Sign Up
-const button2={
-  padding:'5px',
-  //this three to make it center
-  display: 'block',
-  marginRight: 'auto',
-  marginLeft: 'auto',
-  backgroundColor: 'green',
-  color: 'white',
-  border: '2px solid',
-  marginTop:'10px'
-};
+
 //the page login what inside render
 class Login extends React.Component {
   //constructor to undestand state
@@ -103,11 +100,15 @@ class Login extends React.Component {
       <div>
         <h2 style={header}>Welcome To Medical Record</h2>
         
-        <h3 style={user}>Username:</h3>
-        <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input} ></input>
+        <h3 style={user}>Username:
+          <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
+          </input>
+        </h3>
      
-        <h3 style={password}>Password:</h3>
-        <input value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input} ></input>
+        <h3 style={password}>Password:
+          <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
+          </input>
+        </h3>
        
         <button onClick={this.login.bind(this)} style={button}>Login</button>
 
