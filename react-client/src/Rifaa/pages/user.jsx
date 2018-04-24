@@ -56,7 +56,7 @@ const button2={
   marginTop:'10px'
 };
 //the page login what inside render
-class SignUp extends React.Component {
+class User extends React.Component {
   //constructor to undestand state
   constructor(){
     super();
@@ -118,7 +118,7 @@ class SignUp extends React.Component {
   }
 }
 //export this component to can use
-export default SignUp;
+export default User;
 
 
 
