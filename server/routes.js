@@ -18,15 +18,17 @@ router.use(bodyParser.urlencoded({extended : true}))
 router.route('/')
 .get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
 
-
 router.route('/login')
 .get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
+
   .post(function(req,res){
   var userName=req.body.userName;
   var password=req.body.password;
 
   User.findOne({userName:userName},function(err,user){
     if(!user){
+      console.log("User does not exist");
+      res.send('User does not exist')
       return res.redirect('/login')
     }else{
     bcrypt.compare(password,user.password,function(err,match){
@@ -35,8 +37,7 @@ router.route('/login')
         utils.createSession(req,res,user)
       }else{
         console.log('Wrong password');
-
-        res.redirect('/login')
+        res.send('Wrong password!')
 
       }
     })}
@@ -70,10 +71,19 @@ router.route('/signup')
           })
   }else{
     console.log("User already exists!");
-    res.redirect('/signup');
+    res.send('User already exists!');
   }
   })
 });
+
+
+router.route('/logout')
+  .get(function(req,res){
+    console.log(req.session);
+    req.session.destroy()
+    console.log(req.session);
+    res.redirect('/login')
+    })
 
 router.route('/patient')
 //retrieve a pateint.
@@ -91,8 +101,8 @@ router.route('/patients')
 //get all patients
 .get(utils.checkUser,controller.retrieveAll)
 
-//Jozaa another get request i neeed to control it to see rifaa work 
-//about router I think we have to do somthing in server to give me all the controll 
+//Jozaa another get request i neeed to control it to see rifaa work
+//about router I think we have to do somthing in server to give me all the controll
 //we will talk in that tonorrow
 router.route('/list').get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
 router.route('/user').get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
