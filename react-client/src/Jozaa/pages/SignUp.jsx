@@ -126,8 +126,17 @@ class SignUp extends React.Component {
       },
       //when success do this
       success: function (res) {
-        alert(res);
-        console.log(res);
+        //if sign up new user login him and go to home page
+        if (res[0]==='W') {
+          alert(res);
+          console.log(res[0]);          
+          window.location.href= 'http://localhost:3000/'
+        //if sign up exist user use go to login
+        }else{
+          alert(res);
+          console.log(res[0]); 
+          window.location.href= 'http://localhost:3000/login' 
+        }
       },
       //when error do this
       error: function (res){
@@ -136,6 +145,13 @@ class SignUp extends React.Component {
       },
     }); 
   };
+  //try router
+  b(){
+    console.log('HERE:', this);
+    //console.log('HERE:',    window.location.href);
+    //change the path I inside it
+    window.location.href= 'http://localhost:3000/home'
+  }
   //what render -----------------need change style to be nice
   render () {
     return (
@@ -158,6 +174,8 @@ class SignUp extends React.Component {
          </input>
         </h3>
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
+        <button onClick={this.b.bind(this)} style={button}>TRY</button>
+
       </div>
     )
   }
@@ -166,3 +184,25 @@ class SignUp extends React.Component {
 export default SignUp;
 
 
+/*
+
+
+
+
+
+
+
+
+
+
+    // console.log('HERE:',this);
+
+    // console.log('HERE:',this.props.match.path,this.props.match.url);
+
+    //console.log('HERE:',this.props.location.pathname);
+    this.props.location.pathname='/login';
+    this.props.match.path='/login';
+    this.props.match.path='/login';
+    this.props.match.url='/login';
+
+*/
