@@ -31,7 +31,7 @@ router.use(bodyParser.urlencoded({extended : true}))
 //routes and handling requests.
 
 //Jozaa 'give me the controll for the get request only'
-router.route('/write')
+router.route('/newpatient')
 .get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
 //joza
 router.route('/')
@@ -134,9 +134,7 @@ router.route('/logout')
   
 router.route('/patient')
 //retrieve a pateint.
-.get( utils.checkUser, function(req,res){  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));}
-  // controller.retrieveOne
-  )
+.get( utils.checkUser, controller.retrieveOne)
 //create a patient.
 //jozaa change
 .post(/*utils.checkUser,*/controller.createOne)

@@ -11,7 +11,7 @@ import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRo
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
 import SignUp from './Jozaa/pages/SignUp.jsx';
-import Write from './Jozaa/pages/Write.jsx';
+import NewPatient from './Jozaa/pages/NewPatient.jsx';
 import List from './Rifaa/components/List.jsx';
 import Patient2 from './Rifaa/components/patient.jsx';
 import User from './Rifaa/pages/user.jsx';
@@ -81,15 +81,14 @@ class App2 extends React.Component {
               <NavLink to='/' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
               <NavLink to='/login' exact strict style={notActive2} activeStyle={Active}>Login</NavLink>
               <NavLink to='/signup' exact strict style={notActive3} activeStyle={Active}>Sign Up</NavLink>
-              <NavLink to='/write' exact strict style={notActive3} activeStyle={Active}>Write</NavLink>
+              <NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
             </div>
           </div>
           <Route path="/" exact strict component={Home}/>     
           <Route path="/login" exact strict component={Login}/>     
           <Route path="/signup" exact strict component={SignUp}/>
-          <Route path="/logout" exact strict component={Write}/>     
-
-          <Route path="/write" exact strict component={Write}/>
+          <Route path="/logout" exact strict component={NewPatient}/>     
+          <Route path="/newpatient" exact strict component={NewPatient}/>
           <Route path="/list" exact strict component={List}/>
           <Route path="/patient2" exact strict component={Patient2}/>
           <Route path="/user" exact strict component={User}/>       
