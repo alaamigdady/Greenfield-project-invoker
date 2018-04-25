@@ -3,6 +3,7 @@ var session=require('express-session');
 
 exports.isLoggedIn=function(req,res){
   if(req.session.user){
+    console.log(req.session.user);
     return true
   }
   return false;
@@ -10,8 +11,10 @@ exports.isLoggedIn=function(req,res){
 
 exports.checkUser=function(req,res,next){
   if(!exports.isLoggedIn(req)){
+    console.log('redirects');
     res.redirect('/login')
   }else{
+    console.log('next');
     next()
   }
 }
@@ -20,6 +23,7 @@ exports.createSession=function(req,res,aUser){
   req.session.regenerate(function(){
     req.session.user=aUser;
     // console.log(req.session);
+
     res.send('logged in!')
   })
 }
