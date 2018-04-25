@@ -20,7 +20,6 @@ exports.createSession=function(req,res,aUser){
   req.session.regenerate(function(){
     req.session.user=aUser;
     // console.log(req.session);
-    res.redirect('/')
-    res.end()
+    res.send('logged in!')
   })
 }

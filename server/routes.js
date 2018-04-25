@@ -28,6 +28,7 @@ router.route('/login')
   User.findOne({userName:userName},function(err,user){
     if(!user){
       console.log("User does not exist");
+      res.send('User does not exist')
       return res.redirect('/login')
     }else{
     bcrypt.compare(password,user.password,function(err,match){
@@ -36,7 +37,7 @@ router.route('/login')
         utils.createSession(req,res,user)
       }else{
         console.log('Wrong password');
-        res.redirect('/login')
+        res.send('Wrong password!')
 
       }
     })}
@@ -70,7 +71,7 @@ router.route('/signup')
           })
   }else{
     console.log("User already exists!");
-    res.redirect('/signup');
+    res.send('User already exists!');
   }
   })
 });
