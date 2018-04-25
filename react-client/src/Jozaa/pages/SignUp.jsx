@@ -12,6 +12,17 @@ const header={
   fontSize:'40px',
   fontFamily: 'Lobster',
 };
+//the style for the main header
+const header2={
+  color:'green',
+  fontWeight:'bold',
+  textAlign:'center',
+  fontSize:'20px',
+  fontFamily: 'Lobster',
+  marginBottom:'-10px',
+
+  marginTop:'5px',
+};
 //the style for first name
 const fName={
   color:'#7a00a3',
@@ -130,12 +141,12 @@ class SignUp extends React.Component {
         if (res[0]==='W') {
           alert(res);
           console.log(res[0]);          
-          window.location.href= 'http://localhost:3000/'
+          window.location.href= window.location.origin+'/'
         //if sign up exist user use go to login
         }else{
           alert(res);
           console.log(res[0]); 
-          window.location.href= 'http://localhost:3000/login' 
+          window.location.href= window.location.origin+'/login' 
         }
       },
       //when error do this
@@ -150,7 +161,7 @@ class SignUp extends React.Component {
     console.log('HERE:', this);
     //console.log('HERE:',    window.location.href);
     //change the path I inside it
-    window.location.href= 'http://localhost:3000/home'
+    window.location.href= window.location.origin+'/login'
   }
   //what render -----------------need change style to be nice
   render () {
@@ -174,7 +185,9 @@ class SignUp extends React.Component {
          </input>
         </h3>
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
-        <button onClick={this.b.bind(this)} style={button}>TRY</button>
+        <h3 style={header2}>Have an account ? </h3>
+        
+        <button onClick={this.b.bind(this)} style={button}>Login</button>
 
       </div>
     )
