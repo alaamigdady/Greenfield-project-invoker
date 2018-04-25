@@ -7,6 +7,9 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
+//import createHistory from 'history/createBrowserHistory'
+import { createHashHistory } from 'history'
+
 //import each components (pages)
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
@@ -15,6 +18,8 @@ import NewPatient from './Jozaa/pages/NewPatient.jsx';
 import List from './Rifaa/components/List.jsx';
 import Patient2 from './Rifaa/components/patient.jsx';
 import User from './Rifaa/pages/user.jsx';
+export const history = createHashHistory()
+
 //style for div top
 const div2={
   backgroundColor:'#123456',
@@ -70,7 +75,7 @@ class App2 extends React.Component {
   //what render -----------------need change for the router
   render () {
     return (
-      <Router >
+      <Router history={hashHistory}>
         <div>
           <div style={div2}>
             <div style={header1}>
@@ -86,7 +91,7 @@ class App2 extends React.Component {
           </div>
           <Route path="/" exact strict component={Home}/>     
           <Route path="/login" exact strict component={Login}/>     
-          <Route path="/signup" exact strict component={SignUp}/>
+          <Route path="/signup" component={SignUp}/>
           <Route path="/logout" exact strict component={NewPatient}/>     
           <Route path="/newpatient" exact strict component={NewPatient}/>
           <Route path="/list" exact strict component={List}/>

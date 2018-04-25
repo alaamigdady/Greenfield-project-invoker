@@ -2,6 +2,7 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
+import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
 //library for style
 //const Fan = require('react-fontawesome');
 //the style for the main header
@@ -14,13 +15,12 @@ const header={
 };
 //the style for the main header
 const header2={
-  color:'green',
+  color:'#ea3212',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'20px',
+  fontSize:'25px',
   fontFamily: 'Lobster',
   marginBottom:'-10px',
-
   marginTop:'5px',
 };
 //the style for first name
