@@ -10,6 +10,16 @@ const header={
   fontSize:'40px',
   fontFamily: 'Lobster',
 };
+//the style for the main header
+const header2={
+  color:'green',
+  fontWeight:'bold',
+  textAlign:'center',
+  fontSize:'20px',
+  fontFamily: 'Lobster',
+  marginBottom:'-10px',
+  marginTop:'5px',
+};
 //the style for the user
 const user={
   color:'#1B5494',
@@ -97,17 +107,17 @@ class Login extends React.Component {
         if (res[res.length-1]==='e'){
           alert(res);
           //console.log(res[res.length-1]);          
-          window.location.href= 'http://localhost:3000/signup'
+          window.location.href= window.location.origin+'/signup'
         //if login with correct go to home page
         }else if(res[0]==='W'){
           alert(res);
           //console.log(res[0]); 
-          window.location.href= 'http://localhost:3000/'
+          window.location.href= window.location.origin+'/'
         //if the pssword wrong go to login page
         }else{
           alert(res);
           //console.log(res[res.length-1]); 
-          window.location.href= 'http://localhost:3000/login' 
+          window.location.href= window.location.origin+'/login' 
         }
       },
       //when error do this
@@ -122,7 +132,7 @@ class Login extends React.Component {
     console.log('HERE:',   this);
     //console.log('HERE:',    window.location.href);
     //change the path I inside it
-    window.location.href= 'http://localhost:3000/home'
+    window.location.href= window.location.origin+'/signup'
   }
   //what render -----------------need change style to be nice
   render () { 
@@ -138,7 +148,8 @@ class Login extends React.Component {
           </input>
         </h3>
         <button onClick={this.login.bind(this)} style={button}>Login</button>
-        <button onClick={this.b.bind(this)} style={button}>TRY</button>
+        <h3 style={header2}>Dont have an account ? </h3>
+        <button onClick={this.b.bind(this)} style={button}>Sign Up</button>
 
       </div>
     )
