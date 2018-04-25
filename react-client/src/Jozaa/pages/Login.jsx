@@ -79,7 +79,7 @@ class Login extends React.Component {
   };
   //for sign in button
   login() {
-    console.log(`YOU WANT LOGIN : ${this.state.userName} ${this.state.password} `);
+    console.log(`you try to login: DR.${this.state.userName}`);
     //to can use this inside other function
     const that=this;
     //ajax request to sent the data to server then data base
@@ -91,14 +91,14 @@ class Login extends React.Component {
         password: `${this.state.password}`
       },
       //when success do this
-      success: function () {
-        alert('SUCCESS LOGIN WELCOME D.'+`${that.state.userName}`);
-        console.log('SUCCESS LOGIN');
+      success: function (res) {
+        alert(res);
+        console.log(res);
       },
       //when error do this
       error: function (){
-        alert('SUCCESS SIGN UP GO TO LOGIN PAGE NOW :)');
-        console.log('FAILED LOGIN')
+        alert(`Failed login please try again DR.${that.state.userName}`);
+        console.log(`Failed login please try again DR.${that.state.userName}`);
       },
     }); 
   }
