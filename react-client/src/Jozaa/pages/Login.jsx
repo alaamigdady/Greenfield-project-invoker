@@ -2,6 +2,7 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
+import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
 //the style for the main header
 const header={
   color:'black',
@@ -12,10 +13,10 @@ const header={
 };
 //the style for the main header
 const header2={
-  color:'green',
+  color:'#ea3212',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'20px',
+  fontSize:'25px',
   fontFamily: 'Lobster',
   marginBottom:'-10px',
   marginTop:'5px',
@@ -72,7 +73,14 @@ class Login extends React.Component {
     this.state={
       userName: '',
       password: '',
+      loggedIn:'false',
     };
+  }
+  //handle log in
+  loginHandle ()  {
+    this.setState({
+      loggedIn:true,
+    });
   }
   //when change  ... change the
   //username
@@ -89,7 +97,6 @@ class Login extends React.Component {
   };
   //for sign in button
   login(res) {
-
     console.log(`you try to login: DR.${this.state.userName}`);
     //to can use this inside other function
     const that=this;
@@ -126,14 +133,14 @@ class Login extends React.Component {
         console.log(`Failed login please try again DR.${that.state.userName}`);
       },
     }); 
-  }
+  };
   //try router
   b(){
     console.log('HERE:',   this);
     //console.log('HERE:',    window.location.href);
     //change the path I inside it
-    window.location.href= window.location.origin+'/signup'
-  }
+    window.location.href= window.location.origin+'/signup';
+  };
   //what render -----------------need change style to be nice
   render () { 
     return (
@@ -150,10 +157,37 @@ class Login extends React.Component {
         <button onClick={this.login.bind(this)} style={button}>Login</button>
         <h3 style={header2}>Dont have an account ? </h3>
         <button onClick={this.b.bind(this)} style={button}>Sign Up</button>
-
+        <button onClick={() => hashHistory.push('/login')} style={button}>redirect Sign Up</button>
       </div>
     )
   }
 }
 //export this component to can use
 export default Login;
+
+
+
+/*
+  render() {
+    return (
+      <Router>
+          <Prompt
+            when={!this.state.loggedIn}
+            message={(location)=>{
+               return location.pathname.startsWith('/user') ? 'Are you sure?' : true
+             }}
+          />
+logout
+        <input type="button" value={this.state.loggedIn ? 'log out': 'log in'} onClick={this.loginHandle.bind(this)}/>
+    
+        <Route path="/user/:username" exact strict render={({match})=>(
+          this.state.loggedIn ? ( <User username={match.params.username}/>) : (<Redirect to='/' />)
+        )}/>
+        </div>
+      </Router>
+    );
+  }
+}
+
+*/
+

@@ -21,18 +21,18 @@ const header={
 };
 //the style for number
 const number={
-  color:'#7a00a3',
+  color:'black',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'20px',
+  fontSize:'25px',
   marginRight:'20px',
 };
 //the style for number2
 const number2={
-  color:'#7a00a3',
+  color:'black',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'20px',
+  fontSize:'25px',
 };
 //the style for the user and password input
 const input={
@@ -62,7 +62,7 @@ const button={
   fontFamily: 'Lobster',
 };
 //the page login what inside render
-class Write extends React.Component {
+class NewPatient extends React.Component {
   //constructor to undestand state
   constructor(){
     super();
@@ -242,7 +242,7 @@ class Write extends React.Component {
         </div2>
         <div3 style={main}>
           <h3 style={number}>
-          Currentlly Medications:
+          Curr. Medications:
             <input value={this.state.currentlly_Medications} onChange={this.onWrite9.bind(this)} placeholder="Currentlly Medications" style={input}>
             </input>
           </h3>
@@ -269,7 +269,7 @@ class Write extends React.Component {
   }
 }
 //export this component to can use
-export default Write;
+export default NewPatient;
 
 
 

@@ -2,6 +2,11 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
+import {BrowserRouter as Router, Route,hashHistory, IndexRoute,  Link, NavLink, Redirect, Prompt } from "react-router-dom";
+//import createHistory from 'history/createBrowserHistory'
+import { createHashHistory } from 'history'
+export const history = createHashHistory()
+
 //the style for the main header
 const header={
   color:'black',
@@ -146,30 +151,17 @@ class Write extends React.Component {
   //what render -----------------need change style to be nice
   render () {
     return (
-      <div>
-        <h2 style={header}>Home page</h2>
-        {/*
-        <h3 style={fName}>First name: 
-          <input value={this.state.firstName} onChange={this.onWrite1.bind(this)} placeholder="First name" style={input}>
-          </input>
-        </h3>       
-        <h3 style={lName}>Last name: 
-          <input value={this.state.lastName} onChange={this.onWrite2.bind(this)} placeholder="Last name" style={input}>
-          </input>
-        </h3>        
-        <h3 style={user}>Username:
-         <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
-         </input>
-        </h3>
-        <h3 style={password}>Password:
-         <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
-         </input>
-        </h3>
-        */}
-        <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
-        <button onClick={this.login.bind(this)} style={button}>Login</button>
+      <Router history={hashHistory}>
+        <div>
+          <h2 style={header}>Home page</h2>
+  
+          <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
+          <button onClick={this.login.bind(this)} style={button}>Login</button>
+          <button onClick={() => history.push('/signup')} style={button}>redirect Sign Up</button>
+  
+        </div>
+      </Router>
 
-      </div>
     )
   }
 }
