@@ -168,7 +168,7 @@ class Write extends React.Component {
   render () {
     return (
       <div>
-        <h2 style={header}>Welcome To Medical Record</h2>
+        <h2 style={header}>Welcome To Medical Record <br/> Please Insert Your Information // or signout</h2>
         
         <h3 style={fName}>First name: 
           <input value={this.state.firstName} onChange={this.onWrite1.bind(this)} placeholder="First name" style={input}>

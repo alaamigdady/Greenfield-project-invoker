@@ -112,7 +112,7 @@ class SignUp extends React.Component {
   };
   //for sign in button
   saveUser() {
-    console.log(`YOU MAKE NEW USER :  ${this.state.firstName} ${this.state.lastName} ${this.state.userName} ${this.state.password} `);
+    console.log(`you try to create new user:  DR.${this.state.userName}`);
     const that=this;
     //ajax request to sent the data to server then data base
     $.ajax({
@@ -126,13 +126,13 @@ class SignUp extends React.Component {
       },
       //when success do this
       success: function (res) {
-        alert('SUCCESS SIGN UP GO TO LOGIN PAGE NOW D.'+`${that.state.userName}`);
-        console.log('SUCCESS SIGN UP');
+        alert(res);
+        console.log(res);
       },
       //when error do this
       error: function (res){
-        alert('FAILED SIGN UP');
-        console.log('FAILED SIGN UP')
+        alert(`Failed sigup please try again DR.${that.state.userName}`);
+        console.log(`Failed sigup please try again DR.${that.state.userName}`);
       },
     }); 
   };

@@ -83,6 +83,8 @@ class App2 extends React.Component {
           <Route path="/" exact strict component={Home}/>     
           <Route path="/login" exact strict component={Login}/>     
           <Route path="/signup" exact strict component={SignUp}/>
+          <Route path="/logout" exact strict component={Write}/>     
+
           <Route path="/write" exact strict component={Write}/>
           <Route path="/list" exact strict component={List}/>
           <Route path="/patient2" exact strict component={Patient2}/>
