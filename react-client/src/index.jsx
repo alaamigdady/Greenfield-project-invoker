@@ -7,14 +7,14 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
-//import each components
+//import each components (pages)
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
 import SignUp from './Jozaa/pages/SignUp.jsx';
+import Write from './Jozaa/pages/Write.jsx';
 import List from './Rifaa/components/List.jsx';
-import Patient from './Rifaa/components/patient.jsx';
+import Patient2 from './Rifaa/components/patient.jsx';
 import User from './Rifaa/pages/user.jsx';
-
 //style for div top
 const div2={
   backgroundColor:'#123456',
@@ -70,23 +70,23 @@ class App2 extends React.Component {
         <div>
           <div style={div2}>
             <div style={header1}>
-              {/*style={{marginRight:'10px'}}*/}
               <NavLink to='/' exact strict > 
-              <img  src="https://pacificmedicalacls.com/images/pluslogo.png" alt="logo" height="40" width="40"/>
-              <h style={header2}>Medical Record</h>
+                <img  src="https://pacificmedicalacls.com/images/pluslogo.png" alt="logo" height="40" width="40"/>
+                <h style={header2}>Medical Record</h>
               </NavLink>
               <NavLink to='/' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
               <NavLink to='/login' exact strict style={notActive2} activeStyle={Active}>Login</NavLink>
               <NavLink to='/signup' exact strict style={notActive3} activeStyle={Active}>Sign Up</NavLink>
+              <NavLink to='/write' exact strict style={notActive3} activeStyle={Active}>Write</NavLink>
             </div>
           </div>
           <Route path="/" exact strict component={Home}/>     
           <Route path="/login" exact strict component={Login}/>     
           <Route path="/signup" exact strict component={SignUp}/>
+          <Route path="/write" exact strict component={Write}/>
           <Route path="/list" exact strict component={List}/>
-          <Route path="/patient" exact strict component={Patient}/>
-          <Route path="/user" exact strict component={User}/>
-                 
+          <Route path="/patient2" exact strict component={Patient2}/>
+          <Route path="/user" exact strict component={User}/>       
         </div>
       </Router> 
     )

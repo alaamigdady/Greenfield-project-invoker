@@ -2,6 +2,8 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
+//library for style
+//const Fan = require('react-fontawesome');
 //the style for the main header
 const header={
   color:'black',
@@ -18,6 +20,7 @@ const number={
   fontSize:'20px',
   marginBottom:'-10px',
 };
+
 //the style for first name
 const fName={
   color:'#7a00a3',
@@ -190,49 +193,3 @@ class Write extends React.Component {
 }
 //export this component to can use
 export default Write;
-
-
-
-
-
-
-
-
-
-
-/*
-//this page only to see if it is work or not the router
-//to work react
-import React from 'react';
-//to work in ajax
-import $ from 'jquery';
-//the style for the two main header
-const header={
-  color:'black',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'40px',
-};
-///
-//the page home what inside render
-class Home extends React.Component {
-  //constructor to undestand state
-  constructor(){
-    super();
-    this.state={
-    };
-  }
-  //what render -----------------need change style to be nice
-  render () { 
-    return (
-      <div>
-        <h2 style={header}>You Are In Home Page </h2>
-      </div>
-    )
-  }
-}
-//export this component to can use
-export default Home;
-*/
-
-
