@@ -25,19 +25,19 @@ Once the project moves into development, the press release can be used as a touc
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
 
-  Medical records is for doctors who wants to organise manage and save patients medical information.
+  Medical records is for doctors who wants to organise manage and save patients medical informations.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
-  you can access many patients medical relevent information easily using medical records,the information will make it easy to track patients medications,allergies and help doctor make informed decisons with all the facts in one place.
+  you can access many patients medical relevent informations easily using medical records,the informations will make it easy to track patients medications,allergies and help doctor make informed decisons with all the facts in one place.
 ## Problem ##
   > Describe the problem your product solves.
 
   The doctor will have to ask the patient for medical history each time he comes in and sometimes you some information will go missing.
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-Medical records facilitates saving and organizing information for doctors in one place.
+Medical records facilitates saving and organizing informations for doctors in one place.
 ## Quote from You ##
   > A quote from a spokesperson in your company.
 
@@ -55,4 +55,4 @@ Medical records facilitates saving and organizing information for doctors in one
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
 
-if you are interested to see the app head over to our website at:
+if you are interested to see the app head over to our website at: https://medical-record-app.herokuapp.com/
