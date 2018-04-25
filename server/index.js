@@ -20,8 +20,6 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
-
-//
 // app.get('/items', function (req, res) {
 //   items.selectAll(function(err, data) {
 //     if(err) {

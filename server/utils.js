@@ -11,8 +11,10 @@ exports.isLoggedIn=function(req,res){
 
 exports.checkUser=function(req,res,next){
   if(!exports.isLoggedIn(req)){
-    console.log('redirects');
-    res.redirect('/login')
+    console.log('joza change it no redirects');
+    //jozaa
+    //res.redirect('/login')
+    next()
   }else{
     console.log('next');
     next()
