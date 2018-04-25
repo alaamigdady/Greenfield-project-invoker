@@ -37,23 +37,27 @@ const header2={
   fontSize:'25px',
   marginLeft:'10px',
   marginTop:'20px',
+  cursor: 'default'
 };
 //style for not active link
 const notActive1={
   color: 'white',
   marginLeft:'10%',
   fontSize:'20px',
+  textDecoration:'none'
 };
 const notActive2={
   color: 'white',
   marginLeft:'10%',
   marginRight:'10%',
   fontSize:'20px',
+  textDecoration:'none'
 };
 const notActive3={
   color: 'white',
   marginRight:'10%',
   fontSize:'20px',
+  textDecoration:'none'
 };
 //style for active link
 const Active={
@@ -70,7 +74,7 @@ class App2 extends React.Component {
         <div>
           <div style={div2}>
             <div style={header1}>
-              <NavLink to='/' exact strict > 
+              <NavLink to='/' exact strict style={{textDecoration:'none',header2}} > 
                 <img  src="https://pacificmedicalacls.com/images/pluslogo.png" alt="logo" height="40" width="40"/>
                 <h style={header2}>Medical Record</h>
               </NavLink>

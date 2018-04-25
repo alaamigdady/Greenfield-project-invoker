@@ -136,30 +136,12 @@ class Write extends React.Component {
     });
   };
   //for sign in button
-  saveUser() {
-    console.log(`YOU MAKE NEW USER :  ${this.state.firstName} ${this.state.lastName} ${this.state.userName} ${this.state.password} `);
-    const that=this;
-    //ajax request to sent the data to server then data base
-    $.ajax({
-      type: 'POST',
-      url: '/signup',
-      data: {
-        firstName: `${this.state.firstName}`,
-        lastName: `${this.state.lastName}`,
-        userName: `${this.state.userName}`,
-        password: `${this.state.password}`
-      },
-      //when success do this
-      success: function (res) {
-        alert('SUCCESS SIGN UP GO TO LOGIN PAGE NOW D.'+`${that.state.userName}`);
-        console.log('SUCCESS SIGN UP');
-      },
-      //when error do this
-      error: function (res){
-        alert('FAILED SIGN UP');
-        console.log('FAILED SIGN UP')
-      },
-    }); 
+  signup() {
+    window.location.href= window.location.origin+'/signup'
+  };
+    //for sign in button
+  login() {
+    window.location.href= window.location.origin+'/login'
   };
   //what render -----------------need change style to be nice
   render () {
@@ -184,7 +166,9 @@ class Write extends React.Component {
          </input>
         </h3>
         */}
-        <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
+        <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
+        <button onClick={this.login.bind(this)} style={button}>Login</button>
+
       </div>
     )
   }

@@ -138,7 +138,8 @@ router.route('/patient')
   // controller.retrieveOne
   )
 //create a patient.
-.post(utils.checkUser,controller.createOne)
+//jozaa change
+.post(/*utils.checkUser,*/controller.createOne)
 //update patient information.
 .put(utils.checkUser,controller.updateOne)
 //delete a patient.

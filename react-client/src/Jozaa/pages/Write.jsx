@@ -3,20 +3,13 @@ import React from 'react';
 //to work in ajax
 import $ from 'jquery';
 //syle for div to arrange thing
-const div={
-width: '500px',
-  marginTop: '0px ',
-  marginRigth: 'auto',
-}
-//syle for div to arrange thing
 const main={
   width: '400px',
   height: '150px',
   display: '-webkit-flex', 
   display: 'flex',
   marginBottom:'-50px',
-
-  //marginLeft:'10%',
+  marginLeft:'7%',
 }
 //the style for the main header
 const header={
@@ -184,19 +177,17 @@ class Write extends React.Component {
         genetic_Diseases: `${this.state.genetic_Diseases}`,
         allergies: `${this.state.allergies}`,
         description: `${this.state.description}`,
-        password: `${this.state.password}`,
-        password: `${this.state.password}`,
       },
       //when success do this
       success: function (res) {
         //.firstName
-        alert('Success sent this data'+`${that.state}`);
-        console.log('success sent this data'+`${that.state}`);
+        alert(res);
+        console.log(res);
       },
       //when error do this
       error: function (res){
-        alert('Failed sent this data please try agian');
-        console.log('failed sent this data please try agian')
+        alert('Failed sent this data please try agian' , res);
+        console.log('failed sent this data please try agian',res)
       },
     }); 
   };
@@ -204,9 +195,7 @@ class Write extends React.Component {
   render () {
     return (
       <div style={{textAlign: 'center'}}>
-          <h2 style={header}>Welcome To Medical Record <br/> Please Insert Your Information</h2>
-      <div5 style={div}>
-
+        <h2 style={header}>Welcome To Medical Record <br/> Please Insert Your Information</h2>
         <div1 style={main}>
           <h3 className="column" style={number}>
           Number:
@@ -229,8 +218,6 @@ class Write extends React.Component {
             </input>
           </h3>
         </div1>
-      </div5>
-
         <div2 style={main}>
           <h3 style={number}>
           Age:

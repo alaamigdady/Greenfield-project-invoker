@@ -4,15 +4,16 @@ var Patient= require('./index');
 
 //1.create one patient
 exports.createOne = function (req, res) {
-	var pInfo=req.body;
-
+	//jozaa change it to json to can read
+	var pInfo=JSON.stringify(req.body)
+  //here there are error when recive the data (jozaa)
 	var patient=new Patient(pInfo)
-
 	patient.save(function(err,patient){
 		if(err){
-			console.log(error)
+			console.log(err);
+			res.send(err);
 		}
-		res.send('patient Created ')
+		res.send('Success sent this data and create new patient ')
 	})
 };
 
@@ -40,10 +41,11 @@ exports.updateOne = function (req, res) {
 
 			patient.save(function(err,patient){
 				if(err){
-					console.log(error);
+					console.log(err);
 					res.send(err)
 				}else{
-					console.log('patient Updated ^_^!')
+					console.log('Success updated patient ^_^!');
+					res.send('Success updated patient ^_^!');
 				}
 			})
 		}
@@ -59,11 +61,13 @@ Patient.find({number:req.body.number},function(err,patient){
            }
            else{
            	patient.remove(function(err,patient){
-           		if(err){console.log(error);
-           			res.send(err)
+           		if(err){
+           			console.log(err);
+           			res.send(err);
            		}
            		else{
-           			console.log('patient Deleted ^.^')
+           			console.log('Success  deleted patient ^.^');
+           			res.send('Success  deleted patient ^.^');
            		}
            	})
            }
