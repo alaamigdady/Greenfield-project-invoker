@@ -30,7 +30,7 @@ router.route('/login')
   User.findOne({userName:userName},function(err,user){
     if(!user){
       console.log('this username does not exist in database ..!');
-      res.send(`Sorry DR.${userName} this username does not exist in database please insert correct username or go to signup page and create new user`)
+      res.send(`Sorry DR. this username does not exist in database please create new user now // if you have account but insert wrong username please go to login page again and insert your correct username`)
       //return res.redirect('/login')
     }else{
     bcrypt.compare(password,user.password,function(err,match){
@@ -41,7 +41,7 @@ router.route('/login')
         //utils.createSession(req,res,user);
       }else{
         console.log('Wrong password ..!');
-        res.send(`Sorry DR.${userName} this password is wrong please insert correct password`);
+        res.send(`Sorry DR.${userName} this password is wrong please insert the username again and your correct password`);
       }
     })}
   })
@@ -75,7 +75,7 @@ router.route('/signup')
       })
   }else{
     console.log('This username already exists in database ..!');
-    res.send(`Sorry DR this username already exist in database please insert another username or if you DR.${userName} go to login page and insert your password to login`)
+    res.send(`Sorry DR.${userName} you signup before please insert the username again and your password to log in // if you are not DR.${userName} please go to sign up page again and insert another username`)
   }
   })
 });

@@ -7,7 +7,7 @@ const header={
   color:'black',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'40px',
+  fontSize:'200px',
   fontFamily: 'Lobster',
 };
 //the style for number
@@ -165,8 +165,8 @@ class Write extends React.Component {
   render () {
     return (
       <div>
-        <h2 style={header}>Welcome To Medical Record</h2>
-        
+        <h2 style={header}>Home page</h2>
+        {/*
         <h3 style={fName}>First name: 
           <input value={this.state.firstName} onChange={this.onWrite1.bind(this)} placeholder="First name" style={input}>
           </input>
@@ -183,6 +183,7 @@ class Write extends React.Component {
          <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
          </input>
         </h3>
+        */}
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
       </div>
     )

@@ -78,7 +78,8 @@ class Login extends React.Component {
     });
   };
   //for sign in button
-  login() {
+  login(res) {
+
     console.log(`you try to login: DR.${this.state.userName}`);
     //to can use this inside other function
     const that=this;
@@ -92,8 +93,22 @@ class Login extends React.Component {
       },
       //when success do this
       success: function (res) {
-        alert(res);
-        console.log(res);
+        //if login with new user go to sign up page
+        if (res[res.length-1]==='e'){
+          alert(res);
+          //console.log(res[res.length-1]);          
+          window.location.href= 'http://localhost:3000/signup'
+        //if login with correct go to home page
+        }else if(res[0]==='W'){
+          alert(res);
+          //console.log(res[0]); 
+          window.location.href= 'http://localhost:3000/'
+        //if the pssword wrong go to login page
+        }else{
+          alert(res);
+          //console.log(res[res.length-1]); 
+          window.location.href= 'http://localhost:3000/login' 
+        }
       },
       //when error do this
       error: function (){
@@ -101,6 +116,13 @@ class Login extends React.Component {
         console.log(`Failed login please try again DR.${that.state.userName}`);
       },
     }); 
+  }
+  //try router
+  b(){
+    console.log('HERE:',   this);
+    //console.log('HERE:',    window.location.href);
+    //change the path I inside it
+    window.location.href= 'http://localhost:3000/home'
   }
   //what render -----------------need change style to be nice
   render () { 
@@ -116,6 +138,8 @@ class Login extends React.Component {
           </input>
         </h3>
         <button onClick={this.login.bind(this)} style={button}>Login</button>
+        <button onClick={this.b.bind(this)} style={button}>TRY</button>
+
       </div>
     )
   }
