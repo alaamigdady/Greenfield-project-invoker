@@ -13,8 +13,8 @@ app.use(session({
   saveUninitialized: true
 }))
 
-
 app.use('/',router)
+
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.use(bodyParser.json())
