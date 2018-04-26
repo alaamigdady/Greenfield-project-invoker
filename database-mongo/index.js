@@ -22,7 +22,7 @@ var patientSchema = mongoose.Schema({
   lastName:String,
   gender:String,
   age:Number,
-  phone:{type:Number,unique:true},
+  phone:{type:Number,unique:false},
   conditions:String,
   past_Diseases:String,
   currentlly_Medications:String,

@@ -1,19 +1,24 @@
 var Patient= require('./index');
+var mongoose=require('mongoose')
 //controller methods:
 
 
 //1.create one patient
 exports.createOne = function (req, res) {
 	//jozaa change it to json to can read
-	var pInfo=JSON.stringify(req.body)
-  //here there are error when recive the data (jozaa)
+	console.log(req.body);
+	var pInfo=req.body
+  // here there are error when recive the data (jozaa)
 	var patient=new Patient(pInfo)
+
 	patient.save(function(err,patient){
 		if(err){
 			console.log(err);
-			res.send(err);
+			res.send('This number is already taken, choose another one');
+		}else{
+			res.send('Success sent this data and create new patient ')
+
 		}
-		res.send('Success sent this data and create new patient ')
 	})
 };
 
