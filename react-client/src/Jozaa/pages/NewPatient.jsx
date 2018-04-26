@@ -186,8 +186,8 @@ class NewPatient extends React.Component {
       },
       //when error do this
       error: function (res){
-        alert('failed sent this data please try agian' );
-        console.log('failed sent this data please try agian',res)
+        alert('Failed sent this data please try agian' );
+        console.log('Failed sent this data please try agian',res)
       },
     });
   };
