@@ -6,7 +6,7 @@ import $ from 'jquery';
 const main={
   width: '400px',
   height: '150px',
-  display: '-webkit-flex', 
+  display: '-webkit-flex',
   display: 'flex',
   marginBottom:'-50px',
   marginLeft:'7%',
@@ -124,24 +124,24 @@ class NewPatient extends React.Component {
     this.setState({
       conditions: e.target.value,
     });
-  }; 
+  };
   //past_Diseases
   onWrite8 (e) {
     this.setState({
       past_Diseases: e.target.value,
     });
-  };  
+  };
   //currentlly_Medications
   onWrite9 (e) {
     this.setState({
       currentlly_Medications: e.target.value,
     });
-  };  
+  };
   //genetic_Diseases
   onWrite10 (e) {
     this.setState({
       genetic_Diseases: e.target.value,
-    });            
+    });
   };
   //allergies
   onWrite11 (e) {
@@ -154,7 +154,7 @@ class NewPatient extends React.Component {
     this.setState({
       description: e.target.value,
     });
-  };  
+  };
   //for sign in button
   sentData() {
     ////.firstName
@@ -186,10 +186,10 @@ class NewPatient extends React.Component {
       },
       //when error do this
       error: function (res){
-        alert('Failed sent this data please try agian' , res);
+        alert('failed sent this data please try agian' );
         console.log('failed sent this data please try agian',res)
       },
-    }); 
+    });
   };
   //what render
   render () {
@@ -203,15 +203,15 @@ class NewPatient extends React.Component {
             </input>
           </h3>
           <h3 style={number}>
-          First name: 
+          First name:
             <input value={this.state.firstName} onChange={this.onWrite2.bind(this)} placeholder="First name" style={input}>
             </input>
-          </h3>       
+          </h3>
           <h3 style={number}>
-          Last name: 
+          Last name:
             <input value={this.state.lastName} onChange={this.onWrite3.bind(this)} placeholder="Last name" style={input}>
             </input>
-          </h3>        
+          </h3>
           <h3 style={number2}>
           Gender:
             <input value={this.state.gender} onChange={this.onWrite4.bind(this)} placeholder="Gender" style={input}>

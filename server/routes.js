@@ -10,7 +10,7 @@ var User=mongoose.model('User')
 
 
 
-//belal I will make the session let it to last man 
+//belal I will make the session let it to last man
 //lets ginish the page first dont change please*
 
 
@@ -118,7 +118,7 @@ router.route('/logout')
     console.log('GET: Successful logout');
     res.send(`GET: Goodbuy DR you logout now see you later`);
     })
-//anotherr one for post I think this one it is hat we need 
+//anotherr one for post I think this one it is hat we need
 //jozaa
 router.route('/logout')
   .post(function(req,res){
@@ -131,7 +131,7 @@ router.route('/logout')
     // res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
     //res.redirect('/login')
     })
-  
+
 router.route('/patient')
 //retrieve a pateint.
 .get( utils.checkUser, controller.retrieveOne)
