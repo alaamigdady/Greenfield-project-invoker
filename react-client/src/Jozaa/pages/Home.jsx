@@ -5,8 +5,7 @@ import $ from 'jquery';
 import {BrowserRouter as Router, Route,hashHistory, IndexRoute,  Link, NavLink, Redirect, Prompt } from "react-router-dom";
 //import createHistory from 'history/createBrowserHistory'
 import { createHashHistory } from 'history'
-export const history = createHashHistory()
-
+//export const history = createHashHistory()
 //the style for the main header
 const header={
   color:'black',
@@ -18,57 +17,6 @@ const header={
 //the style for number
 const number={
   color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-//the style for first name
-const fName={
-  color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-//the style for last name
-const lName={
-  color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-
-
-/*
-number
-firstName
-lastName
-gender
-age
-phone
-conditions
-past_Diseases
-currentlly_Medications
-genetic_Diseases
-allergies
-description
-
-*/
-
-
-//the style for the user
-const user={
-  color:'#1B5494',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-//the style for the password
-const password={
-  color:'#bb280e',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'20px',
@@ -103,7 +51,7 @@ const button={
 };
 
 //the page login what inside render
-class Write extends React.Component {
+class Home extends React.Component {
   //constructor to undestand state
   constructor(){
     super();
@@ -115,31 +63,7 @@ class Write extends React.Component {
       password: ''
     };
   }
-  //when change  ... change the
-  //first name
-  onWrite1 (e) {
-    this.setState({
-      firstName: e.target.value,
-    });
-  };
-  //last name
-  onWrite2 (e) {
-    this.setState({
-      lastName: e.target.value,
-    });
-  };
-  //username
-  onWrite3 (e) {
-    this.setState({
-      userName: e.target.value,
-    });
-  };
-  //password
-  onWrite4 (e) {
-    this.setState({
-      password: e.target.value,
-    });
-  };
+
   //for sign in button
   signup() {
     window.location.href= window.location.origin+'/signup'
@@ -151,14 +75,12 @@ class Write extends React.Component {
   //what render -----------------need change style to be nice
   render () {
     return (
-      <Router history={hashHistory}>
+      <Router /*history={hashHistory}*/>
         <div>
           <h2 style={header}>Home page</h2>
-  
           <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
           <button onClick={this.login.bind(this)} style={button}>Login</button>
           <button onClick={() => history.push('/signup')} style={button}>redirect Sign Up</button>
-  
         </div>
       </Router>
 
@@ -166,7 +88,7 @@ class Write extends React.Component {
   }
 }
 //export this component to can use
-export default Write;
+export default Home;
 
 
 

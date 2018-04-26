@@ -18,7 +18,7 @@ import NewPatient from './Jozaa/pages/NewPatient.jsx';
 import List from './Rifaa/components/List.jsx';
 import Patient2 from './Rifaa/components/patient.jsx';
 import User from './Rifaa/pages/user.jsx';
-export const history = createHashHistory()
+//export const history = createHashHistory()
 
 //style for div top
 const div2={
@@ -75,7 +75,7 @@ class App2 extends React.Component {
   //what render -----------------need change for the router
   render () {
     return (
-      <Router history={hashHistory}>
+      <Router /*history={hashHistory}*/>
         <div>
           <div style={div2}>
             <div style={header1}>
