@@ -1,19 +1,22 @@
 var Patient= require('./index');
+var mongoose=require('mongoose')
 //controller methods:
-
 
 //1.create one patient
 exports.createOne = function (req, res) {
 	//jozaa change it to json to can read
-	var pInfo=JSON.stringify(req.body)
-  //here there are error when recive the data (jozaa)
+	console.log(req.body);
+	var pInfo=req.body
+  // here there are error when recive the data (jozaa)
 	var patient=new Patient(pInfo)
+
 	patient.save(function(err,patient){
 		if(err){
 			console.log(err);
-			res.send(err);
+			res.send('This number is already taken, choose another one');
+		}else{
+			res.send('Success sent this data and create new patient ')
 		}
-		res.send('Success sent this data and create new patient ')
 	})
 };
 
@@ -25,7 +28,6 @@ exports.updateOne = function (req, res) {
 			res.send(500);
 		}
 		else{
-
 			patient.number=req.body.number;
 			patient.firstName=req.body.firstName;
 			patient.lastName=req.body.lastName;
@@ -54,54 +56,50 @@ exports.updateOne = function (req, res) {
 
 //3.delete one patient
 exports.delete=function(req,res){
-Patient.find({number:req.body.number},function(err,patient){
-	if(err){
-		console.log(err)
-		res.send(500);
-           }
-           else{
-           	patient.remove(function(err,patient){
-           		if(err){
-           			console.log(err);
-           			res.send(err);
-           		}
-           		else{
-           			console.log('Success  deleted patient ^.^');
-           			res.send('Success  deleted patient ^.^');
-           		}
-           	})
-           }
-
-})
+  Patient.find({number:req.body.number},function(err,patient){
+  	if(err){
+  		console.log(err)
+  		res.send(500);
+             }
+             else{
+             	patient.remove(function(err,patient){
+             		if(err){
+             			console.log(err);
+             			res.send(err);
+             		}
+             		else{
+             			console.log('Success  deleted patient ^.^');
+             			res.send('Success  deleted patient ^.^');
+             		}
+             	})
+             }
+  })
 };
 
 //4.return all info for one patient
 exports.retrieveOne=function(req,res){
-Patient.find({number:req.body.number},function(err,patient){
-if(err){
-	console.log(err)
-	res.send(500)
-}
-else{
-
-	console.log(patient)
-	res.send(patient)
-}
-
-})
-
+  Patient.find({number:req.body.number},function(err,patient){
+    if(err){
+    	console.log(err)
+    	res.send(500)
+    }
+    else{
+    	console.log(patient)
+    	res.send(patient)
+    }
+  })
 };
+
 //5.return all info for all patients
 exports.retrieveAll=function(req,res){
-Patient.find(function(err,allpatient){
-	if(err){
-		console.log(err)
-		res.send(500);
-	}
-	else{
-		console.log(allpatient);
-		res.send(allpatient)
-	}
-})
-
+  Patient.find(function(err,allpatient){
+  	if(err){
+  		console.log(err)
+  		res.send(500);
+  	}
+  	else{
+  		console.log(allpatient);
+  		res.send(allpatient)
+  	}
+  })
 };

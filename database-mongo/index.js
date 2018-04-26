@@ -2,7 +2,10 @@
 //include mongoose in our project
 //open a connection to the patient database on our locally running instance of MongoDB.
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://Mohammad94:12345@ds155699.mlab.com:55699/medical');
+
+mongoose.connect('mongodb://localhost/patient');
+//for mlab rifaa
+//mongoose.connect('mongodb://Mohammad94:12345@ds155699.mlab.com:55699/medical');
 
 //now we need to get notified if we connect successfully or if a connection error occurs:
 var db = mongoose.connection;
@@ -22,7 +25,7 @@ var patientSchema = mongoose.Schema({
   lastName:String,
   gender:String,
   age:Number,
-  phone:{type:Number,unique:true},
+  phone:{type:Number,unique:false},
   conditions:String,
   past_Diseases:String,
   currentlly_Medications:String,
@@ -31,10 +34,8 @@ var patientSchema = mongoose.Schema({
   description: String
 });
 
-
 //compiling our schema into a Model(class)
 var Patient = mongoose.model('Patient', patientSchema);
-
 
 var selectAll = function(callback) {
   Patient.find({},function(err, items) {
@@ -47,7 +48,6 @@ var selectAll = function(callback) {
 };
 
 //functionality to our instances:
-
 var save=function(PatientInstance){
 
   PatientInstance.save(function(err,patients){
@@ -68,7 +68,6 @@ var userSchema = mongoose.Schema({
 
 });
 
-
 //compiling our schema into a Model(class)
 var User = mongoose.model('User', userSchema);
 
@@ -76,4 +75,3 @@ module.exports=User;
 module.exports=Patient;
 module.exports.selectAll = selectAll;
 module.exports.save = save;
-// module.exports=db;

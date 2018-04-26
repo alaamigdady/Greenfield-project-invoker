@@ -8,8 +8,7 @@ import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
 //import createHistory from 'history/createBrowserHistory'
-import { createHashHistory } from 'history'
-
+//import { createHashHistory } from 'history'
 //import each components (pages)
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
@@ -18,8 +17,7 @@ import NewPatient from './Jozaa/pages/NewPatient.jsx';
 import List from './Rifaa/components/List.jsx';
 import Patient2 from './Rifaa/components/patient.jsx';
 import User from './Rifaa/pages/user.jsx';
-export const history = createHashHistory()
-
+//export const history = createHashHistory()
 //style for div top
 const div2={
   backgroundColor:'#123456',
@@ -75,18 +73,16 @@ class App2 extends React.Component {
   //what render -----------------need change for the router
   render () {
     return (
-      <Router history={hashHistory}>
+      <Router /*history={hashHistory}*/>
         <div>
           <div style={div2}>
             <div style={header1}>
-              <NavLink to='/' exact strict style={{textDecoration:'none',header2}} > 
+              <NavLink to='/login' exact strict style={{textDecoration:'none',header2}} > 
                 <img  src="https://pacificmedicalacls.com/images/pluslogo.png" alt="logo" height="40" width="40"/>
                 <h style={header2}>Medical Record</h>
               </NavLink>
-              <NavLink to='/' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
               <NavLink to='/login' exact strict style={notActive2} activeStyle={Active}>Login</NavLink>
               <NavLink to='/signup' exact strict style={notActive3} activeStyle={Active}>Sign Up</NavLink>
-              <NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
             </div>
           </div>
           <Route path="/" exact strict component={Home}/>     
@@ -110,11 +106,12 @@ User({match})=> {match.params.username}
 2-<Redirect to''></Redirect>
  
 3- history={hashHistory}   ???????
-    //this.props.history.push(path);
-
-    import {withRouter} from 'react-router-dom';
+  //this.props.history.push(path);
+ import {withRouter} from 'react-router-dom';
 withRouter
+4-neeed home page  
 
-4-neeed home page
+<NavLink to='/login' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
+<NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
 
 */

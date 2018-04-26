@@ -11,21 +11,21 @@ exports.isLoggedIn=function(req,res){
 
 exports.checkUser=function(req,res,next){
   if(!exports.isLoggedIn(req)){
-    console.log('joza change it no redirects');
-    //jozaa
-    //res.redirect('/login')
-    next()
+    console.log('You Are not logged in');
+    res.send('You Are not logged in')
   }else{
     console.log('next');
     next()
   }
 }
 
-exports.createSession=function(req,res,aUser){
+exports.createSession=function(req,res,aUser,username,b){
   req.session.regenerate(function(){
     req.session.user=aUser;
-    // console.log(req.session);
-
-    res.send('logged in!')
+    if (b) {
+      res.send(`Welcome DR.${username} you create new user and you are logged in now`)
+    }else{
+      res.send(`Welcome DR.${username} you are logged in now`)
+    }
   })
 }

@@ -4,71 +4,19 @@ import React from 'react';
 import $ from 'jquery';
 import {BrowserRouter as Router, Route,hashHistory, IndexRoute,  Link, NavLink, Redirect, Prompt } from "react-router-dom";
 //import createHistory from 'history/createBrowserHistory'
-import { createHashHistory } from 'history'
-export const history = createHashHistory()
-
+//import { createHashHistory } from 'history'
+//export const history = createHashHistory()
 //the style for the main header
 const header={
   color:'black',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'200px',
+  fontSize:'50px',
   fontFamily: 'Lobster',
 };
 //the style for number
 const number={
   color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-//the style for first name
-const fName={
-  color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-//the style for last name
-const lName={
-  color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-
-
-/*
-number
-firstName
-lastName
-gender
-age
-phone
-conditions
-past_Diseases
-currentlly_Medications
-genetic_Diseases
-allergies
-description
-
-*/
-
-
-//the style for the user
-const user={
-  color:'#1B5494',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-//the style for the password
-const password={
-  color:'#bb280e',
   fontWeight:'bold',
   textAlign:'center',
   fontSize:'20px',
@@ -101,9 +49,8 @@ const button={
   borderRadius: '10px',
   fontFamily: 'Lobster',
 };
-
 //the page login what inside render
-class Write extends React.Component {
+class Home extends React.Component {
   //constructor to undestand state
   constructor(){
     super();
@@ -112,61 +59,49 @@ class Write extends React.Component {
       firstName:'',
       lastName: '',
       userName: '',
-      password: ''
+      password: '',
+      loggedIn:true,
     };
   }
-  //when change  ... change the
-  //first name
-  onWrite1 (e) {
-    this.setState({
-      firstName: e.target.value,
-    });
+  //for logout button
+  logout(){
+    console.log(`you try to logoutDR`);
+    const that=this
+    //ajax request to logout
+    $.ajax({
+      type: 'GET',
+      url: '/logout',
+      //when success do this
+      success: function (res) {
+        alert(res);
+        that.setState({loggedIn:false});
+        window.location.href= window.location.origin+'/login'
+      },
+      //when error do this
+      error: function (){
+        alert(`Failed logout please try again DR`);
+        console.log(`Failed logout please try again DR`);
+      },
+    }); 
   };
-  //last name
-  onWrite2 (e) {
-    this.setState({
-      lastName: e.target.value,
-    });
+  newPatient(){
+    console.log('you try to go to create new patient:');
+    window.location.href=window.location.origin+'/newpatient';
   };
-  //username
-  onWrite3 (e) {
-    this.setState({
-      userName: e.target.value,
-    });
-  };
-  //password
-  onWrite4 (e) {
-    this.setState({
-      password: e.target.value,
-    });
-  };
-  //for sign in button
-  signup() {
-    window.location.href= window.location.origin+'/signup'
-  };
-    //for sign in button
-  login() {
-    window.location.href= window.location.origin+'/login'
-  };
-  //what render -----------------need change style to be nice
   render () {
     return (
-      <Router history={hashHistory}>
+      <Router /*history={hashHistory}*/>
         <div>
           <h2 style={header}>Home page</h2>
-  
-          <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
-          <button onClick={this.login.bind(this)} style={button}>Login</button>
-          <button onClick={() => history.push('/signup')} style={button}>redirect Sign Up</button>
-  
+          <button onClick={this.logout.bind(this)} style={button}>Logout</button>
+          <button onClick={this.newPatient.bind(this)} style={button}>New Patient</button>
         </div>
       </Router>
-
     )
   }
 }
 //export this component to can use
-export default Write;
+export default Home;
 
 
 
@@ -210,6 +145,11 @@ class Home extends React.Component {
 }
 //export this component to can use
 export default Home;
+
+
+          <button onClick={() => history.push('/signup')} style={button}>redirect Sign Up</button>
+
+
 */
 
 
