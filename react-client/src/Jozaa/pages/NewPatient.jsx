@@ -80,16 +80,12 @@ class NewPatient extends React.Component {
       genetic_Diseases: '',
       allergies: '',
       description: '',
-      loggedIn:false,
+      loggedIn:true,
     };
   }
-   //for logout button
-   logout(){
-    console.log('HERE:',   this);
-    //console.log('HERE:',    window.location.href);
-    //change the path I inside it
-    this.setState({loggedIn:false });
-    window.location.href = window.location.origin+'/logout';
+  //for home button
+  home(){
+    window.location.href= window.location.origin+'/'
   };
   //when change  ... change the
   //number
@@ -164,9 +160,8 @@ class NewPatient extends React.Component {
       description: e.target.value,
     });
   };
-  //for sign in button
+  //for send data in button
   sentData() {
-    ////.firstName
     const that=this;
     console.log(`you sent this data:  ${JSON.stringify(this.state)}`);
     //ajax request to sent the data to server then data base
@@ -189,7 +184,6 @@ class NewPatient extends React.Component {
       },
       //when success do this
       success: function (res) {
-        //.firstName
         alert(res);
         console.log(res);
       },
@@ -272,6 +266,7 @@ class NewPatient extends React.Component {
           </h3>
         </div3>
         <button onClick={this.sentData.bind(this)} style={button}>Submit</button>
+        <button onClick={this.home.bind(this)} style={button}>Back to Home</button>
       </div>
     )
   }
