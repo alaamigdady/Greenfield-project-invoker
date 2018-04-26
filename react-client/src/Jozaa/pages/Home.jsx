@@ -60,7 +60,8 @@ class Home extends React.Component {
       firstName:'',
       lastName: '',
       userName: '',
-      password: ''
+      password: '',
+      loggedIn:'true',
     };
   }
 
@@ -72,6 +73,19 @@ class Home extends React.Component {
   login() {
     window.location.href= window.location.origin+'/login'
   };
+   logout(){
+    console.log('HERE:',   this);
+    //console.log('HERE:',    window.location.href);
+    //change the path I inside it
+    this.setState({loggedIn:false });
+    window.location.href = window.location.origin+'/logout';
+  };
+   newPatient(){
+    console.log('HERE:',   this);
+    //console.log('HERE:',    window.location.href);
+    //change the path I inside it
+    window.location.href = window.location.origin+'/newpatient';
+  };
   //what render -----------------need change style to be nice
   render () {
     return (
@@ -80,7 +94,9 @@ class Home extends React.Component {
           <h2 style={header}>Home page</h2>
           <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
           <button onClick={this.login.bind(this)} style={button}>Login</button>
-          <button onClick={() => history.push('/signup')} style={button}>redirect Sign Up</button>
+          <button onClick={this.logout.bind(this)} style={button}>Logout</button>
+        <button onClick={this.newPatient.bind(this)} style={button}>New Patient</button>
+
         </div>
       </Router>
 
@@ -132,6 +148,11 @@ class Home extends React.Component {
 }
 //export this component to can use
 export default Home;
+
+
+          <button onClick={() => history.push('/signup')} style={button}>redirect Sign Up</button>
+
+
 */
 
 

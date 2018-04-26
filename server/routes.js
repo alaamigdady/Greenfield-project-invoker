@@ -13,26 +13,13 @@ var User=mongoose.model('User')
 //belal I will make the session let it to last man
 //lets ginish the page first dont change please*
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended : true}))
 //routes and handling requests.
 
 //Jozaa 'give me the controll for the get request only'
 router.route('/newpatient')
-.get(function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
+.get(utils.checkUser,function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
 //joza
 router.route('/')
 .get(utils.checkUser,function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
@@ -54,10 +41,10 @@ router.route('/login')
       if(match){
         //jozaa
         console.log('Successful login');
-        res.send(`Welcome DR.${userName} you are logged in now`);
         //jozaa
         //we have problem in create sesiion when sucssful login redirect him to home page after sign in
-        //utils.createSession(req,res,user);
+        utils.createSession(req,res,user);
+        //res.send(`Welcome DR.${userName} you are logged in now`);
         // res.redirect('/list')
 
       }else{
@@ -91,9 +78,9 @@ router.route('/signup')
           user.save(function(err,user){
             //jozaa
             console.log('Successful signup');
-            res.send(`Welcome DR.${userName} you create new user and you are logged in now`);
             //we have problem in create sesiion when sucssful sigup and redirect him to home page after sign in
-            //utils.createSession(req,res,user);
+            utils.createSession(req,res,user);
+            res.send(`Welcome DR.${userName} you create new user and you are logged in now`);
           })
 
           })
@@ -111,7 +98,7 @@ router.route('/logout')
   .get(function(req,res){
     //jozaa
     // console.log(req.session);
-    // req.session.destroy()
+    req.session.destroy()
     // console.log(req.session);
     // res.redirect('/login')
     //jozaa
@@ -123,7 +110,7 @@ router.route('/logout')
 router.route('/logout')
   .post(function(req,res){
     //console.log(req.session);
-    //req.session.destroy()
+    req.session.destroy()
     //console.log(req.session);
     console.log('Successful logout');
     /*after DR .${userName}*/
@@ -137,7 +124,7 @@ router.route('/patient')
 .get( utils.checkUser, controller.retrieveOne)
 //create a patient.
 //jozaa change
-.post(/*utils.checkUser,*/controller.createOne)
+.post(utils.checkUser,controller.createOne)
 //update patient information.
 .put(utils.checkUser,controller.updateOne)
 //delete a patient.

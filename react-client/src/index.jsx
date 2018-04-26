@@ -79,14 +79,12 @@ class App2 extends React.Component {
         <div>
           <div style={div2}>
             <div style={header1}>
-              <NavLink to='/' exact strict style={{textDecoration:'none',header2}} > 
+              <NavLink to='/login' exact strict style={{textDecoration:'none',header2}} > 
                 <img  src="https://pacificmedicalacls.com/images/pluslogo.png" alt="logo" height="40" width="40"/>
                 <h style={header2}>Medical Record</h>
               </NavLink>
-              <NavLink to='/' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
               <NavLink to='/login' exact strict style={notActive2} activeStyle={Active}>Login</NavLink>
               <NavLink to='/signup' exact strict style={notActive3} activeStyle={Active}>Sign Up</NavLink>
-              <NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
             </div>
           </div>
           <Route path="/" exact strict component={Home}/>     
@@ -116,5 +114,11 @@ User({match})=> {match.params.username}
 withRouter
 
 4-neeed home page
+             
+
+              <NavLink to='/login' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
+
+              <NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
+
 
 */
