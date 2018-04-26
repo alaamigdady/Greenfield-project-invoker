@@ -2,6 +2,7 @@
 //include mongoose in our project
 //open a connection to the patient database on our locally running instance of MongoDB.
 var mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost/patient');
 //for mlab rifaa
 //mongoose.connect('mongodb://Mohammad94:12345@ds155699.mlab.com:55699/medical');
