@@ -2,6 +2,9 @@
 var session=require('express-session');
 var path=require('path')
 
+
+//this function will check for a user key in the session object
+//returns true if it exists,false if not.
 exports.isLoggedIn=function(req,res){
   if(req.session.user){
     console.log(req.session.user);
@@ -10,6 +13,8 @@ exports.isLoggedIn=function(req,res){
   return false;
 }
 
+//this function will use the isLoggedIn function and will make a check on most
+//routes,if the user is logged in it will handle his request.
 exports.checkUser=function(req,res,next){
   if(!exports.isLoggedIn(req)){
     console.log('You Are not logged in');
@@ -20,6 +25,7 @@ exports.checkUser=function(req,res,next){
   }
 }
 
+//this function will create a session and store the user info in it.
 exports.createSession=function(req,res,aUser,username,b){
   req.session.regenerate(function(){
     req.session.user=aUser;
