@@ -4,14 +4,14 @@ import React from 'react';
 import $ from 'jquery';
 import {BrowserRouter as Router, Route,hashHistory, IndexRoute,  Link, NavLink, Redirect, Prompt } from "react-router-dom";
 //import createHistory from 'history/createBrowserHistory'
-import { createHashHistory } from 'history'
+//import { createHashHistory } from 'history'
 //export const history = createHashHistory()
 //the style for the main header
 const header={
   color:'black',
   fontWeight:'bold',
   textAlign:'center',
-  fontSize:'200px',
+  fontSize:'50px',
   fontFamily: 'Lobster',
 };
 //the style for number
@@ -49,7 +49,6 @@ const button={
   borderRadius: '10px',
   fontFamily: 'Lobster',
 };
-
 //the page login what inside render
 class Home extends React.Component {
   //constructor to undestand state
@@ -61,45 +60,43 @@ class Home extends React.Component {
       lastName: '',
       userName: '',
       password: '',
-      loggedIn:'true',
+      loggedIn:true,
     };
   }
-
-  //for sign in button
-  signup() {
-    window.location.href= window.location.origin+'/signup'
+  //for logout button
+  logout(){
+    console.log(`you try to logoutDR`);
+    const that=this
+    //ajax request to logout
+    $.ajax({
+      type: 'GET',
+      url: '/logout',
+      //when success do this
+      success: function (res) {
+        alert(res);
+        that.setState({loggedIn:false});
+        window.location.href= window.location.origin+'/login'
+      },
+      //when error do this
+      error: function (){
+        alert(`Failed logout please try again DR`);
+        console.log(`Failed logout please try again DR`);
+      },
+    }); 
   };
-    //for sign in button
-  login() {
-    window.location.href= window.location.origin+'/login'
+  newPatient(){
+    console.log('you try to go to create new patient:');
+    window.location.href=window.location.origin+'/newpatient';
   };
-   logout(){
-    console.log('HERE:',   this);
-    //console.log('HERE:',    window.location.href);
-    //change the path I inside it
-    this.setState({loggedIn:false });
-    window.location.href = window.location.origin+'/logout';
-  };
-   newPatient(){
-    console.log('HERE:',   this);
-    //console.log('HERE:',    window.location.href);
-    //change the path I inside it
-    window.location.href = window.location.origin+'/newpatient';
-  };
-  //what render -----------------need change style to be nice
   render () {
     return (
       <Router /*history={hashHistory}*/>
         <div>
           <h2 style={header}>Home page</h2>
-          <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
-          <button onClick={this.login.bind(this)} style={button}>Login</button>
           <button onClick={this.logout.bind(this)} style={button}>Logout</button>
-        <button onClick={this.newPatient.bind(this)} style={button}>New Patient</button>
-
+          <button onClick={this.newPatient.bind(this)} style={button}>New Patient</button>
         </div>
       </Router>
-
     )
   }
 }

@@ -73,7 +73,7 @@ class Login extends React.Component {
     this.state={
       userName: '',
       password: '',
-      loggedIn:'false',
+      loggedIn:false,
     };
   }
   //handle log in
@@ -142,21 +142,11 @@ class Login extends React.Component {
     //change the path I inside it
     window.location.href = window.location.origin+'/signup';
   };
-  logout(){
-    console.log('HERE:',   this);
-    //console.log('HERE:',    window.location.href);
-    //change the path I inside it
-    this.setState({loggedIn:false });
-    window.location.href = window.location.origin+'/logout';
-  };
- 
-
-  //what render -----------------need change style to be nice
   render () { 
     return (
       <div>
         <h2 style={header}>Welcome To Medical Record</h2>
-        <h3 style={user}>Username:
+        <h3 style={user}>Usename:
           <input value={this.state.userName} onChange={this.onWrite3.bind(this)} placeholder="Username" style={input}>
           </input>
         </h3>
@@ -167,8 +157,6 @@ class Login extends React.Component {
         <button onClick={this.login.bind(this)} style={button}>Login</button>
         <h3 style={header2}>Dont have an account ? </h3>
         <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
-        <button onClick={this.logout.bind(this)} style={button}>Logout</button>
-
       </div>
     )
   }
@@ -199,13 +187,6 @@ logout
     );
   }
 }
-
-
-
-
-
-
-
         <button onClick={() => hashHistory.push('/login')} style={button}>redirect Sign Up</button>
 
 */

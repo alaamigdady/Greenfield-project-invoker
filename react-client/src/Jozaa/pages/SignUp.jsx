@@ -158,9 +158,6 @@ class SignUp extends React.Component {
   };
   //try router
   login(){
-    console.log('HERE:', this);
-    //console.log('HERE:',    window.location.href);
-    //change the path I inside it
     window.location.href= window.location.origin+'/login'
   }
   //what render -----------------need change style to be nice
@@ -186,9 +183,7 @@ class SignUp extends React.Component {
         </h3>
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
         <h3 style={header2}>Have an account ? </h3>
-        
         <button onClick={this.login.bind(this)} style={button}>Login</button>
-
       </div>
     )
   }
@@ -196,26 +191,12 @@ class SignUp extends React.Component {
 //export this component to can use
 export default SignUp;
 
-
 /*
-
-
-
-
-
-
-
-
-
-
     // console.log('HERE:',this);
-
     // console.log('HERE:',this.props.match.path,this.props.match.url);
-
     //console.log('HERE:',this.props.location.pathname);
     this.props.location.pathname='/login';
     this.props.match.path='/login';
     this.props.match.path='/login';
     this.props.match.url='/login';
-
 */
