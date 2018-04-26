@@ -4,8 +4,6 @@
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/patient');
-//for mlab rifaa
-//mongoose.connect('mongodb://Mohammad94:12345@ds155699.mlab.com:55699/medical');
 
 //now we need to get notified if we connect successfully or if a connection error occurs:
 var db = mongoose.connection;
@@ -50,7 +48,7 @@ var selectAll = function(callback) {
 //functionality to our instances:
 var save=function(PatientInstance){
 
-  PatientInstance.save(function(err,patients){
+  PatientInstance.save(function(err,patient){
     if(err){
       console.log(err)
     }else{
