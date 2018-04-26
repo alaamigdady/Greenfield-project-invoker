@@ -157,7 +157,7 @@ class SignUp extends React.Component {
     }); 
   };
   //try router
-  b(){
+  login(){
     console.log('HERE:', this);
     //console.log('HERE:',    window.location.href);
     //change the path I inside it
@@ -187,7 +187,7 @@ class SignUp extends React.Component {
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
         <h3 style={header2}>Have an account ? </h3>
         
-        <button onClick={this.b.bind(this)} style={button}>Login</button>
+        <button onClick={this.login.bind(this)} style={button}>Login</button>
 
       </div>
     )
