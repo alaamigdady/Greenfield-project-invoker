@@ -33,10 +33,8 @@ var patientSchema = mongoose.Schema({
   description: String
 });
 
-
 //compiling our schema into a Model(class)
 var Patient = mongoose.model('Patient', patientSchema);
-
 
 var selectAll = function(callback) {
   Patient.find({},function(err, items) {
@@ -49,7 +47,6 @@ var selectAll = function(callback) {
 };
 
 //functionality to our instances:
-
 var save=function(PatientInstance){
 
   PatientInstance.save(function(err,patients){
@@ -70,7 +67,6 @@ var userSchema = mongoose.Schema({
 
 });
 
-
 //compiling our schema into a Model(class)
 var User = mongoose.model('User', userSchema);
 
@@ -78,4 +74,3 @@ module.exports=User;
 module.exports=Patient;
 module.exports.selectAll = selectAll;
 module.exports.save = save;
-// module.exports=db;

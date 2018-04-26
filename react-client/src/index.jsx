@@ -8,8 +8,7 @@ import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
 //import createHistory from 'history/createBrowserHistory'
-import { createHashHistory } from 'history'
-
+//import { createHashHistory } from 'history'
 //import each components (pages)
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
@@ -19,7 +18,6 @@ import List from './Rifaa/components/List.jsx';
 import Patient2 from './Rifaa/components/patient.jsx';
 import User from './Rifaa/pages/user.jsx';
 //export const history = createHashHistory()
-
 //style for div top
 const div2={
   backgroundColor:'#123456',
@@ -108,17 +106,12 @@ User({match})=> {match.params.username}
 2-<Redirect to''></Redirect>
  
 3- history={hashHistory}   ???????
-    //this.props.history.push(path);
-
-    import {withRouter} from 'react-router-dom';
+  //this.props.history.push(path);
+ import {withRouter} from 'react-router-dom';
 withRouter
+4-neeed home page  
 
-4-neeed home page
-             
-
-              <NavLink to='/login' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
-
-              <NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
-
+<NavLink to='/login' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
+<NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
 
 */

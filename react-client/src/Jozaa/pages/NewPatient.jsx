@@ -80,8 +80,17 @@ class NewPatient extends React.Component {
       genetic_Diseases: '',
       allergies: '',
       description: '',
+      loggedIn:false,
     };
   }
+   //for logout button
+   logout(){
+    console.log('HERE:',   this);
+    //console.log('HERE:',    window.location.href);
+    //change the path I inside it
+    this.setState({loggedIn:false });
+    window.location.href = window.location.origin+'/logout';
+  };
   //when change  ... change the
   //number
   onWrite1 (e) {
@@ -187,7 +196,7 @@ class NewPatient extends React.Component {
       //when error do this
       error: function (res){
         alert('Failed sent this data please try agian' );
-        console.log('Failed sent this data please try agian',res)
+        console.log('Failed sent this data please try agian')
       },
     });
   };
@@ -262,7 +271,6 @@ class NewPatient extends React.Component {
             </input>
           </h3>
         </div3>
-
         <button onClick={this.sentData.bind(this)} style={button}>Submit</button>
       </div>
     )
@@ -270,9 +278,6 @@ class NewPatient extends React.Component {
 }
 //export this component to can use
 export default NewPatient;
-
-
-
 
 /*
 
