@@ -1,11 +1,16 @@
 var Patient= require('./index');
-var mongoose=require('mongoose')
-//controller methods:
+var mongoose=require('mongoose');
 
+//controller methods:
 //1.create one patient
 exports.createOne = function (req, res) {
+  //try to solve problem not unique jozqq cant :(
+  //console.log(req.body);
+  req.body.number=JSON.parse(req.body.number);
+  //console.log('HERE',req.body);
 	var pInfo=req.body
 	var patient=new Patient(pInfo)
+  console.log(patient)
 	patient.save(function(err,patient){
 		if(err){
 			console.log(err);
@@ -74,7 +79,14 @@ exports.delete=function(req,res){
 
 //4.return all info for one patient
 exports.retrieveOne=function(req,res){
-  Patient.find({number:req.body.number},function(err,patient){
+  //try to solve problem cant go to correct number jozaa
+  //take the number sent in the GET request
+  console.log('HEREEEEEEEEEEEE:',req._parsedOriginalUrl.path.split('=')[1]);
+  var number=req._parsedOriginalUrl.path.split('=')[1]
+  //req.body.number=JSON.parse(req.body.number);
+  //console.log('HERE',req.body);
+  //console.log(req)
+  Patient.find({number:number},function(err,patient){
     if(err){
     	console.log(err)
     	res.send(500)

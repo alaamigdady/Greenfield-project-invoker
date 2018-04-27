@@ -12,19 +12,6 @@ router.use(bodyParser.urlencoded({extended : true}))
 
 //**routes and handling requests.**//
 
-router.route('/newpatient')
-.get(utils.checkUser,function(req,res){
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-})
-
-//homepage route with checkUser middleware to check for a user key in the session object.
-router.route('/')
-.get(utils.checkUser,function(req,res){
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-})
-
-
-
 router.route('/login')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
@@ -93,12 +80,23 @@ router.route('/logout')
     res.send(`Goodbye DR you logout now .. see you later`);
     })
 
+//jozaa we need to return (utils.checkUser) after finish test
+//homepage route with checkUser middleware to check for a user key in the session object.
+router.route('/')
+.get(/*utils.checkUser,*/function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
+//go to newpatient page to can create new patient
+router.route('/newpatient')
+.get(/*utils.checkUser,*/function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 //must change here somthing by the id for this patient..26/4 12:30 PM
 router.route('/patient')
 //retrieve a pateint.
-.get( utils.checkUser, controller.retrieveOne)
+.get(/*utils.checkUser,*/ controller.retrieveOne)
 //create a patient.
-.post(utils.checkUser,controller.createOne)
+.post(/*utils.checkUser,*/controller.createOne)
 //update patient information.
 .put(utils.checkUser,controller.updateOne)
 //delete a patient.
@@ -106,7 +104,7 @@ router.route('/patient')
 
 router.route('/patients')
 //get all patients
-.get(utils.checkUser,controller.retrieveAll)
+.get(/*utils.checkUser,*/controller.retrieveAll)
 
 //trial routes
 // router.route('/list').get(utils.checkUser, function(req,res){res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));})
