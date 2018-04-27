@@ -7,16 +7,11 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
-//import createHistory from 'history/createBrowserHistory'
-//import { createHashHistory } from 'history'
 //import each components (pages)
 import Home from './Jozaa/pages/Home.jsx';
 import Login from './Jozaa/pages/Login.jsx';
 import SignUp from './Jozaa/pages/SignUp.jsx';
 import NewPatient from './Jozaa/pages/NewPatient.jsx';
-import List from './Rifaa/components/List.jsx';
-import Patient2 from './Rifaa/components/patient.jsx';
-import User from './Rifaa/pages/user.jsx';
 //export const history = createHashHistory()
 //style for div top
 const div2={
@@ -88,11 +83,7 @@ class App2 extends React.Component {
           <Route path="/" exact strict component={Home}/>     
           <Route path="/login" exact strict component={Login}/>     
           <Route path="/signup" component={SignUp}/>
-          <Route path="/logout" exact strict component={NewPatient}/>     
-          <Route path="/newpatient" exact strict component={NewPatient}/>
-          <Route path="/list" exact strict component={List}/>
-          <Route path="/patient2" exact strict component={Patient2}/>
-          <Route path="/user" exact strict component={User}/>       
+          <Route path="/newpatient" exact strict component={NewPatient}/>       
         </div>
       </Router> 
     )
@@ -104,52 +95,14 @@ ReactDOM.render(<App2 />, document.getElementById('app1'));
 User({match})=> {match.params.username}
 
 2-<Redirect to''></Redirect>
- 
+
 3- history={hashHistory}   ???????
   //this.props.history.push(path);
  import {withRouter} from 'react-router-dom';
 withRouter
-4-neeed home page  
 
+4-neeed home page  
 <NavLink to='/login' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
 <NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
 
-*/
-
-
-
-/*
-  render() {
-    return (
-      <Router>
-          <Prompt
-            when={!this.state.loggedIn}
-            message={(location)=>{
-               return location.pathname.startsWith('/user') ? 'Are you sure?' : true
-             }}
-          />
-logout
-        <input type="button" value={this.state.loggedIn ? 'log out': 'log in'} onClick={this.loginHandle.bind(this)}/>
-    
-        <Route path="/user/:username" exact strict render={({match})=>(
-          this.state.loggedIn ? ( <User username={match.params.username}/>) : (<Redirect to='/' />)
-        )}/>
-        </div>
-      </Router>
-    );
-  }
-}
-        <button onClick={() => hashHistory.push('/login')} style={button}>redirect Sign Up</button>
-
-*/
-
-
-/*
-    // console.log('HERE:',this);
-    // console.log('HERE:',this.props.match.path,this.props.match.url);
-    //console.log('HERE:',this.props.location.pathname);
-    this.props.location.pathname='/login';
-    this.props.match.path='/login';
-    this.props.match.path='/login';
-    this.props.match.url='/login';
 */

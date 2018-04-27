@@ -2,9 +2,6 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
-import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
-//library for style
-//const Fan = require('react-fontawesome');
 //the style for the main header
 const header={
   color:'black',

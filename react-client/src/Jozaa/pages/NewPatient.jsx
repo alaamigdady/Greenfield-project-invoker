@@ -64,11 +64,11 @@ const button={
 //the page login what inside render
 class NewPatient extends React.Component {
   //constructor to undestand state
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     //all the data save before sent in state
     this.state={
-      number: '',
+      number: 0,
       firstName:'',
       lastName: '',
       gender: '',
@@ -91,8 +91,9 @@ class NewPatient extends React.Component {
   //number
   onWrite1 (e) {
     this.setState({
-      number: e.target.value,
+      number: 1*e.target.value,
     });
+    console.log(this.state.number,typeof this.state.number)
   };
   //first name
   onWrite2 (e) {
@@ -162,8 +163,8 @@ class NewPatient extends React.Component {
   };
   //for send data in button
   sentData() {
-    const that=this;
-    console.log(`you sent this data:  ${JSON.stringify(this.state)}`);
+    //${JSON.stringify(this.state)}
+    console.log(`you sent this data: ${typeof this.state.number} ${this.state.number}`);
     //ajax request to sent the data to server then data base
     $.ajax({
       type: 'POST',
@@ -202,7 +203,7 @@ class NewPatient extends React.Component {
         <div1 style={main}>
           <h3 className="column" style={number}>
           Number:
-            <input type='number' value={this.state.number} onChange={this.onWrite1.bind(this)} placeholder="Number" style={input}>
+            <input type="number" value={this.state.number} onChange={this.onWrite1.bind(this)} placeholder="Number" style={input}>
             </input>
           </h3>
           <h3 style={number}>
@@ -273,38 +274,3 @@ class NewPatient extends React.Component {
 }
 //export this component to can use
 export default NewPatient;
-
-/*
-
-
-//the style for first name
-const fName={
-  color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-//the style for last name
-const lName={
-  color:'#7a00a3',
-  fontWeight:'bold',
-  textAlign:'center',
-  fontSize:'20px',
-  marginBottom:'-10px',
-};
-
-number
-firstName
-lastName
-gender
-age
-phone
-conditions
-past_Diseases
-currentlly_Medications
-genetic_Diseases
-allergies
-description
-
-*/
