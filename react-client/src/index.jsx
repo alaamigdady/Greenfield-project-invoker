@@ -8,10 +8,10 @@ import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
 //import each components (pages)
-import Home from './Jozaa/pages/Home.jsx';
-import Login from './Jozaa/pages/Login.jsx';
-import SignUp from './Jozaa/pages/SignUp.jsx';
-import NewPatient from './Jozaa/pages/NewPatient.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import SignUp from './pages/SignUp.jsx';
+import NewPatient from './pages/NewPatient.jsx';
 //export const history = createHashHistory()
 //style for div top
 const div2={
@@ -90,19 +90,3 @@ class App2 extends React.Component {
   }
 }
 ReactDOM.render(<App2 />, document.getElementById('app1'));
-/*
-1- for user/554
-User({match})=> {match.params.username}
-
-2-<Redirect to''></Redirect>
-
-3- history={hashHistory}   ???????
-  //this.props.history.push(path);
- import {withRouter} from 'react-router-dom';
-withRouter
-
-4-neeed home page  
-<NavLink to='/login' exact strict style={notActive1} activeStyle={Active}>Home</NavLink>
-<NavLink to='/newpatient' exact strict style={notActive3} activeStyle={Active}>New Patient</NavLink>
-
-*/
