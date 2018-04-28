@@ -9,10 +9,11 @@ const header1={
   textAlign:'center',
   fontSize:'50px',
   fontFamily: 'Lobster',
+  marginTop:'2px',
 };
 //the style for retrieve one patient
 const header3={
-  color:'#1B5494',
+  color:'black',
   fontWeight:'bold',
   textAlign:'centezr',
   fontSize:'25px',
@@ -24,7 +25,7 @@ const header3={
 const input3={
   padding: '10px 10px 10px 10px',
   marginRight: '-80px',
-  marginLeft: '-20px',
+  marginLeft: '-30px',
   color:'black',
   fontSize:'15px',
   border: '2px solid black',
@@ -33,7 +34,7 @@ const input3={
 //the style for the button retrieve one patient
 const button3={
   padding:'6px',
-  backgroundColor: 'black',
+  backgroundColor: '#123456',
   color: 'white',
   border: '2px solid black',
   fontSize:'20px',
@@ -48,7 +49,8 @@ const table={
     textAlign : 'center',
     fontSize:'25px',
     fontWeight:'bold',
-    color:'#1B5494',
+    color:'black',
+    backgroundColor: 'white',
 }
 //style for td / the changed thing
 const table2={
@@ -57,8 +59,10 @@ const table2={
     padding: '3px',
     textAlign : 'center',
     fontSize:'25px',
-    fontWeight:'bold',
-    color:'#bb280e',
+    //fontWeight:'bold',
+    color:'white',
+    backgroundColor: 'gray',
+
 }
 //the style for the button logout
 const button1={
@@ -146,8 +150,8 @@ class Home extends React.Component {
       data:{number:`${that.state.patientNumber}`},
       //when success do this
       success: function (res) {
-        console.log('Sucess retrieve:',res[0].firstName);
-        alert('Sucess retrieve: '+res[0].firstName);
+        console.log('Sucess retrieve patient have number: ',res[0].number);
+        alert('Sucess retrieve patient have number: '+res[0].number);
         that.setState({data:res});
         //console.log(that.state.data);
         that.renderData()
@@ -161,10 +165,22 @@ class Home extends React.Component {
   };
   //to save data to can use and render
   renderData(){
-    console.log('HERE: ',this.state.data[0]);
+    //console.log('HERE: ',this.state.data[0]);
     //i get the data now i neeed to render it
-
-
+    var data=this.state.data[0]
+    console.log('HERE: ',this.state.data[0]);
+    $('.number').html(data.number);
+    $('.firstName').html(data.firstName);
+    $('.lastName').html(data.lastName);
+    $('.gender').html(data.gender);
+    $('.age').html(data.age);
+    $('.phone').html(data.phone);
+    $('.conditions').html(data.conditions);
+    $('.pastDiseases').html(data.past_Diseases);
+    $('.currMedications').html(data.currentlly_Medications);
+    $('.geneticDisease').html(data.genetic_Diseases);
+    $('.allergies').html(data.allergies);
+    $('.description').html(data.description);    
   };
   render () {
     return (
@@ -184,10 +200,10 @@ class Home extends React.Component {
                 <th style={table}>Gender</th>
               </tr>
               <tr>
-                <td style={table2}>Jill</td>
-                <td style={table2}>Smith</td>
-                <td style={table2}>50</td>
-                <td style={table2}>50</td>
+                <td className='number' value='tttttt' style={table2}></td>
+                <td className='firstName' style={table2}></td>
+                <td className='lastName' style={table2}></td>
+                <td className='gender' style={table2}></td>
               </tr>
               <tr>
                 <th style={table}>Age</th>
@@ -196,10 +212,10 @@ class Home extends React.Component {
                 <th style={table}>Past Diseases</th>
               </tr>
               <tr>
-                <td style={table2}>asd</td>
-                <td style={table2}>asd</td>
-                <td style={table2}>50</td>
-                <td style={table2}>50</td>
+                <td className='age' style={table2}></td>
+                <td className='phone' style={table2}></td>
+                <td className='conditions' style={table2}></td>
+                <td className='pastDiseases' style={table2}></td>
               </tr>
               <tr>
                 <th style={table}>Curr. Medications</th>
@@ -208,10 +224,10 @@ class Home extends React.Component {
                 <th style={table}>Description</th>
               </tr>
               <tr>
-                <td style={table2}>Jill</td>
-                <td style={table2}>Smith</td>
-                <td style={table2}>50</td>
-                <td style={table2}>50</td>
+                <td className='currMedications' style={table2}></td>
+                <td className='geneticDisease' style={table2}></td>
+                <td className='allergies' style={table2}></td>
+                <td className='description' style={table2}></td>
               </tr> 
             </table>
           </div3>

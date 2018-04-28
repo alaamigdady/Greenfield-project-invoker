@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/patient');
 //Add Mlab Database
 mongoose.connect('mongodb://Mohammad:1234@ds161539.mlab.com:61539/medical-records');
+
 //now we need to get notified if we connect successfully or if a connection error occurs:
 var db = mongoose.connection;
 //connection error occurs
@@ -24,7 +25,7 @@ var patientSchema = mongoose.Schema({
   lastName:String,
   gender:String,
   age:Number,
-  phone:{type:Number},
+  phone:Number,
   conditions:String,
   past_Diseases:String,
   currentlly_Medications:String,

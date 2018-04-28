@@ -20,6 +20,17 @@ const div2={
   height:'52px',
   border: 'solid #d22d10 4px',
 };
+//style for login and sign up
+const div3={
+  color:'#d22d10',
+  fontSize:'25px',
+  //marginLeft:'800px',
+  //marginTop:'-40px',
+  fontFamily: 'Lobster',
+  float: 'right',
+  width: '180px',
+
+};
 //the style for the all top bar
 const header1={
   color:'#d22d10',
@@ -76,8 +87,10 @@ class App2 extends React.Component {
                 <img  src="https://pacificmedicalacls.com/images/pluslogo.png" alt="logo" height="40" width="40"/>
                 <h style={header2}>Medical Record</h>
               </NavLink>
-              <NavLink to='/login' exact strict style={notActive2} activeStyle={Active}>Login</NavLink>
-              <NavLink to='/signup' exact strict style={notActive3} activeStyle={Active}>Sign Up</NavLink>
+              <div style={div3} align="right">
+                  <NavLink to='/login' exact strict style={notActive2} activeStyle={Active}>Login</NavLink>
+                  <NavLink to='/signup' exact strict style={notActive3} activeStyle={Active}>Sign Up</NavLink>
+              </div>
             </div>
           </div>
           <Route path="/" exact strict component={Home}/>     
