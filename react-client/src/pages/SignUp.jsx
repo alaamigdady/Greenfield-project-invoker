@@ -9,6 +9,8 @@ const header={
   textAlign:'center',
   fontSize:'40px',
   fontFamily: 'Lobster',
+  marginTop:'2px',
+  marginBottom:'-15px',
 };
 //the style for the main header
 const header2={
@@ -183,8 +185,8 @@ class SignUp extends React.Component {
         </h3>
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
         <h3 style={header2}>Have an account ? </h3>
-        <button onClick={this.login.bind(this)} style={button}>Login</button>
-        <button onClick={this.home.bind(this)} style={button}>Back to Home</button>
+        <button  onClick={this.login.bind(this)} style={button}>Login</button>
+        <button  onClick={this.home.bind(this)} style={button}>Back to Home</button>
       </div>
     )
   }

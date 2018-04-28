@@ -2,7 +2,6 @@
 //include mongoose in our project
 //open a connection to the patient database on our locally running instance of MongoDB.
 var mongoose = require('mongoose');
-
 mongoose.connect('mongodb://localhost/patient');
 
 //now we need to get notified if we connect successfully or if a connection error occurs:
@@ -23,7 +22,7 @@ var patientSchema = mongoose.Schema({
   lastName:String,
   gender:String,
   age:Number,
-  phone:{type:Number},
+  phone:Number,
   conditions:String,
   past_Diseases:String,
   currentlly_Medications:String,
