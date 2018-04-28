@@ -3,8 +3,9 @@
 //open a connection to the patient database on our locally running instance of MongoDB.
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/patient');
-
+//mongoose.connect('mongodb://localhost/patient');
+//Add Mlab Database
+mongoose.connect('mongodb://Mohammad:1234@ds161539.mlab.com:61539/medical-records');
 //now we need to get notified if we connect successfully or if a connection error occurs:
 var db = mongoose.connection;
 //connection error occurs
