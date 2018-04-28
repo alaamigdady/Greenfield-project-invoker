@@ -2,7 +2,6 @@
 var session=require('express-session');
 var path=require('path')
 
-
 //this function will check for a user key in the session object
 //returns true if it exists,false if not.
 exports.isLoggedIn=function(req,res){
