@@ -14,15 +14,16 @@ const header1={
 const header3={
   color:'#1B5494',
   fontWeight:'bold',
-  textAlign:'center',
+  textAlign:'centezr',
   fontSize:'25px',
   fontFamily: 'Lobster',
   marginTop:'5px',
+  marginLeft: '200px',
 };
 //style for input retrieve one patient
 const input3={
   padding: '10px 10px 10px 10px',
-  marginRight: '10px',
+  marginRight: '-80px',
   marginLeft: '-20px',
   color:'black',
   fontSize:'15px',
@@ -39,6 +40,26 @@ const button3={
   borderRadius: '15px',
   fontFamily: 'Lobster',
 };
+//style for th / the const thing
+const table={
+    border: '3px solid black',
+    borderCollapse: 'collapse',
+    padding: '3px',
+    textAlign : 'center',
+    fontSize:'25px',
+    fontWeight:'bold',
+    color:'#1B5494',
+}
+//style for td / the changed thing
+const table2={
+    border: '3px solid black',
+    borderCollapse: 'collapse',
+    padding: '3px',
+    textAlign : 'center',
+    fontSize:'25px',
+    fontWeight:'bold',
+    color:'#bb280e',
+}
 //the style for the button logout
 const button1={
   padding:'5px',
@@ -49,7 +70,7 @@ const button1={
   backgroundColor: '#bb280e',
   color: 'white',
   border: '2px solid #bb280e',
-  marginTop:'20px',
+  marginTop:'5px',
   fontSize:'20px',
   borderRadius: '10px',
   fontFamily: 'Lobster',
@@ -64,7 +85,7 @@ const button2={
   backgroundColor: '#123456',
   color: 'white',
   border: '2px solid #123456',
-  marginTop:'20px',
+  marginTop:'0px',
   fontSize:'20px',
   borderRadius: '10px',
   fontFamily: 'Lobster',
@@ -143,26 +164,66 @@ class Home extends React.Component {
     console.log('HERE: ',this.state.data[0]);
     //i get the data now i neeed to render it
 
+
   };
   render () {
     return (
         <div1>
-          <h2 style={header1}>Welcome DR</h2>
-<div2 >
-<h3 className='col-xs-4' style={header3}>Get all info for this patient:</h3>
-<input className='col-xs-2' value={this.state.patientNumber} type='number' onChange={this.onWrite1.bind(this)} placeholder="Patient number" style={input3}></input>
-<button className='col-xs-2' onClick={this.retrieveOne.bind(this)} style={button3}>Show the data now</button>
-</div2>
-
-
-{/*
-          <button onClick={this.newPatient.bind(this)} style={button2}>Create New Patient</button>
-          <button onClick={this.logout.bind(this)} style={button1}>Logout</button>
- */}        
+          <h2 style={header1}>Retrieve data for patient  by his number</h2>
+          <div2 className='row' style={{marginLeft:'auto',marginRight: 'auto'}}>
+            <h3 className='col-xs-4 col-xs-offset-1' style={header3}>Get all info for this patient:</h3>
+            <input className='col-xs-1 col-xs-offset-1' value={this.state.patientNumber} type='number' onChange={this.onWrite1.bind(this)} placeholder="Patient number" style={input3}></input>
+            <button className='col-xs-2 col-xs-offset-1' onClick={this.retrieveOne.bind(this)} style={button3}>Show the data now</button>
+          </div2>
+          <div3>
+            <table style={{width:'80%',marginLeft:'auto',marginRight: 'auto',marginTop:'20px'}}>
+              <tr>
+                <th style={table}>Number</th>
+                <th style={table}>First name</th> 
+                <th style={table}>Last name</th>
+                <th style={table}>Gender</th>
+              </tr>
+              <tr>
+                <td style={table2}>Jill</td>
+                <td style={table2}>Smith</td>
+                <td style={table2}>50</td>
+                <td style={table2}>50</td>
+              </tr>
+              <tr>
+                <th style={table}>Age</th>
+                <th style={table}>Phone</th> 
+                <th style={table}>Conditions</th>
+                <th style={table}>Past Diseases</th>
+              </tr>
+              <tr>
+                <td style={table2}>asd</td>
+                <td style={table2}>asd</td>
+                <td style={table2}>50</td>
+                <td style={table2}>50</td>
+              </tr>
+              <tr>
+                <th style={table}>Curr. Medications</th>
+                <th style={table}>Genetic Diseases</th>
+                <th style={table}>Allergies</th> 
+                <th style={table}>Description</th>
+              </tr>
+              <tr>
+                <td style={table2}>Jill</td>
+                <td style={table2}>Smith</td>
+                <td style={table2}>50</td>
+                <td style={table2}>50</td>
+              </tr> 
+            </table>
+          </div3>
+          <div4 className='row'> 
+            <button onClick={this.newPatient.bind(this)} style={button2}>Create New Patient</button>
+            <button onClick={this.logout.bind(this)} style={button1}>Logout</button>
+          </div4>
         </div1>
     )
   }
 }
 //export this component to can use
 export default Home;
+
 

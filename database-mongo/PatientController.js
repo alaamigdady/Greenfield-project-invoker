@@ -81,6 +81,7 @@ exports.delete=function(req,res){
 exports.retrieveOne=function(req,res){
   //try to solve problem cant go to correct number jozaa
   //take the number sent in the GET request
+  console.log(req)
   console.log('HEREEEEEEEEEEEE:',req._parsedOriginalUrl.path.split('=')[1]);
   var number=req._parsedOriginalUrl.path.split('=')[1]
   //req.body.number=JSON.parse(req.body.number);
