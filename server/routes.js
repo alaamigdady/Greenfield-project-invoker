@@ -63,7 +63,7 @@ router.route('/signup')
           user.save(function(err,user){
             console.log('Successful signup');
             //createSession will make a new session and store the user object in it.
-            utils.createSession(req,res,user,userName,userName);
+            utils.createSession(req,res,user,userName);
           })
       })
   }else{

@@ -93,7 +93,9 @@ class App2 extends React.Component {
               </div>
             </div>
           </div>
-          <Route path="/" exact strict component={Home}/>     
+          <Route path="/" exact strict component={Home}/> 
+          <Route path="/doctor" exact strict component={Doctor}/>
+          <Route path="/patient" exact strict component={Patient}/>    
           <Route path="/login" exact strict component={Login}/>     
           <Route path="/signup" component={SignUp}/>
           <Route path="/newpatient" exact strict component={NewPatient}/>       
