@@ -153,7 +153,7 @@ class SignUp extends React.Component {
         if (res[0]==='W') {
           alert(res);
           console.log(res[0]);          
-          window.location.href= window.location.origin+'/doctor'
+          window.location.href= window.location.origin+'/doctorprofile'
         //if sign up exist user use go to login
         }else{
           alert(res);

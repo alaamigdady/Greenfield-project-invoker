@@ -12,6 +12,7 @@ import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
 import NewPatient from './pages/NewPatient.jsx';
+import DoctorProfile from './pages/DoctorProfile.jsx';
 //export const history = createHashHistory()
 //style for div top
 const div2={
@@ -93,12 +94,11 @@ class App2 extends React.Component {
               </div>
             </div>
           </div>
-          <Route path="/" exact strict component={Home}/> 
-          <Route path="/doctor" exact strict component={Doctor}/>
-          <Route path="/patient" exact strict component={Patient}/>    
+          <Route path="/" exact strict component={Home}/>     
           <Route path="/login" exact strict component={Login}/>     
           <Route path="/signup" component={SignUp}/>
-          <Route path="/newpatient" exact strict component={NewPatient}/>       
+          <Route path="/newpatient" exact strict component={NewPatient}/>  
+          <Route path="/doctorprofile" exact strict component={DoctorProfile}/>      
         </div>
       </Router> 
     )
