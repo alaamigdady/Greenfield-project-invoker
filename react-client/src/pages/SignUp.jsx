@@ -81,6 +81,7 @@ const button={
   borderRadius: '10px',
   fontFamily: 'Lobster',
 };
+
 //the page login what inside render
 class SignUp extends React.Component {
   //constructor to undestand state
@@ -91,7 +92,8 @@ class SignUp extends React.Component {
       firstName:'',
       lastName: '',
       userName: '',
-      password: ''
+      password: '',
+      userType: 'doctor'
     };
   }
   //when change  ... change the
@@ -113,6 +115,15 @@ class SignUp extends React.Component {
       userName: e.target.value,
     });
   };
+
+  //select
+  onSelect (e) {
+    this.setState({
+      userType: e.target.value
+    })
+    console.log(e.target.value)
+  }
+
   //password
   onWrite4 (e) {
     this.setState({
@@ -121,7 +132,7 @@ class SignUp extends React.Component {
   };
   //for sign in button
   saveUser() {
-    console.log(`you try to create new user:  DR.${this.state.userName}`);
+    console.log(`you try to create new user:  ${this.state.userName} as ${this.state.userType}`);
     const that=this;
     //ajax request to sent the data to server then data base
     $.ajax({
@@ -131,21 +142,41 @@ class SignUp extends React.Component {
         firstName: `${this.state.firstName}`,
         lastName: `${this.state.lastName}`,
         userName: `${this.state.userName}`,
-        password: `${this.state.password}`
+        password: `${this.state.password}`,
+        userType: `${this.state.userType}`
       },
       //when success do this
       success: function (res) {
-        //if sign up new user login him and go to home page
+       //var type = that.state.userType
+      //console.log(typ)
+       if(that.state.userType === 'doctor'){
         if (res[0]==='W') {
           alert(res);
           console.log(res[0]);          
-          window.location.href= window.location.origin+'/'
+          window.location.href= window.location.origin+'/doctorprofile'
         //if sign up exist user use go to login
         }else{
           alert(res);
           console.log(res[0]); 
           window.location.href= window.location.origin+'/login' 
         }
+
+       }else if(that.state.userType === 'patient'){
+        if (res[0]==='W') {
+          alert(res);
+          console.log(res[0]);          
+          window.location.href= window.location.origin+'/patient'
+        //if sign up exist user use go to login
+        }else{
+          alert(res);
+          console.log(res[0]); 
+          window.location.href= window.location.origin+'/login' 
+        }
+
+       }
+
+        //if sign up new user login him and go to home page
+        
       },
       //when error do this
       error: function (res){
@@ -183,6 +214,11 @@ class SignUp extends React.Component {
          <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
          </input>
         </h3>
+        <br />
+        <select name="users" style={button} onChange={this.onSelect.bind(this)} value={this.state.userType}>
+        <option value="doctor">doctor</option>
+        <option value="patient">patient</option>
+        </select>
         <button onClick={this.saveUser.bind(this)} style={button}>Sign Up</button>
         <h3 style={header2}>Have an account ? </h3>
         <button  onClick={this.login.bind(this)} style={button}>Login</button>
