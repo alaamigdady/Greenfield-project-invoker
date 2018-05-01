@@ -4,7 +4,7 @@ import React from 'react';
 import $ from 'jquery';
 
 
-class PaitentProfile extends React.Component {
+class PatientProfile extends React.Component {
   constructor(){
     super();
     //all the data save before sent in state
@@ -27,7 +27,7 @@ class PaitentProfile extends React.Component {
 
    $.ajax({
     type: 'POST',
-    url: '/paitentprofile',
+    url: '/patientprofile',
     data: {
       fullName: `${this.state.fullName}`,
       address: `${this.state.adress}`,
@@ -102,7 +102,7 @@ changeMedications (e) {
 render () {
   return (
     <div>
-    <h1> Paitent Profile</h1>
+    <h1> Patient Profile</h1>
 
     <label for="fullName">Full Name</label>
     <input type="text" id="fullName" value={this.state.fullName} onChange={this.changeName.bind(this)}></input> 
@@ -163,4 +163,4 @@ render () {
     )
 }
 }
-export default PaitentProfile;
+export default PatientProfile;
