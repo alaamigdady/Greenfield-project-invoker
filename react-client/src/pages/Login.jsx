@@ -73,8 +73,17 @@ class Login extends React.Component {
       userName: '',
       password: '',
       loggedIn:false,
+      userType: 'doctor'
     };
   }
+
+  onSelect (e) {
+    this.setState({
+      userType: e.target.value
+    })
+    console.log(e.target.value)
+  }
+
   //handle log in
   loginHandle ()  {
     this.setState({
@@ -105,10 +114,13 @@ class Login extends React.Component {
       url: '/login',
       data: {
         userName: `${this.state.userName}`,
-        password: `${this.state.password}`
+        password: `${this.state.password}`,
+        userType: `${this.state.userType}`
       },
       //when success do this
       success: function (res) {
+         if(that.state.userType === 'doctor'){
+
         //if login with new user go to sign up page
         if (res[res.length-1]==='e'){
           alert(res);
@@ -119,12 +131,31 @@ class Login extends React.Component {
           alert(res);
           //console.log(res[0]);
          that.setState({loggedIn:true });
-          window.location.href= window.location.origin+'/'
+          window.location.href= window.location.origin+'/doctorprofile'
         //if the pssword wrong go to login page
         }else{
           alert(res);
           //console.log(res[res.length-1]); 
           window.location.href= window.location.origin+'/login' 
+        }
+      } else if(that.state.userType === 'patient'){
+          //if login with new user go to sign up page
+        if (res[res.length-1]==='e'){
+          alert(res);
+          //console.log(res[res.length-1]);          
+          window.location.href= window.location.origin+'/signup'
+        //if login with correct go to home page
+        }else if(res[0]==='W'){
+          alert(res);
+          //console.log(res[0]);
+         that.setState({loggedIn:true });
+          window.location.href= window.location.origin+'/patientProfile'
+        //if the pssword wrong go to login page
+        }else{
+          alert(res);
+          //console.log(res[res.length-1]); 
+          window.location.href= window.location.origin+'/login' 
+         }
         }
       },
       //when error do this
@@ -157,6 +188,10 @@ class Login extends React.Component {
           <input type='password' value={this.state.password} onChange={this.onWrite4.bind(this)} placeholder="Password" style={input}>
           </input>
         </h3>
+        <select name="users" style={button} onChange={this.onSelect.bind(this)} value={this.state.userType}>
+        <option value="doctor">doctor</option>
+        <option value="patient">patient</option>
+        </select>
         <button onClick={this.login.bind(this)} style={button}>Login</button>
         <h3 style={header2}>Dont have an account ? </h3>
         <button onClick={this.signup.bind(this)} style={button}>Sign Up</button>
@@ -167,5 +202,4 @@ class Login extends React.Component {
 }
 //export this component to can use
 export default Login;
-
 

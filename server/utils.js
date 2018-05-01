@@ -25,13 +25,22 @@ exports.checkUser=function(req,res,next){
 }
 
 //this function will create a session and store the user info in it.
+
 exports.createSession=function(req,res,aUser,username,b){
   req.session.regenerate(function(){
     req.session.user=aUser;
     if (b) {
-      res.send(`Welcome DR.${username} you create new user and you are logged in now`)
+      res.send(`Welcome DR.${username} you created new user and you are logged in now`)
     }else{
       res.send(`Welcome DR.${username} you are logged in now`)
     }
+
   })
 }
+
+// exports.createSession=function(req,res,aUser,username){
+//   req.session.regenerate(function(){
+//     req.session.user=aUser;
+//      res.send()
+//       })
+// }
