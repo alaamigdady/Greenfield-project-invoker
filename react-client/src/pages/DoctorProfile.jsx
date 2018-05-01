@@ -80,7 +80,9 @@ changeSpeciality (e) {
   });
 };
 
-
+add (){
+    window.location.href= window.location.origin+'/'
+  }
 
 
 render () {
@@ -114,16 +116,8 @@ render () {
     <br></br> 
     <br></br> 
     <button onClick={this.submit.bind(this)}>Save</button>
+    <button onClick={this.add.bind(this)}>Add Record</button>
     
-
-
-
-
-
-
-
-
-
 
 
 

@@ -95,7 +95,7 @@ const button2={
   fontFamily: 'Lobster',
 };
 //the page home what inside render
-class Home extends React.Component {
+class Record extends React.Component {
   constructor(){
     super();
     //all the data save before sent in state
@@ -240,6 +240,7 @@ class Home extends React.Component {
   }
 }
 //export this component to can use
-export default Home;
+export default Record;
+
 
 
