@@ -75,6 +75,7 @@ var userSchema = mongoose.Schema({
   medications:String,
   fullName:String,
   speciality:String,
+  userType: String,
 
 });
 

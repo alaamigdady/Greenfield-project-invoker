@@ -8,7 +8,7 @@ import $ from 'jquery';
 //and the router
 import {BrowserRouter as Router, Route, Link, NavLink, Redirect, Prompt, IndexRoute, hashHistory } from "react-router-dom";
 //import each components (pages)
-import Home from './pages/Home.jsx';
+import Record from './pages/Record.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
 import NewPatient from './pages/NewPatient.jsx';
@@ -96,8 +96,8 @@ class App2 extends React.Component {
               </div>
             </div>
           </div>
-          <Route path="/" exact strict component={Home}/>     
-          <Route path="/login" exact strict component={Login}/>     
+          <Route path="/" exact strict component={Record}/>     
+          <Route path="/login" exact strict component={Login}/> 
           <Route path="/signup" component={SignUp}/>
           <Route path="/newpatient" exact strict component={NewPatient}/>  
           <Route path="/doctorprofile" exact strict component={DoctorProfile}/>
