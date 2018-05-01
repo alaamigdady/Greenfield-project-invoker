@@ -241,3 +241,4 @@ class Record extends React.Component {
 }
 //export this component to can use
 export default Record;
+
