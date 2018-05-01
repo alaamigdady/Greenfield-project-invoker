@@ -95,6 +95,11 @@ router.route('/doctorprofile')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+
+router.route('/paitentprofile')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 //must change here somthing by the id for this patient..26/4 12:30 PM
 router.route('/patient')
 //retrieve a pateint.
