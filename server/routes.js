@@ -99,7 +99,7 @@ router.route('/doctorprofile')
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 
-router.route('/paitentprofile')
+router.route('/patientprofile')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
