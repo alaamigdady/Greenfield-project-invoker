@@ -110,8 +110,8 @@ render () {
     <label for="phone" value={this.state.phone} onChange={this.changePhone.bind(this)}>Phone Number</label>
     <input type="text" id="phone"></input> 
     <br></br> 
-    <label for="adress" value={this.state.adress} onChange={this.changeAddress.bind(this)}>Adress</label>
-    <input type="text" id="adress"></input> 
+    <label for="address" value={this.state.address} onChange={this.changeAddress.bind(this)}>Address</label>
+    <input type="text" id="address"></input> 
     <br></br> 
     <label for="male">Male</label>
     <input type="radio" name="gender" id="male" value="male"></input>&nbsp; &nbsp;
@@ -123,7 +123,36 @@ render () {
     <input type="date" name="bday" id="bday"></input>
     <br></br> 
 
-   
+    <p value={this.state.disability} onChange={this.changeDisability.bind(this)}> Do you suffer from any disability? </p>
+    <label for="Yes">Yes</label>
+    <input type="radio" name="yes" id="yes" value="yes"></input>&nbsp;&nbsp;
+    <label for="no">No</label>
+    <input type="radio" name="no" id="no" value="no"></input><br></br> 
+    <br></br> 
+
+    <p> Have you ever, or do you now take illegal drugs? </p>
+    <label for="Yes">Yes</label>
+    <input type="radio" name="yes" id="yes" value="yes"></input>&nbsp;&nbsp;
+    <label for="no">No</label>
+    <input type="radio" name="no" id="no" value="no"></input><br></br> 
+    <br></br> 
+
+
+    <p value={this.state.medications} onChange={this.changeMedications.bind(this)}> Have you ever had an allergic reaction to medication? </p>
+    <label for="Yes">Yes</label>
+    <input type="radio" name="yes" id="yes" value="yes"></input>&nbsp;&nbsp;
+    <label for="no">No</label>
+    <input type="radio" name="no" id="no" value="no"></input><br></br> 
+    <br></br> 
+
+
+    <p value={this.state.pregnant} onChange={this.changePregnant.bind(this)}> For females: Are you pregnant? </p>
+    <label for="Yes">Yes</label>
+    <input type="radio" name="yes" id="yes" value="yes"></input>&nbsp;&nbsp;
+    <label for="no">No</label>
+    <input type="radio" name="no" id="no" value="no"></input><br></br> 
+    <br></br> 
+
     
     <button onClick={this.submit.bind(this)}>Save</button>
 

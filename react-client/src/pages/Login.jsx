@@ -114,7 +114,8 @@ class Login extends React.Component {
       url: '/login',
       data: {
         userName: `${this.state.userName}`,
-        password: `${this.state.password}`
+        password: `${this.state.password}`,
+        userType: `${this.state.userType}`
       },
       //when success do this
       success: function (res) {

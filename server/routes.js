@@ -20,8 +20,9 @@ router.route('/login')
 .post(function(req,res){
   var userName=req.body.userName;
   var password=req.body.password;
+  var userType=req.body.userType;
   //searching for user by the username and comparing passwords.
-  User.findOne({userName:userName},function(err,user){
+  User.findOne({userName:userName, userType:userType},function(err,user){
     if(!user){
       console.log('This username does not exist in database ..!');
       res.send(`Sorry DR. this username does not exist in database please create new user now // if you have account but insert wrong username please go to login page again and insert your correct username`)
@@ -48,6 +49,7 @@ router.route('/signup')
   var password=req.body.password;
   var firstName=req.body.firstName;
   var lastName=req.body.lastName;
+  var userType=req.body.userType
 
   //checking for a username,and if it doesn't exist it will create an account
   //and store the hashed password.
@@ -58,7 +60,8 @@ router.route('/signup')
             firstName:firstName,
             lastName:lastName,
             userName:userName,
-            password:hash
+            password:hash,
+            userType: userType
           })
           user.save(function(err,user){
             console.log('Successful signup');
