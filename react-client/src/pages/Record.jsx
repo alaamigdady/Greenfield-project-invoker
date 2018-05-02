@@ -114,25 +114,28 @@ class Record extends React.Component {
     });
   };
   //for logout button
-  logout(){
-    console.log('you try to logoutDR');
-    const that=this
-    //ajax request to logout
-    $.ajax({
-      type: 'GET',
-      url: '/logout',
-      //when success do this
-      success: function (res) {
-        alert(res);
-        that.setState({loggedIn:false});
-        window.location.href= window.location.origin+'/login'
-      },
-      //when error do this
-      error: function (){
-        alert('Failed logout please try again DR');
-        console.log('Failed logout please try again DR');
-      },
-    }); 
+  // logout(){
+  //   console.log('you try to logoutDR');
+  //   const that=this
+  //   //ajax request to logout
+  //   $.ajax({
+  //     type: 'GET',
+  //     url: '/logout',
+  //     //when success do this
+  //     success: function (res) {
+  //       alert(res);
+  //       that.setState({loggedIn:false});
+  //       window.location.href= window.location.origin+'/login'
+  //     },
+  //     //when error do this
+  //     error: function (){
+  //       alert('Failed logout please try again DR');
+  //       console.log('Failed logout please try again DR');
+  //     },
+  //   }); 
+  // };
+  home(){
+    window.location.href= window.location.origin+'/doctor'
   };
   //for button create new patient
   newPatient(){
@@ -232,8 +235,7 @@ class Record extends React.Component {
             </table>
           </div3>
           <div4 className='row'> 
-            <button onClick={this.newPatient.bind(this)} style={button2}>Create New Patient</button>
-            <button onClick={this.logout.bind(this)} style={button1}>Logout</button>
+            <button onClick={this.home.bind(this)} style={button1}>back</button>
           </div4>
         </div1>
     )

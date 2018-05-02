@@ -2,21 +2,17 @@ import React from 'react';
 //to work in ajax
 import $ from 'jquery';
 
-class Doctor extends React.Component {
+class Patient extends React.Component {
 	constructor(){
 		super();
 	}
 
 	add (){
-		window.location.href= window.location.origin+'/newpatient'
-	}
-	
-	search (){
-		window.location.href= window.location.origin+'/record'
+		window.location.href= window.location.origin+'/'
 	}
 
 	update (){
-		window.location.href= window.location.origin+'/doctorProfile'
+		window.location.href= window.location.origin+'/patientProfile'
 	}
 
 	logout(){
@@ -38,21 +34,19 @@ class Doctor extends React.Component {
         console.log('Failed logout please try again DR');
       },
     }) 
-  }
+   }
+
 
 	render() {
 		return (
 			<div>
-			<button onClick={this.add.bind(this)}>Add Record</button>
-			<button onClick={this.search.bind(this)}>Search</button>
+			<button onClick={this.add.bind(this)}>Reserve an appointment</button>
 			<button onClick={this.logout.bind(this)}>Log Out</button>
 			<button onClick={this.update.bind(this)}>Update your Profile</button>
-			<div></div>
-
 			</div>
 			)
 	}
 
 }
 
-export default Doctor
+export default Patient

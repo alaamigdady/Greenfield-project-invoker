@@ -92,7 +92,7 @@ class PatientProfile extends React.Component {
       medications: `${this.state.medications}`,
     },
     success: function (res) {
-      window.location.href= window.location.origin+'/'
+      window.location.href= window.location.origin+'/patients'
     },
 
     error: function (){

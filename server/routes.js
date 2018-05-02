@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var path=require('path')
 var mongoose=require('mongoose')
 var User=mongoose.model('User')
+var db = require('../database-mongo/index.js')
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({extended : true}))
@@ -56,20 +57,19 @@ router.route('/signup')
   User.findOne({userName:userName},function(err,user){
     if(!user){
       bcrypt.hash(password,10,function(err,hash){
-          var user=new User({
+          var obj ={
             firstName:firstName,
             lastName:lastName,
             userName:userName,
             password:hash,
             userType: userType
-          })
-          user.save(function(err,user){
-            console.log('Successful signup');
-            //createSession will make a new session and store the user object in it.
+          }
+          db.save(obj)
+       
             utils.createSession(req,res,user,userName);
           })
-      })
-  }else{
+      }
+  else{
     console.log('This username already exists in database ..!');
     res.send(`Sorry DR.${userName} you signup before please insert the username again and your password to log in // if you are not DR.${userName} please go to sign up page again and insert another username`)
   }
@@ -88,6 +88,11 @@ router.route('/')
 .get(utils.checkUser,function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+
+router.route('/record')
+.get(utils.checkUser,function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 //go to newpatient page to can create new patient
 router.route('/newpatient')
 .get(utils.checkUser,function(req,res){
@@ -99,30 +104,57 @@ router.route('/doctorprofile')
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 .post(function(req,res){
-  var user = new User({
-    fullName:req.body.fullName,
-    adress:req.body.adress,
-    phone:req.body.phone,
-    gender:req.body.gender,
-    speciality:req.body.speciality
+  User.findOne({userName:req.session.user},function(err,user){
+ 
+    user.fullName=req.body.fullName,
+    user.adress=req.body.adress,
+    user.phone=req.body.phone,
+    user.gender=req.body.gender,
+    user.speciality=req.body.speciality,
+    db.save(user)
+ })
+  
+  res.send()
   })
-  user.save( function(err,user){
-    res.send()
-  })
-})
+
 
 //.post(utils.checkUser,controller.createOne)
 router.route('/patientprofile')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+.post(function(req,res){
+  console.log(req.session.user)
+User.findOne({userName:req.session.user},function(err,user){
+  console.log(req.session.user)
+
+    user.fullName=req.body.fullName,
+   user.adress=req.body.adress,
+    user.phone=req.body.phone,
+    user.gender=req.body.gender,
+    user.bday=req.body.bday,
+    user.disability=req.body.disability,
+    user.drugs=req.body.drugs,
+    user.pregnant=req.body.pregnant,
+    user.medications=req.body.medications,
+
+  db.save(user)
+  })
+res.send()
+   })
+
+
+
 
 router.route('/doctor')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 
-
+router.route('/patients')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 //must change here somthing by the id for this patient..26/4 12:30 PM
 router.route('/patient')
 //retrieve a pateint.
@@ -134,8 +166,8 @@ router.route('/patient')
 //delete a patient.
 .delete(utils.checkUser,controller.delete)
 
-router.route('/patients')
-//get all patients
-.get(utils.checkUser,controller.retrieveAll)
+// router.route('/patients')
+// //get all patients
+// .get(utils.checkUser,controller.retrieveAll)
 
 module.exports=router;

@@ -68,6 +68,7 @@ class NewPatient extends React.Component {
     super(props);
     //all the data save before sent in state
     this.state={
+      doctorName:'',
       number: 0,
       firstName:'',
       lastName: '',
@@ -85,7 +86,7 @@ class NewPatient extends React.Component {
   }
   //for home button
   home(){
-    window.location.href= window.location.origin+'/'
+    window.location.href= window.location.origin+'/doctor'
   };
   //when change  ... change the
   //number
@@ -161,6 +162,11 @@ class NewPatient extends React.Component {
       description: e.target.value,
     });
   };
+  onWrite13 (e) {
+    this.setState({
+      doctorName: e.target.value,
+    });
+  }
   //for send data in button
   sentData() {
     //${JSON.stringify(this.state)}
@@ -182,6 +188,7 @@ class NewPatient extends React.Component {
         genetic_Diseases: `${this.state.genetic_Diseases}`,
         allergies: `${this.state.allergies}`,
         description: `${this.state.description}`,
+        doctorName: `${this.state.doctorName}`
       },
       //when success do this
       success: function (res) {
@@ -265,9 +272,14 @@ class NewPatient extends React.Component {
             <input value={this.state.description} onChange={this.onWrite12.bind(this)} placeholder="Description" style={input}>
             </input>
           </h3>
+          <h3 style={number}>
+          Doctor Name:
+            <input value={this.state.doctorName} onChange={this.onWrite13.bind(this)} placeholder="Doctor Name" style={input}>
+            </input>
+          </h3>
         </div3>
         <button onClick={this.sentData.bind(this)} style={button}>Submit</button>
-        <button onClick={this.home.bind(this)} style={button}>Back to Home</button>
+        <button onClick={this.home.bind(this)} style={button}>Back</button>
       </div>
     )
   }
