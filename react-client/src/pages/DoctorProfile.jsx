@@ -179,12 +179,9 @@ render () {
 
     </form>
     </div>
-
     </div>
-
     )
 }
-
 }
 
 
