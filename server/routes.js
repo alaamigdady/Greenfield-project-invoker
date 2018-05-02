@@ -144,10 +144,6 @@ res.send()
    })
 
 
-router.route('/doctorApp')
-.get(function(req,res){
-  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-})
 
 router.route('/doctor')
 .get(function(req,res){
