@@ -2,6 +2,7 @@
 import React from 'react';
 //to work in ajax
 import $ from 'jquery';
+
 //the style for the main header
 const header={
   color:'black',

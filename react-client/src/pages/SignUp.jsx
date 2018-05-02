@@ -135,6 +135,8 @@ class SignUp extends React.Component {
     console.log(`you try to create new user:  ${this.state.userName} as ${this.state.userType}`);
     const that=this;
     //ajax request to sent the data to server then data base
+    if(this.state.userName !== '' && this.state.userName !== null && this.state.userName !== undefined){
+
     $.ajax({
       type: 'POST',
       url: '/signup',
@@ -165,7 +167,7 @@ class SignUp extends React.Component {
         if (res[0]==='W') {
           alert(res);
           console.log(res[0]);          
-          window.location.href= window.location.origin+'/paitentprofile'
+          window.location.href= window.location.origin+'/patientprofile'
         //if sign up exist user use go to login
         }else{
           alert(res);
@@ -184,7 +186,10 @@ class SignUp extends React.Component {
         console.log(`Failed sigup please try again DR.${that.state.userName}`);
       },
     }); 
-  };
+} else {
+    alert(`Enter a valid name`)
+  }
+};
   //try router
   login(){
     window.location.href= window.location.origin+'/login'

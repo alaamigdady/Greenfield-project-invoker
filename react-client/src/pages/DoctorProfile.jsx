@@ -4,6 +4,58 @@ import React from 'react';
 import $ from 'jquery';
 
 
+const pageName = {
+  fontFamily: 'Imprima',
+}
+
+const formCen={
+  display: 'inline-block',
+
+  textAlign: 'center',
+  width: '100%',
+};
+
+const button = {
+  backgroundColor: 'blue',
+  color: 'white',
+  fontWeight: 'bold',
+  borderRadius: '20%',
+  padding: '10px',
+  border:'none',
+  width:'100px',
+};
+
+
+const input={
+  padding: '2px',
+  //this three to make it center
+  display: 'block',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  color:'black',
+  fontSize : '14px',
+  border: '2px solid black',
+  borderRadius: '15px',
+};
+
+const label={
+  fontWeight : 'bold',
+  fontSize : '14px',
+
+}
+
+const body={
+  backgroundColor: '#BDF1F6',
+  fontFamily: 'sans-serif',
+  fontSize: '0.85em',
+  color: 'rgba(66,66,66 ,1)',
+  height: '100vh',
+  width: '100vw',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}
+
 class DoctorProfile extends React.Component {
   constructor(){
     super();
@@ -24,7 +76,7 @@ class DoctorProfile extends React.Component {
 
    $.ajax({
     type: 'POST',
-    url: '/update',
+    url: '/doctorprofile',
     data: {
       fullName: `${this.state.fullName}`,
       adress: `${this.state.adress}`,
@@ -33,17 +85,16 @@ class DoctorProfile extends React.Component {
       speciality:`${this.state.speciality}`,
     },
     success: function (res) {
-      window.location.href= window.location.origin+'/'
+      window.location.href= window.location.origin+'/doctor'
     },
 
     error: function (){
-   
+
     },
 
   });
-
-
  }
+
 
  logout(){
   const that=this
@@ -58,16 +109,19 @@ class DoctorProfile extends React.Component {
     },
   }); 
 };
+
 changeName (e) {
   this.setState({
     fullName: e.target.value,
   });
 };
+
 changephone (e) {
   this.setState({
     phone: e.target.value,
   });
 };
+
 changeAdress (e) {
   this.setState({
     adress: e.target.value,
@@ -80,24 +134,28 @@ changeSpeciality (e) {
   });
 };
 
-add (){
-    window.location.href= window.location.origin+'/'
-  }
+
+// add (){
+//     window.location.href= window.location.origin+'/'
+//   }
+
 
 
 render () {
   return (
-    <div>
-    <h1> Profile</h1>
+    <div style={formCen}>
+    <div style={body}>
+    <form >    
+    <h1 style={pageName}> Profile</h1>
 
-    <label for="fullName">Full Name</label>
-    <input type="text" id="fullName" value={this.state.fullName} onChange={this.changeName.bind(this)}></input> 
+    <label style={label} for="fullName">Full Name</label>
+    <input style = {input} type="text" id="fullName" value={this.state.fullName} onChange={this.changeName.bind(this)}></input> 
     <br></br>    
-    <label for="phone" value={this.state.phone} onChange={this.changephone.bind(this)}>Phone Number</label>
-    <input type="text" id="phone"></input> 
+    <label style={label} for="phone" value={this.state.phone} onChange={this.changephone.bind(this)}>Phone Number</label>
+    <input style = {input} type="text" id="phone"></input> 
     <br></br> 
-    <label for="adress" value={this.state.adress} onChange={this.changeAdress.bind(this)}>Adress</label>
-    <input type="text" id="adress"></input> 
+    <label style={label} for="adress" value={this.state.adress} onChange={this.changeAdress.bind(this)}>Adress</label>
+    <input style = {input} type="text" id="adress"></input> 
     <br></br> 
     <select onChange={this.changeSpeciality.bind(this)} value={this.state.speciality}>
     <option value="Neurology">Neurology</option>
@@ -109,22 +167,24 @@ render () {
     <option value="Family Medicine">Family Medicine</option>
     </select>
     <br></br> 
-    <label for="male">Male</label>
-    <input type="radio" name="gender" id="male" value="male"></input><br></br> 
-    <label for="female">Female</label>
-    <input type="radio" name="gender" id="female" value="female"></input><br></br> 
+    <br></br> 
+    <label style={label} for="male">Male</label>&nbsp; &nbsp;
+    <input type="radio" name="gender" id="male" value="male"></input>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+    <label style={label} for="female">Female</label>&nbsp; &nbsp;
+    <input type="radio" name="gender" id="female" value="female"></input><br></br> &nbsp; &nbsp;
     <br></br> 
     <br></br> 
-    <button onClick={this.submit.bind(this)}>Save</button>
-    <button onClick={this.add.bind(this)}>Add Record</button>
-    
 
+    <button onClick={this.submit.bind(this)}>Save</button>
+
+    </form>
 
 
     </div>
 
     )
 }
+
 }
 
 
