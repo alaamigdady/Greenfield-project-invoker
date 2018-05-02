@@ -21,6 +21,10 @@ exports.createOne = function (req, res) {
 	})
 };
 
+
+
+
+
 //2.update specific info for one patient
 exports.updateOne = function (req, res) {
 	Patient.find({number:req.body.number},function(err,patient){
