@@ -30,7 +30,8 @@ var patientSchema = mongoose.Schema({
   currentlly_Medications:String,
   genetic_Diseases:String,
   allergies:String,
-  description: String
+  description: String,
+  appointments: [{date:Date , from:String ,to:String , patient:String, doctor:String , description:String }]
 });
 
 //compiling our schema into a Model(class)
@@ -47,15 +48,10 @@ var selectAll = function(callback) {
 };
 
 //functionality to our instances:
-var save=function(PatientInstance){
+var save=function(data){
 
-  PatientInstance.save(function(err,patient){
-    if(err){
-      console.log(err)
-    }else{
-      console.log('saved patient!')
-    }
-  })
+var user = new User(data)
+user.save()
 }
 
 //create our schema

@@ -28,7 +28,7 @@ exports.checkUser=function(req,res,next){
 
 exports.createSession=function(req,res,aUser,username,b){
   req.session.regenerate(function(){
-    req.session.user=aUser;
+    req.session.user=username;
     if (b) {
       res.send(`Welcome DR.${username} you created new user and you are logged in now`)
     }else{
