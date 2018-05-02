@@ -24,7 +24,7 @@ class DoctorProfile extends React.Component {
 
    $.ajax({
     type: 'POST',
-    url: '/update',
+    url: '/doctorprofile',
     data: {
       fullName: `${this.state.fullName}`,
       adress: `${this.state.adress}`,
@@ -33,7 +33,7 @@ class DoctorProfile extends React.Component {
       speciality:`${this.state.speciality}`,
     },
     success: function (res) {
-      window.location.href= window.location.origin+'/'
+      window.location.href= window.location.origin+'/doctor'
     },
 
     error: function (){
@@ -41,9 +41,8 @@ class DoctorProfile extends React.Component {
     },
 
   });
-
-
  }
+
 
  logout(){
   const that=this
@@ -58,16 +57,19 @@ class DoctorProfile extends React.Component {
     },
   }); 
 };
+
 changeName (e) {
   this.setState({
     fullName: e.target.value,
   });
 };
+
 changephone (e) {
   this.setState({
     phone: e.target.value,
   });
 };
+
 changeAdress (e) {
   this.setState({
     adress: e.target.value,
@@ -80,9 +82,9 @@ changeSpeciality (e) {
   });
 };
 
-add (){
-    window.location.href= window.location.origin+'/'
-  }
+// add (){
+//     window.location.href= window.location.origin+'/'
+//   }
 
 
 render () {
@@ -116,15 +118,11 @@ render () {
     <br></br> 
     <br></br> 
     <button onClick={this.submit.bind(this)}>Save</button>
-    <button onClick={this.add.bind(this)}>Add Record</button>
-    
-
-
-
     </div>
 
     )
 }
+
 }
 
 

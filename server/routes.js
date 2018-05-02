@@ -98,11 +98,31 @@ router.route('/doctorprofile')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+.post(function(req,res){
+  var user = new User({
+    fullName:req.body.fullName,
+    adress:req.body.adress,
+    phone:req.body.phone,
+    gender:req.body.gender,
+    speciality:req.body.speciality
+  })
+  user.save( function(err,user){
+    res.send()
+  })
+})
 
+//.post(utils.checkUser,controller.createOne)
 router.route('/patientprofile')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+
+router.route('/doctor')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
+
+
 //must change here somthing by the id for this patient..26/4 12:30 PM
 router.route('/patient')
 //retrieve a pateint.
