@@ -11,6 +11,7 @@ class Patient extends React.Component {
 		window.location.href= window.location.origin+'/'
 	}
 
+
 	update (){
 		window.location.href= window.location.origin+'/patientProfile'
 	}
@@ -43,6 +44,7 @@ class Patient extends React.Component {
 			<button onClick={this.add.bind(this)}>Reserve an appointment</button>
 			<button onClick={this.logout.bind(this)}>Log Out</button>
 			<button onClick={this.update.bind(this)}>Update your Profile</button>
+
 			</div>
 			)
 	}
