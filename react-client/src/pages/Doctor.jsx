@@ -10,13 +10,17 @@ class Doctor extends React.Component {
 	add (){
 		window.location.href= window.location.origin+'/newpatient'
 	}
-	
+
 	search (){
 		window.location.href= window.location.origin+'/record'
 	}
 
 	update (){
 		window.location.href= window.location.origin+'/doctorProfile'
+	}
+
+	show (){
+		window.location.href= window.location.origin+'/doctorApp'
 	}
 
 	logout(){
@@ -47,6 +51,7 @@ class Doctor extends React.Component {
 			<button onClick={this.search.bind(this)}>Search</button>
 			<button onClick={this.logout.bind(this)}>Log Out</button>
 			<button onClick={this.update.bind(this)}>Update your Profile</button>
+			<button onClick={this.show.bind(this)}>The Appointments</button>
 			<div></div>
 
 			</div>
