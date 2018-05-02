@@ -20,6 +20,7 @@ db.once('open', function() {
 
 //create our schema
 var patientSchema = mongoose.Schema({
+  doctorName: String,
   firstName:String,
   lastName:String,
   userType:String,
@@ -72,8 +73,10 @@ var userSchema = mongoose.Schema({
   fullName:String,
   speciality:String,
   userType: String,
-
 });
+ 
+
+
 
 //compiling our schema into a Model(class)
 var User = mongoose.model('User', userSchema);

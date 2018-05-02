@@ -132,7 +132,7 @@ class Login extends React.Component {
           alert(res);
           //console.log(res[0]);
          that.setState({loggedIn:true });
-          window.location.href= window.location.origin+'/doctorprofile'
+          window.location.href= window.location.origin+'/doctor'
         //if the pssword wrong go to login page
         }else{
           alert(res);
@@ -150,7 +150,7 @@ class Login extends React.Component {
           alert(res);
           //console.log(res[0]);
          that.setState({loggedIn:true });
-          window.location.href= window.location.origin+'/patientProfile'
+          window.location.href= window.location.origin+'/patients'
         //if the pssword wrong go to login page
         }else{
           alert(res);

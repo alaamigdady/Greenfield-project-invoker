@@ -88,6 +88,11 @@ router.route('/')
 .get(utils.checkUser,function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+
+router.route('/record')
+.get(utils.checkUser,function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 //go to newpatient page to can create new patient
 router.route('/newpatient')
 .get(utils.checkUser,function(req,res){
