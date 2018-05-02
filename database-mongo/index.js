@@ -76,8 +76,10 @@ var userSchema = mongoose.Schema({
   fullName:String,
   speciality:String,
   userType: String,
-
 });
+ 
+
+
 
 //compiling our schema into a Model(class)
 var User = mongoose.model('User', userSchema);
