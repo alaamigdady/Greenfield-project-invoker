@@ -5,7 +5,26 @@ import $ from 'jquery';
 class Doctor extends React.Component {
 	constructor(){
 		super();
+		this.state={
+			info:[]
+		}
 	}
+
+	componentDidMount() {
+    console.log('hi',this.state.info);
+    const that=this
+    $.ajax({
+      type: 'GET',
+      url: '/getInfo',
+      success: function (res) {
+      	//console.log('hh',res)
+      	that.setState({info:res })
+      	//console.log(that.state.info)
+      	
+      }
+  })
+}
+
 
 	add (){
 		window.location.href= window.location.origin+'/newpatient'
@@ -47,7 +66,12 @@ class Doctor extends React.Component {
 			<button onClick={this.search.bind(this)}>Search</button>
 			<button onClick={this.logout.bind(this)}>Log Out</button>
 			<button onClick={this.update.bind(this)}>Update your Profile</button>
-			<div></div>
+			<div>
+				{this.state.info.map((obj)=>
+					<h3> name:{obj.firstName + " " +obj.lastName } , age:{obj.age } </h3>)
+				}
+
+			</div>
 
 			</div>
 			)

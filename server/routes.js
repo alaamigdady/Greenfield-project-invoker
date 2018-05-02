@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var path=require('path')
 var mongoose=require('mongoose')
 var User=mongoose.model('User')
+var Patient=mongoose.model('Patient')
 var db = require('../database-mongo/index.js')
 
 router.use(bodyParser.json())
@@ -173,6 +174,24 @@ router.route('/doctor')
 router.route('/patients')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
+
+
+router.route('/getInfo')
+.get(function(req,res){
+ Patient.find({},function(err,users){
+  console.log('here',users)
+  var userArr=[]
+  for(var i=0;i<users.length;i++){
+    if(users[i].doctorName===req.session.user){
+      userArr.push(users[i])
+  }
+   } 
+ 
+  console.log('arr',userArr)
+    res.send(userArr)
+  // res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 })
 //must change here somthing by the id for this patient..26/4 12:30 PM
 router.route('/patient')
