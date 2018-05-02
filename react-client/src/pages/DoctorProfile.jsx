@@ -178,7 +178,7 @@ render () {
     <button onClick={this.submit.bind(this)}>Save</button>
 
     </form>
-
+    </div>
 
     </div>
 
