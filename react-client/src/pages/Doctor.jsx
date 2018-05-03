@@ -11,7 +11,7 @@ const body={
 	display: 'flex',
 	justifyContent: 'center',
 	alignItems: 'center',
-	height: '100vh',
+	height: '91vh',
 	width: '100vw',
 }
 
@@ -23,12 +23,18 @@ const button={
 	border: 'none',
 	color: '#FFFFFF',
 	textAlign: 'center',
-	fontSize: '28px',
-	padding: '20px',
+	fontSize: '15px',
+	padding: '15px',
 	width: '200px',
 	transition: 'a1ll 0.5s',
 	cursor: 'pointer',
-	margin: '5px',
+	margin: '15px',
+	display:'block',
+
+}
+
+const newStyle = {
+	display:'block',
 }
 
 
@@ -92,9 +98,8 @@ class Doctor extends React.Component {
 render() {
 	return (
 		<div style={body}>
-		<div>
+		<div style={newStyle}>
 		<button style={button} onClick={this.add.bind(this)}><span>Add Record </span></button>
-		</div>
 		<br></br>
 		<br></br>
 		<button style={button} onClick={this.search.bind(this)}>Search</button>
@@ -111,6 +116,7 @@ render() {
 
 	</div>
 
+	</div>
 	</div>
 	)
 }
