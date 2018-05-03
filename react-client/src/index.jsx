@@ -17,6 +17,7 @@ import PatientProfile from './pages/PatientProfile.jsx';
 import Doctor from './pages/Doctor.jsx';
 import Patient from './pages/Patient.jsx';
 import DoctorApp from './pages/DoctorApp.jsx';
+import PatientApp from './pages/PatientApp.jsx';
 //export const history = createHashHistory()
 //style for div top
 const div2={
@@ -108,6 +109,7 @@ class App2 extends React.Component {
           <Route path="/doctor" exact strict component={Doctor}/>    
           <Route path="/patients" exact strict component={Patient}/>   
           <Route path="/doctorApp" exact strict component={DoctorApp}/> 
+          <Route path="/patientApp" exact strict component={PatientApp}/>
         </div>
       </Router> 
     )

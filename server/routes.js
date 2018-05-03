@@ -89,6 +89,11 @@ router.route('/')
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 
+router.route('/patientApp')
+.get(utils.checkUser,function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
+
 router.route('/record')
 .get(utils.checkUser,function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
@@ -117,6 +122,25 @@ router.route('/doctorprofile')
   res.send()
   })
 
+router.route('/patientApp')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
+.post(function(req,res){
+  User.findOne({fullName:req.body.doctorName},function(err,user){
+ 
+    user.appointments.push({date:req.body.date , from:req.body.from ,to:req.body.to , patient:req.body.patient, doctor:req.body.doctorName , description:req.body.description })
+    
+    db.save(user)
+ })
+  res.send()
+  })
+
+
+router.route('/doctorApp')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 
 //.post(utils.checkUser,controller.createOne)
 router.route('/patientprofile')
