@@ -17,7 +17,7 @@ class Doctor extends React.Component {
       type: 'GET',
       url: '/getInfo',
       success: function (res) {
-      	//console.log('hh',res)
+      	console.log('hh',res)
       	that.setState({info:res })
       	//console.log(that.state.info)
       	
@@ -39,7 +39,7 @@ class Doctor extends React.Component {
 	}
 
 	logout(){
-    console.log('you try to logoutDR');
+    console.log('you try to logout');
     const that=this
     //ajax request to logout
     $.ajax({
@@ -53,8 +53,8 @@ class Doctor extends React.Component {
       },
       //when error do this
       error: function (){
-        alert('Failed logout please try again DR');
-        console.log('Failed logout please try again DR');
+        alert('Failed logout please try again ');
+        console.log('Failed logout please try again ');
       },
     }) 
   }
@@ -66,9 +66,11 @@ class Doctor extends React.Component {
 			<button onClick={this.search.bind(this)}>Search</button>
 			<button onClick={this.logout.bind(this)}>Log Out</button>
 			<button onClick={this.update.bind(this)}>Update your Profile</button>
-			<div>
+			<div style={{textAlign: 'center'}} >
+			Appointments:
 				{this.state.info.map((obj)=>
-					<h3> name:{obj.firstName + " " +obj.lastName } , age:{obj.age } </h3>)
+					
+					<div style={{borderStyle: 'solid'}}> <h3> name:{obj.name} </h3> <h3> date: {obj.date }, from: {obj.from} ,to: {obj.to } </h3> </div>)
 				}
 
 			</div>
