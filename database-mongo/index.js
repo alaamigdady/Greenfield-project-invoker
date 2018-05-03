@@ -33,7 +33,7 @@ var patientSchema = mongoose.Schema({
   genetic_Diseases:String,
   allergies:String,
   description: String,
-  appointments: [{date:Date , from:String ,to:String , patient:String, doctor:String , description:String }]
+  appointments: [{date:String , from:String ,to:String , patient:String, doctor:String , description:String }]
 });
 
 //compiling our schema into a Model(class)
@@ -54,6 +54,12 @@ var save=function(data){
 
   var user = new User(data)
   user.save()
+}
+
+var savePat=function(data){
+
+var pat = new Patient(data)
+pat.save()
 }
 
 //create our schema
@@ -85,3 +91,4 @@ module.exports=User;
 module.exports=Patient;
 module.exports.selectAll = selectAll;
 module.exports.save = save;
+module.exports.savePat = savePat;
