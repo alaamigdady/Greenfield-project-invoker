@@ -19,6 +19,7 @@ db.once('open', function() {
 
 //create our schema
 var patientSchema = mongoose.Schema({
+  number:{type:Number,unique:true},
   doctorName: String,
   firstName:String,
   lastName:String,
@@ -51,8 +52,8 @@ var selectAll = function(callback) {
 //functionality to our instances:
 var save=function(data){
 
-var user = new User(data)
-user.save()
+  var user = new User(data)
+  user.save()
 }
 
 //create our schema
@@ -73,7 +74,7 @@ var userSchema = mongoose.Schema({
   speciality:String,
   userType: String,
 });
- 
+
 
 
 
