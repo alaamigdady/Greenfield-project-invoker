@@ -149,7 +149,7 @@ router.route('/patientApp')
     else if(check === false){
     res.status(404).send('it is reserved')
   } 
-  })
+  })})
   
 
 
