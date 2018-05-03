@@ -65,13 +65,17 @@ class Doctor extends React.Component {
 	add (){
 		window.location.href= window.location.origin+'/newpatient'
 	}
-	
+
 	search (){
 		window.location.href= window.location.origin+'/record'
 	}
 
 	update (){
 		window.location.href= window.location.origin+'/doctorProfile'
+	}
+
+	show (){
+		window.location.href= window.location.origin+'/doctorApp'
 	}
 
 	logout(){
@@ -92,6 +96,7 @@ class Doctor extends React.Component {
       	alert('Failed logout please try again DR');
       	console.log('Failed logout please try again DR');
       },
+
   }) 
 }
 
@@ -112,6 +117,7 @@ render() {
 		<div>
 		{this.state.info.map((obj)=>
 			<h3> name:{obj.firstName + " " +obj.lastName } , age:{obj.age } </h3>)
+
 	}
 
 	</div>
